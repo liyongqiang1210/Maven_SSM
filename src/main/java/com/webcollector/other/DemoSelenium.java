@@ -1,4 +1,4 @@
-package com.webcollector;
+package com.webcollector.other;
 
 import cn.edu.hfut.dmic.webcollector.crawldb.DBManager;
 import cn.edu.hfut.dmic.webcollector.crawler.Crawler;

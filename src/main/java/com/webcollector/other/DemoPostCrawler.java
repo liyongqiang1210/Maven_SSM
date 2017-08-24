@@ -1,4 +1,4 @@
-package com.webcollector;
+package com.webcollector.other;
 
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatum;
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;

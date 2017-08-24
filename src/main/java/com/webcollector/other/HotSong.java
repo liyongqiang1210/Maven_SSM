@@ -1,4 +1,4 @@
-package com.webcollector.music;
+package com.webcollector.other;
 
 import java.io.IOException;
 

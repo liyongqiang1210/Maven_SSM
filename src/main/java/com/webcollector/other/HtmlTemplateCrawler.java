@@ -1,4 +1,4 @@
-package com.webcollector;
+package com.webcollector.other;
 
 import java.io.IOException;
 import java.util.Map;
