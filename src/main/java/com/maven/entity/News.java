@@ -1,5 +1,7 @@
 package com.maven.entity;
 
+import java.util.Date;
+
 public class News {
 
 	private String id;
