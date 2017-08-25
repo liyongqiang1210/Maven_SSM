@@ -28,7 +28,8 @@ public class JDBCTemplate {
 			}
 		} catch (Exception ex) {
 			jdbcTemplate = null;
-			System.out.println("mysql未开启或JDBCHelper.createMysqlTemplate中参数配置不正确!");
+			log.error("错误信息："+ex);
+			//System.out.println("mysql未开启或JDBCHelper.createMysqlTemplate中参数配置不正确!");
 		}
 	}
 }
