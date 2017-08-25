@@ -73,12 +73,13 @@ public class Crawler_gjjq extends BreadthCrawler {
 					// 获取文章内容
 					String text = shtml_doc.select("div#artibody.content").toString();
 					log.debug("文章正文：\n" + text);
+					
+					//存到数据库
 					String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
 					jdbc.jdbc(TYPE,title, web_url, release_time, source, text,sql);
 
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+						log.error(e);
 				}
 
 			}
