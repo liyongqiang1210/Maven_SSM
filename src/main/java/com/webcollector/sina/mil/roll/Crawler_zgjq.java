@@ -77,12 +77,13 @@ public class Crawler_zgjq extends BreadthCrawler {
 						source = ts.substring(17, ts.length());
 						log.debug("发布时间：" + release_time);
 						log.debug("数据来源: " + source);
+						
+						//存到数据库
 						String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
 						jdbc.jdbc(TYPE,title, web_url, release_time, source, text,sql);
 						log.debug("---------------------------END--------------------------------");
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						log.error("中国军情爬取异常："+e);
 					}
 
 				}
