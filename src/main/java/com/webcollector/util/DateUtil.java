@@ -11,6 +11,7 @@ import java.util.Date;
 public class DateUtil {
 
 	Date date = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 
 	/**
 	 * 获取今天的年月日
@@ -18,13 +19,23 @@ public class DateUtil {
 	 * @return
 	 */
 	public String getToday() {
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+		
 		return sdf.format(date);
+	}
+	
+	/**
+	 * 获取年月
+	 * @param args
+	 */
+	public String getYear_Month(){
+		
+		return sdf.format(date).substring(0, 7);
+		
 	}
 
 	public static void main(String[] args) {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-		System.out.println(sdf.format(date));
+		System.out.println(sdf.format(date).substring(0, 7));
 	}
 }
