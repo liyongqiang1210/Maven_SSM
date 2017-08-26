@@ -25,6 +25,6 @@ public class NewsController {
 	public String getAllNews(Model model){
 		List<News> list = newsService.getAllNews();
 		model.addAttribute("News", list);
-		return "info/right";
+		return "jsp/right";
 	}
 }

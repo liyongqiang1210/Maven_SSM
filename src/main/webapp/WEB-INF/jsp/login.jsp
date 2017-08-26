@@ -6,14 +6,15 @@
 %>
 <html lang="en" class="no-js">
 <head>
+<base href="<%=basePath%>">
 <meta charset="utf-8">
 <title>用户登录</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- CSS -->
-<link rel="stylesheet" href="<%=basePath%>assets/css/reset.css">
-<link rel="stylesheet" href="<%=basePath%>assets/css/supersized.css">
-<link rel="stylesheet" href="<%=basePath%>assets/css/style.css">
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/supersized.css">
+<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -32,10 +33,10 @@
 	</div>
 
 	<!-- Javascript -->
-	<script src="<%=basePath%>assets/js/jquery-1.8.2.min.js"></script>
-	<script src="<%=basePath%>assets/js/supersized.3.2.7.min.js"></script>
-	<script src="<%=basePath%>assets/js/supersized-init.js"></script>
-	<script src="<%=basePath%>assets/js/scripts.js"></script>
+	<script src="assets/js/jquery-1.8.2.min.js"></script>
+	<script src="assets/js/supersized.3.2.7.min.js"></script>
+	<script src="assets/js/supersized-init.js"></script>
+	<script src="assets/js/scripts.js"></script>
 
 </body>
 
