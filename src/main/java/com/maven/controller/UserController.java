@@ -9,10 +9,10 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -38,20 +38,21 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/login")
-	public ModelAndView login(HttpServletRequest req, ModelAndView mv) {
+	public String login(HttpServletRequest req, Model model) {
 
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("username", req.getParameter("username"));
 		map.put("password", req.getParameter("password"));
 		User user = userService.login(map);
+		String str;
 		if (user != null) {
-			mv.setViewName("userList");
+			str = "jsp/index";
 		} else {
 
-			mv.addObject("message", "用户名或密码输入错误,请重新输入");
-			mv.setViewName("login");
+			model.addAttribute("message", "用户名或密码输入错误,请重新输入");
+			str = "jsp/login";
 		}
-		return mv;
+		return str;
 
 	}
 
@@ -89,7 +90,7 @@ public class UserController {
 	@RequestMapping("/toUserList")
 	public String toUserList() {
 
-		return "userList";
+		return "jsp/userList";
 
 	}
 

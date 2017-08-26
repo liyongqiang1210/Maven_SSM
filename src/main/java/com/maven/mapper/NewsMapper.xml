@@ -2,21 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.maven.dao.INewsDao">
 	<resultMap id="BaseResultMap" type="com.maven.entity.News">
-		<result column="id" property="id"  jdbcType="VARCHAR"/>
-		<result column="title" property="title" jdbcType="VARCHAR"/>
-		<result column="text" property="text" jdbcType="VARCHAR"/>
-		<result column="author" property="author" jdbcType="VARCHAR"/>
-		<result column="picture_url" property="picture_url" jdbcType="VARCHAR"/>
-		<result column="source" property="source" jdbcType="VARCHAR"/>
-		<result column="release_time" property="release_time" jdbcType="VARCHAR"/>
-		<result column="create_time" property="create_time" jdbcType="VARCHAR"/>
-		<result column="web_url" property="title" jdbcType="VARCHAR"/>
-		<result column="type" property="title" jdbcType="VARCHAR"/>
+		<result column="id" property="id" jdbcType="VARCHAR" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="text" property="text" jdbcType="VARCHAR" />
+		<result column="author" property="author" jdbcType="VARCHAR" />
+		<result column="picture_url" property="picture_url" jdbcType="VARCHAR" />
+		<result column="source" property="source" jdbcType="VARCHAR" />
+		<result column="release_time" property="release_time" jdbcType="VARCHAR" />
+		<result column="create_time" property="create_time" jdbcType="VARCHAR" />
+		<result column="web_url" property="title" jdbcType="VARCHAR" />
+		<result column="type" property="title" jdbcType="VARCHAR" />
 	</resultMap>
-	
-	<insert id="inserNews" parameterType="com.maven.entity.News" >
-	
-		INSERT INTO 
+
+	<insert id="inserNews" parameterType="com.maven.entity.News">
+
+		INSERT INTO
 		news
 		VALUES(
 		#{id},
@@ -31,5 +31,12 @@
 		#{type}
 		)
 	</insert>
+	<select id="getAllNews" resultType="com.maven.entity.News">
+		SELECT
+		id,title,text,release_time,source,web_url,type
+		FROM
+		news
+	</select>
+
 
 </mapper>  

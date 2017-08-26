@@ -35,7 +35,7 @@
 	<!--定义跳转文件的前后缀，试图模式配置 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="prefix" value="/WEB-INF/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->

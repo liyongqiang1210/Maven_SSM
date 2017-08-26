@@ -8,5 +8,8 @@
 </head>
 <body>
 
+	<form action="News/getAllNews" method="post">
+		<input type="submit" value="查看新闻数据">
+	</form>
 </body>
 </html>
