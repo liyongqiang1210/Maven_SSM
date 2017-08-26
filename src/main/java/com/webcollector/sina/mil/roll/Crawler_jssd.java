@@ -23,15 +23,15 @@ public class Crawler_jssd extends BreadthCrawler {
 	private static final String URL = "http://mil.news.sina.com.cn/jssd/";
 	private static final String TYPE = "深度";
 	private static final String SHTML_REGEX = ".*jssd\\/2017.*\\/.*\\.shtml";
+
 	public Crawler_jssd(String crawlPath, boolean autoParse) {
 		super(crawlPath, autoParse);
 		this.addSeed(URL);
-		
-		
+
 	}
 
 	public void visit(Page page, CrawlDatums next) {
-		
+
 		JDBCTemplate jdbc = new JDBCTemplate();
 		log.debug(
 				"----------------------START(国际军情) 日期：" + new DateUtil().getToday() + "-----------------------------");
@@ -43,7 +43,7 @@ public class Crawler_jssd extends BreadthCrawler {
 			String shtml_url = el.absUrl("href");
 			// 获取我们需要的url
 			if (shtml_url.matches(SHTML_REGEX)) {
-				
+
 				try {
 					// 获取文章标题
 					String title = el.text();
@@ -65,15 +65,15 @@ public class Crawler_jssd extends BreadthCrawler {
 					log.debug("发布时间：" + release_time + "  来源：" + source);
 
 					// 获取文章内容
-					String text = shtml_doc.select("div#artibody.content").toString();
+					String text = "\"" + shtml_doc.select("div#artibody.content").toString() + "\"";
 					log.debug("文章正文：\n" + text);
-					
-					//存到数据库
+
+					// 存到数据库
 					String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
-					jdbc.jdbc(TYPE,title, web_url, release_time, source, text,sql);
+					jdbc.jdbc(TYPE, title, web_url, release_time, source, text, sql);
 
 				} catch (IOException e) {
-						log.error(e);
+					log.error(e);
 				}
 
 			}

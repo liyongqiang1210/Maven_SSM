@@ -32,8 +32,6 @@ public class Crawler_society extends BreadthCrawler {
 
 	public void visit(Page page, CrawlDatums next) {
 
-		
-
 		JDBCTemplate jdbc = new JDBCTemplate();
 
 		@SuppressWarnings("deprecation")
@@ -63,7 +61,7 @@ public class Crawler_society extends BreadthCrawler {
 						String shtml_url = type_el.absUrl("href");
 
 						if (shtml_url.matches(SHTML_REGEX)) {
-							
+
 							// 获取文章网址
 							String web_url = shtml_url;
 
@@ -72,13 +70,13 @@ public class Crawler_society extends BreadthCrawler {
 
 							// 获取文章标题
 							String title = type_el.select("a[href]").text();
-							
-							log.debug("---------------------------"+title+"-START--------------------------------");
+
+							log.debug("---------------------------" + title + "-START--------------------------------");
 							log.debug("文章标题：" + title);
 							log.debug("文章网址：" + web_url);
-							
+
 							// 获取文章内容
-							String text = shtml_doc.select("div#artibody.article.article_16").toString();
+							String text = "\"" + shtml_doc.select("div#artibody.article.article_16").toString() + "\"";
 							log.debug("文章内容：" + text);
 
 							// 获取文章发布时间
@@ -93,7 +91,7 @@ public class Crawler_society extends BreadthCrawler {
 							// 存到数据库
 							String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
 							jdbc.jdbc(type, title, web_url, release_time, source, text, sql);
-							log.debug("---------------------------"+title+"-END--------------------------------");
+							log.debug("---------------------------" + title + "-END--------------------------------");
 						}
 					}
 

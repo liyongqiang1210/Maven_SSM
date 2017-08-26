@@ -71,7 +71,7 @@ public class Crawler_gjjq extends BreadthCrawler {
 					log.debug("发布时间：" + release_time + "  来源：" + source);
 
 					// 获取文章内容
-					String text = shtml_doc.select("div#artibody.content").toString();
+					String text = "\""+shtml_doc.select("div#artibody.content").toString()+"\"";
 					log.debug("文章正文：\n" + text);
 					
 					//存到数据库

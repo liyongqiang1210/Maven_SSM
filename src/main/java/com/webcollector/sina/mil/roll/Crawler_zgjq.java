@@ -67,7 +67,7 @@ public class Crawler_zgjq extends BreadthCrawler {
 						Document shtml_doc = Jsoup.connect(shtml_url).method(Method.GET).execute().parse();
 						// 下面开始分析这个文档
 						// 获取正文内容
-						text = shtml_doc.select("div#artibody.content").toString();
+						text = "\"" + shtml_doc.select("div#artibody.content").toString() + "\"";
 						log.debug(text);
 						// 获取发布时间与数据来源
 						String ts = shtml_doc.select("div#page-tools > span").text();
@@ -77,13 +77,13 @@ public class Crawler_zgjq extends BreadthCrawler {
 						source = ts.substring(17, ts.length());
 						log.debug("发布时间：" + release_time);
 						log.debug("数据来源: " + source);
-						
-						//存到数据库
+
+						// 存到数据库
 						String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
-						jdbc.jdbc(TYPE,title, web_url, release_time, source, text,sql);
+						jdbc.jdbc(TYPE, title, web_url, release_time, source, text, sql);
 						log.debug("---------------------------END--------------------------------");
 					} catch (IOException e) {
-						log.error("中国军情爬取异常："+e);
+						log.error("中国军情爬取异常：" + e);
 					}
 
 				}
