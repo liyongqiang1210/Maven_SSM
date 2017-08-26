@@ -85,14 +85,14 @@
 				<c:forEach items="${News}" var="news">
 					<tr>
 						<td><input name="option" type="checkbox" /></td>
-						<td>${news.id }</td>
-						<td>${news.title }</td>
-						<td>${news.text }</td>
-						<td>admin</td>
+						<td id="id">${news.id }</td>
+						<td id="title">${news.title }</td>
+						<td id="text">文章正文</td>
+						<td id="author">admin</td>
 						<td>图片url</td>
-						<td>${news.type }</td>
-						<td>${news.source }</td>
-						<td>${news.release_time }</td>
+						<td id="type">${news.type }</td>
+						<td id="source">${news.source }</td>
+						<td id="release_time">${news.release_time }</td>
 						<td>已审核</td>
 						<td><a href="#" class="tablelink">查看</a> <a href="#"
 							class="tablelink"> 删除</a></td>
