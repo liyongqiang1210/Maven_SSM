@@ -1,4 +1,4 @@
-/**
+<%=basePath%>info//**
  * right页面的js
  */
 $(document).ready(function(){
