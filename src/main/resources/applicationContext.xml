@@ -20,4 +20,6 @@
 	<import resource="spring-db.xml" />
 	<!--导入事务管理器配置 -->
 	<import resource="spring-tx.xml" />
+	<!--导入spring定时器  -->
+	<import resource="spring-task.xml"/>
 </beans>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd      
+                        http://www.springframework.org/schema/context      
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd      
+                        http://www.springframework.org/schema/mvc      
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                          http://www.springframework.org/schema/beans
+                         http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                         http://www.springframework.org/schema/task 
+                         http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<!-- 定时任务start -->
+
+	<!-- 线程执行器配置，用于任务注册 -->
+	<bean id="executor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="10" />
+		<property name="maxPoolSize" value="100" />
+		<property name="queueCapacity" value="500" />
+	</bean>
+
+	<!-- 业务对象 -->
+	<bean id="mainUtil" class="com.webcollector.util.MainUtil" />
+
+
+	<!-- 调度业务 -->
+	<bean id="jobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- <property name="targetObject" ref="testJobTask" /> <property name="targetMethod" 
+			value="main" /> -->
+		<property name="targetObject" ref="mainUtil" />
+		<property name="targetMethod" value="main" />
+	</bean>
+
+
+	<!-- 增加调用的触发器，触发时间 -->
+	<bean id="cronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetail" />
+		<property name="cronExpression" value="0 43 12 ? * *" />
+	</bean>
+
+
+	<bean id="mainUtil2" class="com.webcollector.util.MainUtil2" />
+	<bean id="jobDetail2"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="mainUtil2" />
+		<property name="targetMethod" value="main" />
+	</bean>
+	<bean id="cronTrigger2"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetail2" />
+		<property name="cronExpression" value="0 45 12 ? * *" />
+	</bean>
+	
+	
+	<!-- 设置调度 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger" />
+				<ref bean="cronTrigger2" />
+			</list>
+		</property>
+		<property name="taskExecutor" ref="executor" />
+	</bean>
+
+	<!-- 定时任务end -->
+</beans>                       

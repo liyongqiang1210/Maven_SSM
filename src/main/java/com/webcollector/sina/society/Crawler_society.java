@@ -104,6 +104,7 @@ public class Crawler_society extends BreadthCrawler {
 	}
 
 	public static void main(String[] args) throws Exception {
+		System.out.println("society---main方法调用成功");
 		Crawler_society cs = new Crawler_society("crawl", true);
 		cs.setThreads(2);
 		cs.setTopN(100);
