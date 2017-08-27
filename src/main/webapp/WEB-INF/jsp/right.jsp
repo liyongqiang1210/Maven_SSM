@@ -13,7 +13,7 @@
 <title>数据列表</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript" src="js/right.jss"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".click").click(function() {
