@@ -46,7 +46,7 @@ public class UserController {
 		User user = userService.login(map);
 		String str;
 		if (user != null) {
-			str = "jsp/index";
+			str = "jsp/main";
 		} else {
 
 			model.addAttribute("message", "用户名或密码输入错误,请重新输入");

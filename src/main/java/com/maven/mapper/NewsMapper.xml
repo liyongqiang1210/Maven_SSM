@@ -31,12 +31,21 @@
 		#{type}
 		)
 	</insert>
-	<select id="getAllNews" resultType="com.maven.entity.News">
+	<!--获取数据总条数 -->
+	<select id="getAllNews" resultType="java.lang.Integer">
 		SELECT
-		id,title,text,release_time,source,web_url,type
+		COUNT(*)
 		FROM
 		news
 	</select>
-
-
+	<!--分页查询  -->
+	<select id="getNewsToPage" parameterType="java.lang.Integer" resultType="com.maven.entity.News">
+		SELECT
+			id,title,source,release_time,create_time,web_url,type,create_time
+		FROM
+			news
+		LIMIT 
+		#{start},13
+	
+	</select>
 </mapper>  

@@ -6,7 +6,9 @@ import com.maven.entity.News;
 
 public interface INewsDao {
 
-	public int insertNews(News news);
+	public Integer insertNews(News news);
 	
-	public List<News> getAllNews();
+	public Integer getAllNews();
+	
+	public List<News> getNewsToPage(Integer start);
 }

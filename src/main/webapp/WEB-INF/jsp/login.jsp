@@ -7,37 +7,62 @@
 <html lang="en" class="no-js">
 <head>
 <base href="<%=basePath%>">
-<meta charset="utf-8">
-<title>用户登录</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎登录后台管理系统</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/cloud.js" type="text/javascript"></script>
 
-<!-- CSS -->
-<link rel="stylesheet" href="assets/css/reset.css">
-<link rel="stylesheet" href="assets/css/supersized.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<script>
+	$(function(){
+    $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
+	$(window).resize(function(){  
+    $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
+    })  
+});  
+</script>
 
 </head>
 
-<body>
+<body
+	style="background-color: #1c77ac; background-image: url(images/light.png); background-repeat: no-repeat; background-position: center top; overflow: hidden;">
 
-	<div class="page-container">
-		<h1>登录</h1>
-		<form action="/Maven_SSM/user/login" method="post">
-			<input type="text" id="username" name="username" class="username"
-				placeholder="请输入用户名" pattern="[A-Za-z0-9]{5,15}" required="required">
-			<input type="password" id="password" name="password" class="password"
-				pattern="[A-Za-z0-9]{6,12}" required="required" placeholder="请输入密码">
-			<button type="submit">登录</button>
-			<div id="login-error" style="color: #F00">${requestScope.message}</div>
-		</form>
+
+
+	<div id="mainBody">
+		<div id="cloud1" class="cloud"></div>
+		<div id="cloud2" class="cloud"></div>
 	</div>
 
-	<!-- Javascript -->
-	<script src="assets/js/jquery-1.8.2.min.js"></script>
-	<script src="assets/js/supersized.3.2.7.min.js"></script>
-	<script src="assets/js/supersized-init.js"></script>
-	<script src="assets/js/scripts.js"></script>
 
+	<div class="logintop">
+		<span>欢迎登录后台管理界面平台</span>
+		<ul>
+			<li><a href="#">回首页</a></li>
+			<li><a href="#">帮助</a></li>
+			<li><a href="#">关于</a></li>
+		</ul>
+	</div>
+
+	<div class="loginbody">
+
+		<span class="systemlogo"></span>
+
+		<div class="loginbox">
+	<form action="user/login" method="post">
+				<ul>
+					<li><input name="username" type="text" class="loginuser"
+						value="admin" onclick="JavaScript:this.value=''" /></li>
+					<li><input name="password" type="text" class="loginpwd"
+						value="密码" onclick="JavaScript:this.value=''" /></li>
+					<li><input type="submit" class="loginbtn" value="登录" />
+					<label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a
+							href="#">忘记密码？</a></label></li>
+				</ul>
+			</form>
+		</div>
+
+	</div>
 </body>
 
 </html>

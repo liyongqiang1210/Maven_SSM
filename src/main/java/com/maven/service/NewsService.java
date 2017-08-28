@@ -19,8 +19,13 @@ public class NewsService {
 		
 	}
 	
-	public List<News> getAllNews(){
+	public Integer getAllNews(){
 		
 		return newsdao.getAllNews();
+	}
+	
+	public List<News> getNewsToPage(Integer start){
+		
+		return newsdao.getNewsToPage(start);
 	}
 }

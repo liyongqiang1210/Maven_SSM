@@ -34,7 +34,6 @@
 
 	});
 </script>
-
 </head>
 
 <body>
@@ -65,16 +64,13 @@
 
 		</div>
 
-		<table class="tablelist">
+		<table class="tablelist" id="table">
 			<thead>
 				<tr>
 					<th><input id="all" name="all" type="checkbox" /></th>
 					<th>编号<i class="sort"><img src="images/px.gif" /></i></th>
 					<th>标题</th>
-					<th>正文</th>
-					<th>作者</th>
-					<th>图片url</th>
-					<th>类型</th>
+					<th>新闻类型</th>
 					<th>来源</th>
 					<th>发布时间</th>
 					<th>抓取时间</th>
@@ -82,14 +78,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${News}" var="news">
+				<c:forEach items="${News}" var="news" >
 					<tr>
-						<td><input name="option" type="checkbox" /></td>
+						<td style="width: 10px;"><input name="option" type="checkbox" /></td>
 						<td id="id">${news.id }</td>
 						<td id="title">${news.title }</td>
-						<td id="text">文章正文</td>
-						<td id="author">admin</td>
-						<td>图片url</td>
 						<td id="type">${news.type }</td>
 						<td id="source">${news.source }</td>
 						<td id="release_time">${news.release_time }</td>
@@ -103,20 +96,18 @@
 
 		<div class="pagin">
 			<div class="message">
-				共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i class="blue">2&nbsp;</i>页
+				共<i class="blue">${dataTotal }</i>条记录，当前显示第&nbsp;<i class="blue">1&nbsp;</i>页，总&nbsp;<i class="blue">${pageTotal }&nbsp;</i>页
 			</div>
 			<ul class="paginList">
-				<li class="paginItem"><a href="javascript:;"><span
-						class="pagepre"></span></a></li>
-				<li class="paginItem"><a href="javascript:;">1</a></li>
-				<li class="paginItem current"><a href="javascript:;">2</a></li>
-				<li class="paginItem"><a href="javascript:;">3</a></li>
-				<li class="paginItem"><a href="javascript:;">4</a></li>
-				<li class="paginItem"><a href="javascript:;">5</a></li>
-				<li class="paginItem more"><a href="javascript:;">...</a></li>
-				<li class="paginItem"><a href="javascript:;">10</a></li>
-				<li class="paginItem"><a href="javascript:;"><span
-						class="pagenxt"></span></a></li>
+				<li class="paginItem"  id="page_last"><a href="javascript:;" id="page_last_a"><span
+						class="pagepre">上5页</span></a></li>
+				<li class="paginItem" id="page_one"><a href="javascript:;">1</a></li>
+				<li class="paginItem" id="page_two"><a href="javascript:;">2</a></li>
+				<li class="paginItem" id="page_three"><a href="javascript:;">3</a></li>
+				<li class="paginItem" id="page_four"><a href="javascript:;">4</a></li>
+				<li class="paginItem" id="page_five"><a href="javascript:;">5</a></li>
+				<li class="paginItem"  id="page_next"><a href="javascript:;" id="page_next_a"><span
+						class="pagenxt">下5页</span></a></li>
 			</ul>
 		</div>
 
