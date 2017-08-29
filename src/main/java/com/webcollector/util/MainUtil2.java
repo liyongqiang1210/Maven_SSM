@@ -1,6 +1,6 @@
 package com.webcollector.util;
 
-import com.webcollector.sina.mil.roll.Crawler_gjjq;
+import com.webcollector.sina.military.Crawler_gjjq;
 
 public class MainUtil2 {
 

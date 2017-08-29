@@ -27,7 +27,7 @@ public class DateUtil {
 	 * 获取年月
 	 * @param args
 	 */
-	public String getYear_Month(){
+	public String getYearAndMonth(){
 		
 		return sdf.format(date).substring(0, 7);
 		

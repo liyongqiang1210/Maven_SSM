@@ -1,4 +1,4 @@
-package com.webcollector.sina.mil.roll;
+package com.webcollector.sina.military;
 
 import java.io.IOException;
 

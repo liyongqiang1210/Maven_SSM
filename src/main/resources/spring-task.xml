@@ -25,9 +25,8 @@
 	</bean>
 
 	<!-- 业务对象 -->
+	<!--任务一开始 -->
 	<bean id="mainUtil" class="com.webcollector.util.MainUtil" />
-
-
 	<!-- 调度业务 -->
 	<bean id="jobDetail"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -36,16 +35,14 @@
 		<property name="targetObject" ref="mainUtil" />
 		<property name="targetMethod" value="main" />
 	</bean>
-
-
 	<!-- 增加调用的触发器，触发时间 -->
 	<bean id="cronTrigger"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail" />
-		<property name="cronExpression" value="0 43 12 ? * *" />
+		<property name="cronExpression" value="0 0 23 * * ?" />
 	</bean>
-
-
+	<!--任务一结束 -->
+	<!--任务二开始 -->
 	<bean id="mainUtil2" class="com.webcollector.util.MainUtil2" />
 	<bean id="jobDetail2"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -55,10 +52,10 @@
 	<bean id="cronTrigger2"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail2" />
-		<property name="cronExpression" value="0 45 12 ? * *" />
+		<property name="cronExpression" value="0 0 23 * * ?" />
 	</bean>
-	
-	
+	<!--任务二结束 -->
+
 	<!-- 设置调度 -->
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
