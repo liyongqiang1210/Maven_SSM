@@ -82,13 +82,13 @@
 				<c:forEach items="${webSites}" var="webSiite" >
 					<tr>
 						<td style="width: 10px;"><input name="option" type="checkbox" /></td>
-						<td id="id">${webSiite.id }</td>
-						<td id="url">${webSiite.url }</td>
-						<td id="name">${webSiite.name }</td>
-						<td id="create_time">${webSiite.create_time }</td>
-						<td id="update_time">${webSiite.update_time }</td>
-						<td id="creater">${webSiite.creater }</td>
-						<td id="modifier">${webSiite.modifier }</td>
+						<td id="id">${webSite.id }</td>
+						<td id="url">${webSite.url }</td>
+						<td id="name">${webSite.name }</td>
+						<td id="create_time">${webSite.create_time }</td>
+						<td id="update_time">${webSite.update_time }</td>
+						<td id="creater">${webSite.creater }</td>
+						<td id="modifier">${webSite.modifier }</td>
 						<td><a href="#" class="tablelink">查看</a> <a href="#"
 							class="tablelink"> 删除</a></td>
 					</tr>
