@@ -2,8 +2,6 @@ package com.maven.controller;
 
 import java.util.List;
 
-import javax.json.Json;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
