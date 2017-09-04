@@ -71,23 +71,22 @@ public class Crawler_gdxw extends BreadthCrawler {
 					log.debug("文章来源：" + source);
 
 					// 存到数据库
-					String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
-					//jdbc.jdbc(type, title, web_url, release_time, source, text, sql);
+					jdbc.jdbc(type, title, web_url, release_time, source, text);
 					log.debug("---------------------------" + title + "-END--------------------------------");
 
 				} catch (IOException e) {
-					log.error("国际滚动爬取异常：" + e);
+					log.error("各地新闻爬取异常：" + e);
 				}
 			}
 
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		Crawler_gdxw cs = new Crawler_gdxw("crawl", true);
 		cs.setThreads(2);
 		cs.setTopN(100);
 		cs.start(5);
-	}
+	}*/
 
 }

@@ -34,6 +34,10 @@ public class NewsController {
 		}
 		// 获取新闻列表
 		List<News> list = newsService.getNewsToPage(start);
+		for(News news:list){
+			news.setCreate_time(news.getCreate_time().substring(0, 19));
+			news.setRelease_time(news.getRelease_time().substring(0, 19));
+		}
 		model.addAttribute("News", list);
 
 		// 获取数据数量
@@ -65,6 +69,10 @@ public class NewsController {
 			start = (start-1) * 10;
 		}
 		List<News> list= newsService.getNewsToPage(start);
+		for(News news:list){
+			news.setCreate_time(news.getCreate_time().substring(0, 19));
+			news.setRelease_time(news.getRelease_time().substring(0, 19));
+		}
 		JSONArray json = new JSONArray();
 		for (News news : list) {
 			json.add(news);

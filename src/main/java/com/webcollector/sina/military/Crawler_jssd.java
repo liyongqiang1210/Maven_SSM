@@ -69,8 +69,7 @@ public class Crawler_jssd extends BreadthCrawler {
 					log.debug("文章正文：\n" + text);
 
 					// 存到数据库
-					String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
-					jdbc.jdbc(TYPE, title, web_url, release_time, source, text, sql);
+					jdbc.jdbc(TYPE, title, web_url, release_time, source, text);
 
 				} catch (IOException e) {
 					log.error(e);

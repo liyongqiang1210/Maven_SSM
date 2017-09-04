@@ -1,6 +1,8 @@
 package com.webcollector.sina.international;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,23 +21,30 @@ import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
 public class Crawler_gjgd extends BreadthCrawler {
 
-	private static final String URL = "http://roll.news.sina.com.cn/s/channel.php?ch=01#col=91&spec=&type=&ch=01&k=&offset_page=0&offset_num=0&num=60&asc=&page=1";
-	private static final String URL_REGEX = "http://roll.news.sina.com.cn/s/channel.php?ch=01#col=91&spec=&type=&ch=01&k=&offset_page=0&offset_num=0&num=60&asc=&page=(1|2|3)";
+	private static final String URL = "http://roll.news.sina.com.cn/s/channel.php";
 	private static final String SHTML_REGEX = ".*\\/" + new DateUtil().getToday()+"\\/.*\\.shtml";
 	private Log log = LogFactory.getLog(Crawler_gjgd.class);
 
 	public Crawler_gjgd(String crawlPath, boolean autoParse) {
 		super(crawlPath, autoParse);
 		this.addSeed(URL);
-		this.addRegex(URL_REGEX);
+		//this.addRegex(URL_REGEX);
 	}
 
 	public void visit(Page page, CrawlDatums next) {
 
+		Map<String,String> map =new HashMap<String, String>();
+		map.put("ch", "01");
+		map.put("col", "91");
+		map.put("offset_page", "0");
+		map.put("offset_num", "0");
+		map.put("num", "0");
+		map.put("page", "1");
+		try {
+			Document doc = Jsoup.connect(URL).data(map).method(Method.GET).execute().parse();
+		
 		JDBCTemplate jdbc = new JDBCTemplate();
 		String type = "国际滚动";
-		@SuppressWarnings("deprecation")
-		Document doc = page.getDoc();
 		Elements els = doc.select("a[href]");
 		for (Element el : els) {
 
@@ -81,13 +90,17 @@ public class Crawler_gjgd extends BreadthCrawler {
 			}
 
 		}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		Crawler_gjgd cs = new Crawler_gjgd("crawl", true);
 		cs.setThreads(2);
 		cs.setTopN(100);
 		cs.start(5);
-	}
+	}*/
 
 }

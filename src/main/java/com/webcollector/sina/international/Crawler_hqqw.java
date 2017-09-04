@@ -1,4 +1,5 @@
-package com.webcollector.sina.society;
+package com.webcollector.sina.international;
+
 
 import java.io.IOException;
 
@@ -17,21 +18,22 @@ import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
-public class Crawler_shyf extends BreadthCrawler {
+public class Crawler_hqqw extends BreadthCrawler {
 
-	private static final String URL = "http://roll.news.sina.com.cn/news/shxw/fz-shyf/index.shtml";
+	private static final String URL = "http://roll.news.sina.com.cn/news/gjxw/hqqw/index.shtml";
 	private static final String SHTML_REGEX = ".*\\/" + new DateUtil().getToday()+"\\/.*\\.shtml";
-	private Log log = LogFactory.getLog(Crawler_shyf.class);
+	private Log log = LogFactory.getLog(Crawler_hqqw.class);
 
-	public Crawler_shyf(String crawlPath, boolean autoParse) {
+	public Crawler_hqqw(String crawlPath, boolean autoParse) {
 		super(crawlPath, autoParse);
 		this.addSeed(URL);
+		//this.addRegex(URL_REGEX);
 	}
 
 	public void visit(Page page, CrawlDatums next) {
 
 		JDBCTemplate jdbc = new JDBCTemplate();
-		String type = "社会与法";
+		String type = "环球趣闻";
 		@SuppressWarnings("deprecation")
 		Document doc = page.getDoc();
 		Elements els = doc.select("a[href]");
@@ -49,7 +51,7 @@ public class Crawler_shyf extends BreadthCrawler {
 					String web_url = shtml_url;
 
 					// 请求url并转换为document文档
-					Document shtml_doc = Jsoup.connect(web_url).method(Method.GET).execute().parse();
+					Document shtml_doc = Jsoup.connect(web_url).method(Method.GET).timeout(10000).execute().parse();
 
 					log.debug("---------------------------" + title + "-START--------------------------------");
 					log.debug("文章标题：" + title);
@@ -73,18 +75,18 @@ public class Crawler_shyf extends BreadthCrawler {
 					log.debug("---------------------------" + title + "-END--------------------------------");
 
 				} catch (IOException e) {
-					log.error("真情时刻爬取异常：" + e);
+					log.error("环球趣闻爬取异常：" + e);
 				}
 			}
 
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
-		Crawler_shyf cs = new Crawler_shyf("crawl", true);
+	/*public static void main(String[] args) throws Exception {
+		Crawler_hqqw cs = new Crawler_hqqw("crawl", true);
 		cs.setThreads(2);
 		cs.setTopN(100);
 		cs.start(5);
-	}
+	}*/
 
 }

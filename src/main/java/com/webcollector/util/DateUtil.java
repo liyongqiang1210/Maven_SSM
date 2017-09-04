@@ -12,7 +12,7 @@ public class DateUtil {
 
 	Date date = new Date();
 	SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-
+	SimpleDateFormat sdf2 = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 	/**
 	 * 获取今天的年月日
 	 * 
@@ -33,9 +33,14 @@ public class DateUtil {
 		
 	}
 
+	public String getYMDHMS(){
+		
+		return sdf2.format(date);
+		
+	}
 	public static void main(String[] args) {
-		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-		System.out.println(sdf.format(date).substring(0, 7));
+		
+		DateUtil d = new DateUtil();
+		System.out.println(d.getYMDHMS());
 	}
 }
