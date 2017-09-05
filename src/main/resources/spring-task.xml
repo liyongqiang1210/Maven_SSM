@@ -26,42 +26,70 @@
 
 	<!-- 业务对象 -->
 	<!--任务一开始 -->
-	<bean id="mainUtil" class="com.webcollector.util.MainUtil" />
+	<bean id="military_main" class="com.webcollector.sina.military.military_main" />
 	<!-- 调度业务 -->
 	<bean id="jobDetail"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<!-- <property name="targetObject" ref="testJobTask" /> <property name="targetMethod" 
 			value="main" /> -->
-		<property name="targetObject" ref="mainUtil" />
+		<property name="targetObject" ref="military_main" />
 		<property name="targetMethod" value="main" />
 	</bean>
-	<!-- 增加调用的触发器，触发时间 -->
-	<bean id="cronTrigger"
+	<!-- 增加调用的触发器，触发时间没十分钟执行一次 -->
+	<bean id="cronTrigger1"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail" />
-		<property name="cronExpression" value="0 0 23 * * ?" />
+		<property name="cronExpression" value="0 0/10 0 * * ?" />
 	</bean>
 	<!--任务一结束 -->
 	<!--任务二开始 -->
-	<bean id="mainUtil2" class="com.webcollector.util.MainUtil2" />
+	<bean id="society_main" class="com.webcollector.sina.society.society_main" />
 	<bean id="jobDetail2"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-		<property name="targetObject" ref="mainUtil2" />
+		<property name="targetObject" ref="society_main" />
 		<property name="targetMethod" value="main" />
 	</bean>
 	<bean id="cronTrigger2"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail2" />
-		<property name="cronExpression" value="0 0 23 * * ?" />
+		<property name="cronExpression" value="0 0/10 0 * * ?" />
 	</bean>
 	<!--任务二结束 -->
+	<!--任务三开始 -->
+	<bean id="domestic_main" class="com.webcollector.sina.domestic.domestic_main" />
+	<bean id="jobDetail3"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="domestic_main" />
+		<property name="targetMethod" value="main" />
+	</bean>
+	<bean id="cronTrigger3"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetail3" />
+		<property name="cronExpression" value="0 0/10 0 * * ?" />
+	</bean>
+	<!--任务三结束 -->
+	<!--任务四开始 -->
+	<bean id="international_main" class="com.webcollector.sina.international.international_main" />
+	<bean id="jobDetail4"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="international_main" />
+		<property name="targetMethod" value="main" />
+	</bean>
+	<bean id="cronTrigger4"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetail4" />
+		<property name="cronExpression" value="0 0/10 0 * * ?" />
+	</bean>
+	<!--任务四结束 -->
 
 	<!-- 设置调度 -->
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
-				<ref bean="cronTrigger" />
+				<ref bean="cronTrigger1" />
 				<ref bean="cronTrigger2" />
+				<ref bean="cronTrigger3" />
+				<ref bean="cronTrigger4" />
 			</list>
 		</property>
 		<property name="taskExecutor" ref="executor" />
