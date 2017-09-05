@@ -39,7 +39,7 @@
 	<bean id="cronTrigger1"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail" />
-		<property name="cronExpression" value="0 0/10 0 * * ?" />
+		<property name="cronExpression" value="0 1,3,5,7,8,35 0-23 * * ?" />
 	</bean>
 	<!--任务一结束 -->
 	<!--任务二开始 -->
@@ -52,7 +52,7 @@
 	<bean id="cronTrigger2"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail2" />
-		<property name="cronExpression" value="0 0/10 0 * * ?" />
+		<property name="cronExpression" value="0 12,40 0-23 * * ?" />
 	</bean>
 	<!--任务二结束 -->
 	<!--任务三开始 -->
@@ -65,7 +65,7 @@
 	<bean id="cronTrigger3"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail3" />
-		<property name="cronExpression" value="0 0/10 0 * * ?" />
+		<property name="cronExpression" value="0 10,42 0-23 * * ?" />
 	</bean>
 	<!--任务三结束 -->
 	<!--任务四开始 -->
@@ -78,7 +78,7 @@
 	<bean id="cronTrigger4"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="jobDetail4" />
-		<property name="cronExpression" value="0 0/10 0 * * ?" />
+		<property name="cronExpression" value="0 8,38 0-23 * * ?" />
 	</bean>
 	<!--任务四结束 -->
 

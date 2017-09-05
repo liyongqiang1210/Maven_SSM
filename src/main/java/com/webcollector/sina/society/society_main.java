@@ -1,9 +1,17 @@
 package com.webcollector.sina.society;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.webcollector.sina.domestic.domestic_main;
+import com.webcollector.util.DateUtil;
+
 public class society_main {
 
 	public static void main(String[] args) throws Exception {
 		
+		Log log = LogFactory.getLog(domestic_main.class);
+		log.debug("开始运行时间"+new DateUtil().getToday());
 		Crawler_qwys cs = new Crawler_qwys("crawl", true);
 		cs.setThreads(2);
 		cs.setTopN(100);

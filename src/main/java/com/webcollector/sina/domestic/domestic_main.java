@@ -1,9 +1,17 @@
 package com.webcollector.sina.domestic;
 
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.webcollector.util.DateUtil;
+
 public class domestic_main {
 
 	public static void main(String[] args) throws Exception {
 		
+		Log log = LogFactory.getLog(domestic_main.class);
+		log.debug("开始运行时间"+new DateUtil().getToday());
 		//港澳台新闻
 		Crawler_gatxw cg = new Crawler_gatxw("crawl", true);
 		cg.setThreads(2);
