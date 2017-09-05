@@ -25,7 +25,6 @@ public class Crawler_zgjq extends BreadthCrawler {
 	// 获取新闻页面正则
 	private String shtml_regex = ".*china\\/" + new DateUtil().getToday() + "\\/.*\\.shtml";
 	// News的属性
-	private String title = null;
 	private String text = null;
 	private String source = null;
 	private String release_time = null;
@@ -51,51 +50,58 @@ public class Crawler_zgjq extends BreadthCrawler {
 			if (shtml_url.matches(shtml_regex)) {
 
 				if (shtml_url.matches(shtml_regex)) {
+					// 获取文章标题
+					String title = el.text();
+					// 查询数据库是否存在此条数据
+					int i = jdbc.getTitle(title);
+					// 如果存在的话继续下一步，否则结束
+					if (i == 0) {
+						try {
+							log.debug("--------------------------START------------------------------");
+							// 获取到文章的标题
+							title = el.text();
+							// 打印出文章的标题
+							log.debug("title: " + title);
+							// 获取文章的url
+							web_url = shtml_url;
+							// 打印出文章的url
+							log.debug(web_url);
+							// 打开这个url连接
+							// 获取某篇文章的doc文档
+							Document shtml_doc = Jsoup.connect(shtml_url).method(Method.GET).execute().parse();
+							// 下面开始分析这个文档
+							// 获取正文内容
+							text = "\"" + shtml_doc.select("div#artibody.content").toString() + "\"";
+							log.debug(text);
+							// 获取发布时间与数据来源
+							String ts = shtml_doc.select("div#page-tools > span").text();
+							// 截取发布时间
+							release_time = ts.substring(0, 17).replaceAll("年|月", "-").replace("日", "");
+							// 截取数据来源
+							source = ts.substring(17, ts.length());
+							log.debug("发布时间：" + release_time);
+							log.debug("数据来源: " + source);
 
-					try {
-						log.debug("--------------------------START------------------------------");
-						// 获取到文章的标题
-						title = el.text();
-						// 打印出文章的标题
-						log.debug("title: " + title);
-						// 获取文章的url
-						web_url = shtml_url;
-						// 打印出文章的url
-						log.debug(web_url);
-						// 打开这个url连接
-						// 获取某篇文章的doc文档
-						Document shtml_doc = Jsoup.connect(shtml_url).method(Method.GET).execute().parse();
-						// 下面开始分析这个文档
-						// 获取正文内容
-						text = "\"" + shtml_doc.select("div#artibody.content").toString() + "\"";
-						log.debug(text);
-						// 获取发布时间与数据来源
-						String ts = shtml_doc.select("div#page-tools > span").text();
-						// 截取发布时间
-						release_time = ts.substring(0, 17).replaceAll("年|月", "-").replace("日", "");
-						// 截取数据来源
-						source = ts.substring(17, ts.length());
-						log.debug("发布时间：" + release_time);
-						log.debug("数据来源: " + source);
-
-						// 存到数据库
-						jdbc.jdbc(TYPE, title, web_url, release_time, source, text);
-						log.debug("---------------------------END--------------------------------");
-					} catch (IOException e) {
-						log.error("中国军情爬取异常：" + e);
+							// 存到数据库
+							jdbc.insertNews(TYPE, title, web_url, release_time, source, text);
+							log.debug("---------------------------END--------------------------------");
+						} catch (IOException e) {
+							log.error("中国军情爬取异常：" + e);
+						}
+					} else {
+						log.debug("######################数据库已经存在此条信息--" + title + "#####################");
 					}
-
 				}
 			}
 
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		Crawler_zgjq nc = new Crawler_zgjq("crawl", true);
 		nc.setThreads(2);
 		nc.setTopN(5000);
 		nc.start(7);
-	}
+	}*/
 
 }
