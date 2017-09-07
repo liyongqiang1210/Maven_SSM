@@ -9,7 +9,6 @@
 %>
 <html>
 <head>
-<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>数据列表</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -81,14 +80,14 @@
 			<tbody>
 				<c:forEach items="${News}" var="news" >
 					<tr>
-						<td style="width: 10px;"><input name="option" type="checkbox" /></td>
+						<td id="select_id"><input name="option" type="checkbox" /></td>
 						<td id="id">${news.id }</td>
 						<td id="title">${news.title }</td>
 						<td id="type">${news.type }</td>
 						<td id="source">${news.source }</td>
 						<td id="release_time">${news.release_time }</td>
 						<td id="create_time">${news.create_time }</td>
-						<td><a href="#" class="tablelink">查看</a> <a href="#"
+						<td id="operate"><a href="#" class="tablelink">查看</a> <a href="#"
 							class="tablelink"> 删除</a></td>
 					</tr>
 				</c:forEach>

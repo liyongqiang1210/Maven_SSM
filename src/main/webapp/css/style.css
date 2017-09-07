@@ -1625,36 +1625,68 @@ h2 {
 	border-radius: 3px;
 	behavior: url(js/pie.htc);
 }
-.page{
-    list-style: none;
-}
-.page>li{
-    float: left;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.page .pageItem{
-    border: solid thin #DDDDDD;
-    margin: 5px;
-}
-.page .pageItemActive{
-    border: solid thin #0099FF;
-    margin: 5px;
-    background-color: #0099FF;
-    color:white;
-}
-.page .pageItem:hover{
-    border: solid thin #0099FF;
-    background-color: #0099FF;
-    color:white;
-}
-.page .pageItemDisable{
-    border: solid thin #DDDDDD;
-    margin: 5px;
-    background-color: #DDDDDD;
+
+.page {
+	list-style: none;
 }
 
-#page_next_a,#page_last_a{
-	width:50px;
+.page>li {
+	float: left;
+	padding: 5px 10px;
+	cursor: pointer;
 }
 
+.page .pageItem {
+	border: solid thin #DDDDDD;
+	margin: 5px;
+}
+
+.page .pageItemActive {
+	border: solid thin #0099FF;
+	margin: 5px;
+	background-color: #0099FF;
+	color: white;
+}
+
+.page .pageItem:hover {
+	border: solid thin #0099FF;
+	background-color: #0099FF;
+	color: white;
+}
+
+.page .pageItemDisable {
+	border: solid thin #DDDDDD;
+	margin: 5px;
+	background-color: #DDDDDD;
+}
+
+#page_next_a,
+#page_last_a {
+	width: 50px;
+}
+
+td#title {
+	width: 35%;
+}
+
+td#id {
+	width: 15%;
+}
+td#select_id{
+	width: 2%;
+}
+td#operate{
+	width: 8%;
+}
+td#type,
+td#source,
+td#create_time,
+td#release_time {
+	width: 10%;
+}
+
+td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

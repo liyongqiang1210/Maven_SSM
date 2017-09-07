@@ -35,6 +35,9 @@ public class NewsController {
 		// 获取新闻列表
 		List<News> list = newsService.getNewsToPage(start);
 		for(News news:list){
+			if(news.getTitle().length()>50){
+				news.setTitle(news.getTitle().substring(0, 50)+"....");
+			}
 			news.setCreate_time(news.getCreate_time().substring(0, 19));
 			news.setRelease_time(news.getRelease_time().substring(0, 19));
 		}

@@ -80,8 +80,7 @@ public class Crawler_gjgd extends BreadthCrawler {
 					log.debug("文章来源：" + source);
 
 					// 存到数据库
-					String sql = "insert into news (id,type,title,text,source,web_url,release_time,create_time) value (?,?,?,?,?,?,?,?)";
-					//jdbc.jdbc(type, title, web_url, release_time, source, text, sql);
+					jdbc.insertNews(type, title, web_url, release_time, source, text);
 					log.debug("---------------------------" + title + "-END--------------------------------");
 
 				} catch (IOException e) {
