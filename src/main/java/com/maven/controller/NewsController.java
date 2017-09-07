@@ -40,6 +40,7 @@ public class NewsController {
 			}
 			news.setCreate_time(news.getCreate_time().substring(0, 19));
 			news.setRelease_time(news.getRelease_time().substring(0, 19));
+			
 		}
 		model.addAttribute("News", list);
 

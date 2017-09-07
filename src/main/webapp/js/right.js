@@ -186,13 +186,6 @@ $(document).ready(function() {
 			}else{
 			$("li#page_last").css("hover", null);
 		}
-		/*$("li#page_one").attr("class","paginItem");
-		$("li#page_two").attr("class","paginItem");
-		$("li#page_three").attr("class","paginItem");
-		$("li#page_four").attr("class","paginItem");
-		$("li#page_five").attr("class","paginItem");
-		$("li#page_last").attr("class","paginItem current");
-		$("li#page_next").attr("class","paginItem");*/
 
 	});
 	$("li#page_next").live('click',function() {
@@ -209,13 +202,6 @@ $(document).ready(function() {
 
 		}
 
-		/*$("li#page_one").attr("class","paginItem");
-		$("li#page_two").attr("class","paginItem");
-		$("li#page_three").attr("class","paginItem");
-		$("li#page_four").attr("class","paginItem");
-		$("li#page_five").attr("class","paginItem");
-		$("li#page_last").attr("class","paginItem");
-		$("li#page_next").attr("class","paginItem current");*/
 
 	});
 	
