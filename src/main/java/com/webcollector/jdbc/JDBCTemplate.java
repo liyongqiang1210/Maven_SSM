@@ -60,14 +60,14 @@ public class JDBCTemplate {
 				ps.setString(4, source);
 				ps.setString(5, web_url);
 				ps.setString(6, release_time);
-				ps.setString(7, new DateUtil().getToday());
+				ps.setString(7, new DateUtil().getYMDHMS());
 				int executeUpdate = ps.executeUpdate();
 
 				ps = conn.prepareStatement(sql_text);
 				ps.setString(1, text_id);
 				ps.setString(2, text);
 				ps.setString(3, news_id);
-				ps.setString(4, new DateUtil().getToday());
+				ps.setString(4, new DateUtil().getYMDHMS());
 				int executeUpdate2 = ps.executeUpdate();
 
 				if (!(executeUpdate == 1 && executeUpdate2 == 1)) {

@@ -14,13 +14,13 @@ public class DateUtil {
 	SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 	SimpleDateFormat sdf2 = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 	/**
-	 * 获取今天的年月日时分秒
+	 * 获取今天的年月日
 	 * 
 	 * @return
 	 */
 	public String getToday() {
 		
-		return sdf2.format(date);
+		return sdf.format(date);
 	}
 	
 	/**
