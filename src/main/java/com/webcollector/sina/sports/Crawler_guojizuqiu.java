@@ -48,6 +48,7 @@ public class Crawler_guojizuqiu extends BreadthCrawler {
 
 		JDBCTemplate jdbc = new JDBCTemplate();
 		String type = "国际足球";
+		@SuppressWarnings("deprecation")
 		Document doc = page.getDoc();
 		Elements els = doc.select("a[href]");
 		for (Element el : els) {
