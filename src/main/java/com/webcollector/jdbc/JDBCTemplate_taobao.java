@@ -37,8 +37,8 @@ public class JDBCTemplate_taobao {
 	 * @param tb_goods_payment
 	 * @param tb_goods_is_free_shipping
 	 */
-	public void insertShopAndGoods(String creater, String tb_shop_name, String tb_shop_url, String tb_goods_price,String tb_goods_url,
-			String tb_goods_title, int tb_goods_payment, int tb_goods_is_free_shipping) {
+	public void insertShopAndGoods(String creater, String tb_shop_name, String tb_goods_price, String tb_shop_url,
+			String tb_goods_url, String tb_goods_title, int tb_goods_payment, int tb_goods_is_free_shipping) {
 		// 获取UUID
 		String tb_goods_id = UUID.randomUUID().toString();
 		String tb_shop_id = UUID.randomUUID().toString();
@@ -157,15 +157,15 @@ public class JDBCTemplate_taobao {
 	 * @param tb_shop_name
 	 * @return
 	 */
-	public int selectShop(String tb_shop_url) {
+	public int selectShop(String tb_shop_name) {
 		int i = 0;
-		String select_sql = "select tb_shop_id from taobao_shop where tb_shop_url = ?";
+		String select_sql = "select tb_shop_id from taobao_shop where tb_shop_name = ?";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			try {
 				conn = DriverManager.getConnection(URL, USER, PASSWORD);
 				ps = conn.prepareStatement(select_sql);
-				ps.setString(1, tb_shop_url);
+				ps.setString(1, tb_shop_name);
 				ResultSet rs = ps.executeQuery();
 				if (rs.next()) {
 					i = 1;
