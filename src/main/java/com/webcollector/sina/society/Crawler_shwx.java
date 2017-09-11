@@ -10,7 +10,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.webcollector.jdbc.JDBCTemplate;
+import com.webcollector.jdbc.JDBCTemplate_sina;
 import com.webcollector.util.DateUtil;
 
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
@@ -30,7 +30,7 @@ public class Crawler_shwx extends BreadthCrawler {
 
 	public void visit(Page page, CrawlDatums next) {
 
-		JDBCTemplate jdbc = new JDBCTemplate();
+		JDBCTemplate_sina jdbc = new JDBCTemplate_sina();
 		String type = "社会万象";
 		@SuppressWarnings("deprecation")
 		Document doc = page.getDoc();

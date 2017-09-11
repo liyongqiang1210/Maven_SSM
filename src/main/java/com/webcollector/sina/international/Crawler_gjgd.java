@@ -12,7 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.webcollector.jdbc.JDBCTemplate;
+import com.webcollector.jdbc.JDBCTemplate_sina;
 import com.webcollector.util.DateUtil;
 
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
@@ -43,7 +43,7 @@ public class Crawler_gjgd extends BreadthCrawler {
 		try {
 			Document doc = Jsoup.connect(URL).data(map).method(Method.GET).execute().parse();
 		
-		JDBCTemplate jdbc = new JDBCTemplate();
+		JDBCTemplate_sina jdbc = new JDBCTemplate_sina();
 		String type = "国际滚动";
 		Elements els = doc.select("a[href]");
 		for (Element el : els) {

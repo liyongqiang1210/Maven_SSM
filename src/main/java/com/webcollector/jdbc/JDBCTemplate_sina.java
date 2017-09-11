@@ -17,14 +17,14 @@ import com.webcollector.util.DateUtil;
  * @author Li Yongqiang
  *
  */
-public class JDBCTemplate {
+public class JDBCTemplate_sina {
 
 	Connection conn = null;
 	PreparedStatement ps = null;
 	private final String URL = "jdbc:mysql://localhost:3306/maven";
 	private final String USER = "root";
 	private final String PASSWORD = "root";
-	private Log log = LogFactory.getLog(JDBCTemplate.class);
+	private Log log = LogFactory.getLog(JDBCTemplate_sina.class);
 
 	/**
 	 * 向数据库添加数据
@@ -149,7 +149,6 @@ public class JDBCTemplate {
 				ps.close();
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
