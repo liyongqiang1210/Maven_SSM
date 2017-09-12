@@ -34,8 +34,8 @@ $(document).ready(function() {
 					$("tbody").empty();
 					for(var i = 0; i <= 13; i++) {
 						var title = data[i].title;
-						if(title.length>50){
-							title = title.substring(0,50)+"....";
+						if(title.length>20){
+							title = title.substring(0,20)+"....";
 						}
 						$("tbody").append("<tr><td style='width: 10px;'><input name='option' type='checkbox' /></td><td id='id'>" + data[i].id + "</td><td id='title'>" + title + "</td><td id='type'>" + data[i].type + "</td><td id='source'>" + data[i].source + "</td><td id='release_time'>" + data[i].release_time + "</td><td>" + data[i].create_time + "</td><td><a href='#' class='tablelink'>查看</a> <a href='#' class='tablelink'> 删除</a></td></tr>");
 					}
@@ -66,8 +66,8 @@ $(document).ready(function() {
 					$("tbody").empty();
 					for(var i = 0; i <= 13; i++) {
 						var title = data[i].title;
-						if(title.length>50){
-							title = title.substring(0,50)+"....";
+						if(title.length>20){
+							title = title.substring(0,20)+"....";
 						}
 						$("tbody").append("<tr><td style='width: 10px;'><input name='option' type='checkbox' /></td><td id='id'>" + data[i].id + "</td><td id='title'>" + title + "</td><td id='type'>" + data[i].type + "</td><td id='source'>" + data[i].source + "</td><td id='release_time'>" + data[i].release_time + "</td><td>" + data[i].create_time + "</td><td><a href='#' class='tablelink'>查看</a> <a href='#' class='tablelink'> 删除</a></td></tr>");
 					}
@@ -98,8 +98,8 @@ $(document).ready(function() {
 					$("tbody").empty();
 					for(var i = 0; i <= 13; i++) {
 						var title = data[i].title;
-						if(title.length>50){
-							title = title.substring(0,50)+"....";
+						if(title.length>20){
+							title = title.substring(0,20)+"....";
 						}
 						$("tbody").append("<tr><td style='width: 10px;'><input name='option' type='checkbox' /></td><td id='id'>" + data[i].id + "</td><td id='title'>" + title + "</td><td id='type'>" + data[i].type + "</td><td id='source'>" + data[i].source + "</td><td id='release_time'>" + data[i].release_time + "</td><td>" + data[i].create_time + "</td><td><a href='#' class='tablelink'>查看</a> <a href='#' class='tablelink'> 删除</a></td></tr>");
 					}
@@ -130,8 +130,8 @@ $(document).ready(function() {
 					$("tbody").empty();
 					for(var i = 0; i <= 13; i++) {
 						var title = data[i].title;
-						if(title.length>50){
-							title = title.substring(0,50)+"....";
+						if(title.length>20){
+							title = title.substring(0,20)+"....";
 						}
 						$("tbody").append("<tr><td style='width: 10px;'><input name='option' type='checkbox' /></td><td id='id'>" + data[i].id + "</td><td id='title'>" + title + "</td><td id='type'>" + data[i].type + "</td><td id='source'>" + data[i].source + "</td><td id='release_time'>" + data[i].release_time + "</td><td>" + data[i].create_time + "</td><td><a href='#' class='tablelink'>查看</a> <a href='#' class='tablelink'> 删除</a></td></tr>");
 					}
@@ -162,8 +162,8 @@ $(document).ready(function() {
 					$("tbody").empty();
 					for(var i = 0; i <= 13; i++) {
 						var title = data[i].title;
-						if(title.length>50){
-							title = title.substring(0,50)+"....";
+						if(title.length>20){
+							title = title.substring(0,20)+"....";
 						}
 						$("tbody").append("<tr><td style='width: 10px;'><input name='option' type='checkbox' /></td><td id='id'>" + data[i].id + "</td><td id='title'>" + title + "</td><td id='type'>" + data[i].type + "</td><td id='source'>" + data[i].source + "</td><td id='release_time'>" + data[i].release_time + "</td><td>" + data[i].create_time + "</td><td><a href='#' class='tablelink'>查看</a> <a href='#' class='tablelink'> 删除</a></td></tr>");
 					}

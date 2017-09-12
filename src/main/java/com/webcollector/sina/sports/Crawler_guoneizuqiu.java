@@ -11,7 +11,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import com.webcollector.jdbc.JDBCTemplate;
+import com.webcollector.jdbc.JDBCTemplate_sina;
 
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
@@ -50,7 +50,7 @@ public class Crawler_guoneizuqiu extends BreadthCrawler {
 
 	public void visit(Page page, CrawlDatums next) {
 
-		JDBCTemplate jdbc = new JDBCTemplate();
+		JDBCTemplate_sina jdbc = new JDBCTemplate_sina();
 		String type = "国内足球";
 		@SuppressWarnings("deprecation")
 		String data = page.getDoc().toString();
