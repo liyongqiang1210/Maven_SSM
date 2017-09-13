@@ -1,4 +1,4 @@
-package com.webcollector.taobao.nanzhuang;
+package com.webcollector.taobao.yundong;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,20 +20,19 @@ import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
 /**
- * 
+ * 钓鱼竿
  * @author Li Yongqiang
  *
  */
-public class Crawler_niuzaiku extends BreadthCrawler {
-	private String URL = "https://jingxuan.tmall.com/sem/tmsearch?spm=a2e1o.8267851.07626516003.1.54f025dbKFlaD5&keyword=%E7%89%9B%E4%BB%94%E8%A3%A4&refpid=mm_10011550_0_0&clk1=17f08a50116bdd93518d8852371e6ff9&page=1&_input_charset=utf-8";
+public class Crawler_diaoyugan extends BreadthCrawler {
+	private String URL = "https://jingxuan.tmall.com/sem/tmsearch?spm=a2e1o.8267851.07626516003.1.54f025db1zzHXA&keyword=%E9%92%93%E7%AB%BF&refpid=mm_10011550_0_0&clk1=ae224ea65f9c1977c16976631ddc8e96&page=";
 	private Log log = LogFactory.getLog(Crawler_gdxw.class);
 
-	public Crawler_niuzaiku(String crawlPath, boolean autoParse) {
+	public Crawler_diaoyugan(String crawlPath, boolean autoParse) {
 		super(crawlPath, autoParse);
-		this.addSeed(URL);
+		this.addSeed(URL + "&_input_charset=utf-8");
 		for (int i = 1; i < 101; i++) {
-			this.addSeed(
-					"https://jingxuan.tmall.com/sem/tmsearch?spm=a2e1o.8267851.07626516003.1.54f025dbKFlaD5&keyword=%E7%89%9B%E4%BB%94%E8%A3%A4&refpid=mm_10011550_0_0&clk1=17f08a50116bdd93518d8852371e6ff9&page="+i+"&_input_charset=utf-8");
+			this.addSeed(URL + i + "&_input_charset=utf-8");
 		}
 
 	}
@@ -112,7 +111,7 @@ public class Crawler_niuzaiku extends BreadthCrawler {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		Crawler_niuzaiku cw = new Crawler_niuzaiku("crawl", true);
+		Crawler_diaoyugan cw = new Crawler_diaoyugan("crawl", true);
 		cw.setThreads(50);
 		cw.setTopN(1000);
 		cw.start(10);
