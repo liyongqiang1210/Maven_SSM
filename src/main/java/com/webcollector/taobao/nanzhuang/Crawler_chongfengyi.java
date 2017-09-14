@@ -19,6 +19,11 @@ import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
+/**
+ * 
+ * @author Li Yongqiang
+ *
+ */
 public class Crawler_chongfengyi extends BreadthCrawler {
 	private String URL = "https://jingxuan.tmall.com/sem/tmsearch?spm=a2e1o.8267851.07626516003.1.54f025db7WD7rH&keyword=%E8%BF%9E%E8%A1%A3%E8%A3%99&refpid=mm_10011550_0_0&clk1=2a87579536548c22ac327c3478abb256&page=1&_input_charset=utf-8";
 	private Log log = LogFactory.getLog(Crawler_gdxw.class);
