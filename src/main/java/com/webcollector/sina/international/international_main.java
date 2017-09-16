@@ -12,12 +12,12 @@ public class international_main {
 		
 		Log log = LogFactory.getLog(domestic_main.class);
 		log.debug("开始运行时间"+new DateUtil().getToday());
-		Crawler_hqqw cs = new Crawler_hqqw("crawl", true);
+		Crawler_hqqw cs = new Crawler_hqqw("crawl_hqqw", true);
 		cs.setThreads(2);
 		cs.setTopN(500);
 		cs.start(5);
 		
-		Crawler_hqsy cs2 = new Crawler_hqsy("crawl", true);
+		Crawler_hqsy cs2 = new Crawler_hqsy("crawl_hqsy", true);
 		cs2.setThreads(2);
 		cs2.setTopN(500);
 		cs2.start(5);
