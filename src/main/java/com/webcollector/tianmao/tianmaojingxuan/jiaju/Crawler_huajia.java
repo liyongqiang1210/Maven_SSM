@@ -20,9 +20,9 @@ public class Crawler_huajia extends TianMaoJingXuanCrawler{
 
 
 	public static void main(String[] args) throws Exception {
-		Crawler_huajia cs = new Crawler_huajia("crawl", true);
+		Crawler_huajia cs = new Crawler_huajia("crawl1", true);
 		cs.setThreads(10);
 		cs.setTopN(10000);
-		cs.start(10);
+		cs.start(100);
 	}
 }

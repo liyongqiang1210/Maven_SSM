@@ -23,6 +23,6 @@ public class Crawler_diannaozhuo extends TianMaoJingXuanCrawler{
 		Crawler_diannaozhuo cs = new Crawler_diannaozhuo("crawl", true);
 		cs.setThreads(10);
 		cs.setTopN(10000);
-		cs.start(10);
+		cs.start(100);
 	}
 }

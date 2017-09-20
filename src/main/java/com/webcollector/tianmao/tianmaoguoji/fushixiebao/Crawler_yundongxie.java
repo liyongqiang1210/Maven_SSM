@@ -1,5 +1,6 @@
 package com.webcollector.tianmao.tianmaoguoji.fushixiebao;
 
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,6 +14,7 @@ import org.jsoup.select.Elements;
 
 import com.webcollector.jdbc.JDBCTemplate_tianmao;
 import com.webcollector.sina.domestic.Crawler_gdxw;
+import com.webcollector.tianmao.Login;
 import com.webcollector.util.DateUtil;
 
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
@@ -44,10 +46,12 @@ public class Crawler_yundongxie extends BreadthCrawler {
 		String tb_goods_url = null;
 		String tb_goods_price = null;
 		try {
+			Map<String, String> cookies = Login.getCookies_Tmall("212067863@qq.com", "lyq212067863");
 			for (int i = 0; i < 101; i++) {
 				Document doc = Jsoup.connect(url + i * 60
-						+ "&sort=s&style=g&search_condition=7&auction_tag=71682;13186;&from=tmhk_1_cat&active=1&industryCatId=52832004&tmhkmain=1&type=pc#J_Filter")
+						+ "&sort=s&style=g&search_condition=7&auction_tag=71682;13186;&from=tmhk_1_cat&active=1&industryCatId=52832004&tmhkmain=1&type=pc#J_Filter").cookies(cookies)
 						.method(Method.GET).execute().parse();
+				System.out.println(doc.toString());
 				Elements els = doc.select("div#J_ItemList");
 				System.out.println(els.toString());
 				for (Element el : els) {

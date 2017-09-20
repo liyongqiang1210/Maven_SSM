@@ -1,5 +1,7 @@
 package com.webcollector.tianmao.tianmaoguoji;
 
+import java.io.IOException;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,6 +15,7 @@ import org.jsoup.select.Elements;
 
 import com.webcollector.jdbc.JDBCTemplate_tianmao;
 import com.webcollector.sina.domestic.Crawler_gdxw;
+import com.webcollector.tianmao.Login;
 import com.webcollector.util.DateUtil;
 
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
@@ -44,6 +47,8 @@ public abstract class TianMaoGuoJiCrawler extends BreadthCrawler {
 		String tb_goods_url = null;
 		String tb_goods_price = null;
 		try {
+			
+			Map<String, String> cookies = Login.getCookies_Tmall("212067863@qq.com", "lyq212067863");
 			@SuppressWarnings("deprecation")
 			Document doc = page.getDoc();
 			Elements els = doc.select("div#J_ItemList");

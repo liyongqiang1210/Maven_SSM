@@ -33,7 +33,6 @@ public abstract class TianMaoJingXuanCrawler extends BreadthCrawler {
 	}
 
 	public void visit(Page page, CrawlDatums next) {
-
 		JDBCTemplate_tianmao jdbc = new JDBCTemplate_tianmao();
 		int tb_goods_payment = 0;
 		int tb_goods_is_free_shipping = 0;
@@ -47,7 +46,6 @@ public abstract class TianMaoJingXuanCrawler extends BreadthCrawler {
 			@SuppressWarnings("deprecation")
 			Document doc = page.getDoc();
 			Elements els = doc.select("div.item");
-			System.out.println(els.toString());
 			int i = 1;
 			for (Element el : els) {
 				String regex = "[\u4e00-\u9fa5]";
