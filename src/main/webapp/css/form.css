@@ -1,0 +1,213 @@
+@charset "utf-8";
+body {
+	font-size: 62.5%;
+}
+
+label,
+input {
+	display: block;
+}
+
+input.text {
+	margin-bottom: 12px;
+	width: 95%;
+	padding: .4em;
+}
+
+fieldset {
+	padding: 0;
+	border: 0;
+	margin-top: 25px;
+}
+
+div#users-contain {
+	width: 100%;
+	margin: 20px 0;
+}
+
+div#users-contain table {
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+div#users-contain table td,
+div#users-contain table th {
+	border: 1px solid #eee;
+	padding: .6em 10px;
+	text-align: left;
+}
+
+.ui-dialog .ui-state-error {
+	padding: .3em;
+}
+
+.validateTips {
+	border: 1px solid transparent;
+	padding: 0.3em;
+}
+
+#create-button,
+#update-button,
+#deletes-button {
+	background-color: #008CBA;
+	border: 1px solid green;
+	color: white;
+	padding: 8px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	margin: 4px 2px;
+	cursor: pointer;
+	float: left;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#create-button,
+#update-button,
+#deletes-button {
+	background-color: white;
+	color: black;
+	border: 2px solid #008CBA;
+}
+
+#create-button:hover,
+#update-button:hover,
+#deletes-button:hover {
+	background-color: #008CBA;
+	color: white;
+}
+
+
+/*弹出层*/
+
+
+/*垂直居中*/
+
+.verticalAlign {
+	vertical-align: middle;
+	display: inline-block;
+	height: 100%;
+	margin-left: -1px;
+}
+
+.xcConfirm .xc_layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #666666;
+	opacity: 0.5;
+	z-index: 2147000000;
+}
+
+.xcConfirm .popBox {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	background-color: #ffffff;
+	z-index: 2147000001;
+	width: 570px;
+	height: 300px;
+	margin-left: -285px;
+	margin-top: -150px;
+	border-radius: 5px;
+	font-weight: bold;
+	color: #535e66;
+}
+
+.xcConfirm .popBox .ttBox {
+	height: 30px;
+	line-height: 30px;
+	padding: 14px 30px;
+	border-bottom: solid 1px #eef0f1;
+}
+
+.xcConfirm .popBox .ttBox .tt {
+	font-size: 18px;
+	display: block;
+	float: left;
+	height: 30px;
+	position: relative;
+}
+
+.xcConfirm .popBox .ttBox .clsBtn {
+	display: block;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 22px;
+	right: 30px;
+	background: url(../img/icons.png) -48px -96px no-repeat;
+}
+
+.xcConfirm .popBox .txtBox {
+	margin: 40px 100px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.xcConfirm .popBox .txtBox .bigIcon {
+	float: left;
+	margin-right: 20px;
+	width: 48px;
+	height: 48px;
+	background-image: url(../img/icons.png);
+	background-repeat: no-repeat;
+	background-position: 48px 0;
+}
+
+.xcConfirm .popBox .txtBox p {
+	height: 84px;
+	margin-top: 16px;
+	line-height: 26px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.xcConfirm .popBox .txtBox p input {
+	width: 364px;
+	height: 30px;
+	border: solid 1px #eef0f1;
+	font-size: 18px;
+	margin-top: 6px;
+}
+
+.xcConfirm .popBox .btnArea {
+	border-top: solid 1px #eef0f1;
+}
+
+.xcConfirm .popBox .btnGroup {
+	float: right;
+}
+
+.xcConfirm .popBox .btnGroup .sgBtn {
+	margin-top: 14px;
+	margin-right: 10px;
+}
+
+.xcConfirm .popBox .sgBtn {
+	display: block;
+	cursor: pointer;
+	float: left;
+	width: 95px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+
+.xcConfirm .popBox .sgBtn.ok {
+	background-color: #0095d9;
+	color: #FFFFFF;
+}
+
+.xcConfirm .popBox .sgBtn.cancel {
+	background-color: #546a79;
+	color: #FFFFFF;
+}

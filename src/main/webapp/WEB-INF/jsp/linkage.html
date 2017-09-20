@@ -1,0 +1,61 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>一级菜单</title>
+		<!--jq对话框js，css文件  -->
+		<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="../../css/form.css" />
+		<script>
+			$(document).ready(function() {
+				$("#dialog-form").hide();
+				$("#create-button").click(function() {
+					$("#dialog-form").show();
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div style="position: relative;">
+		<div id="dialog-form" title="添加菜单" style="position:absolute;z-index:2; background-color:white;top: 500px;left: 500px;">
+			<form>
+					<label for="linkage_name">菜单名</label> <input type="text" name="linkage_name" id="name" class="text ui-widget-content ui-corner-all">
+					<input type="submit" value="确认" />
+			</form>
+		</div>
+
+		<div id="users-contain" class="ui-widget" style="position:absolute;z-index:1;">
+			<button id="create-button">添加菜单</button>
+			<button id="update-button">更新菜单</button>
+			<button id="deletes-button">批量删除菜单</button>
+			<table id="users" class="ui-widget ui-widget-content">
+				<thead>
+					<tr class="ui-widget-header ">
+						<th>一级菜单ID</th>
+						<th>一级菜单名</th>
+						<th>一级菜单创建时间</th>
+						<th>一级菜单创建人</th>
+						<th>一级菜单更新时间</th>
+						<th>一级菜单更新人</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John Doe</td>
+						<td>john.doe@example.com</td>
+						<td>johndoe1</td>
+						<td>John Doe</td>
+						<td>john.doe@example.com</td>
+						<td>johndoe1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</div>
+	</body>
+
+</html>
