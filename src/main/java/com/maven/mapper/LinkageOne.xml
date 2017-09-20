@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.maven.dao.ILinkageOneDao">
+	<select id="selectLinkage_one" parameterType="java.lang.Integer"
+		resultType="com.maven.entity.Linkage_One">
+		SELECT
+		lo_id,
+		lo_name,
+		lo_creater,
+		lo_create_time,
+		lo_update_time,
+		lo_modifier
+		FROM
+		linkage_one
+		LIMIT #{page},
+		10
+	</select>
+	<insert id="insertLinkage_one" parameterType="com.maven.entity.Linkage_One">
+		INSERT INTO
+		linkage_one (lo_id, lo_name,lo_create_time,lo_creater)
+		VALUES
+		(#{lo_id},#{lo_name},#{lo_create_time},#{lo_creater});
+
+	</insert>
+
+
+</mapper>
