@@ -8,36 +8,12 @@
 		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="../../css/form.css" />
-		<script>
-			$(document).ready(function() {
-			//添加菜单
-			$(".div-main").hide();
-			$("#create-button").click(function() {
-				$(".div-main").show();
-			});
-			//更新菜单
-			$(".div-main").hide();
-			$("#update-button").click(function() {
-				$(".div-main").show();
-			});
-			//点击X的时候关闭弹出窗口
-			$(".div-close").click(function() {
-				$(".div-main").hide();
-			});
-			//窗口拖动
-			$(".div-main").draggable({
-				containment: ".div-out",
-				scroll: false,
-				cancel: "#input-submit,#input-button",
-			});
-			});
-		</script>
+		<script type="text/javascript" src="../../js/linkage.js"></script>
 	</head>
 
 	<body>
 		<div class="div-out">
 			<div class="div-main">
-
 				<div class="div-up">
 					<!--<span id="span-name">一级菜单</span>
 					<span id="span-X">X</span>-->
@@ -45,27 +21,24 @@
 					<div class="div-close">X</div>
 				</div>
 				<div class="div-center">
-					<form id="reg-form">
+					<form>
+						<div class="div-table">
+							<table id="div-table">
+								<tr>
+									<td class="table-name">菜单名：</td>
+									<td class="table-input"><input name="linkage_name" type="text" id="linkage_name">
+									</td>
+								</tr>
 
-						<table>
-							<tr>
-								<td>菜单名</td>
-								<td><input name="linkage_name" type="text" id="linkage_name">
-								</td>
-							</tr>
-
-						</table>
-
+							</table>
+						</div>
 						<div class="buttons">
 							<input value="确认" type="submit" id="input-submit">
 							<input value="取消" type="button" id="input-button">
 						</div>
-
-						<br class="clear">
 					</form>
 				</div>
 				<div class="div-down">
-
 				</div>
 			</div>
 			<div id="users-contain" class="ui-widget">

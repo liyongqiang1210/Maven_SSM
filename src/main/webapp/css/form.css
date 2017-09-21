@@ -3,22 +3,15 @@ body {
 	font-size: 62.5%;
 }
 
-label,
-input {
-	display: block;
+.table-input{
+	width: 200px;
+	height: 40px;
+	
+}
+.table-name{
+	font-size: 15px;
 }
 
-input.text {
-	margin-bottom: 12px;
-	width: 95%;
-	padding: .4em;
-}
-
-fieldset {
-	padding: 0;
-	border: 0;
-	margin-top: 25px;
-}
 
 div#users-contain {
 	width: 100%;
@@ -50,9 +43,7 @@ div#users-contain table th {
 #create-button,
 #update-button,
 #deletes-button {
-	background-color: #008CBA;
 	border: 1px solid green;
-	color: white;
 	padding: 8px 15px;
 	text-align: center;
 	text-decoration: none;
@@ -68,16 +59,16 @@ div#users-contain table th {
 #create-button,
 #update-button,
 #deletes-button {
-	background-color: white;
-	color: black;
+	background-color: #008CBA;
+	color: white;
 	border: 2px solid #008CBA;
 }
 
 #create-button:hover,
 #update-button:hover,
 #deletes-button:hover {
-	background-color: #008CBA;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
 
@@ -110,27 +101,31 @@ div#users-contain table th {
  */
 
 .div-main {
+	left: 30%;
+	top: 20%;
 	z-index: 2;
-	position: absolute;
+	position: fixed;
 	background-color: white;
-	border: 1px solid #aaa;
-	width: 424px;
-	height: 200px;
+	border: 0px solid #aaa;
+	width: 600px;
+	height: 300px;
 	font-size: 12px;
 	box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(75, 75, 75, 0.3);
 	text-align: left;
-	margin: auto;
 }
+
 
 /**
  * 弹出层的上div
  */
+
 .div-up {
 	width: 100%;
-	height: 40px;
+	height: 15%;
 	background-color: #008CBA;
 	font-size: 16px;
 	color: white;
+	cursor: pointer;
 }
 
 .div-title {
@@ -142,29 +137,50 @@ div#users-contain table th {
 
 .div-close {
 	float: right;
-	margin-right: 10px;
+	margin-right: 3%;
 	margin-top: 10px;
 	cursor: pointer;
 }
+
+
 /**
  * 弹出层中div
  */
-.div-center{
-	margin-bottom: -13px;
-	height: 160px;
+
+.div-center {
+	height: 75%;
 }
-.buttons{
-	height: 50px;
-	margin-bottom: -14px;
+
+.div-table {
+	height: 80%;
 }
+
+#div-table {
+	position: absolute;
+	left: 30%;
+	margin-left: 30%;
+	margin: 10% auto;
+}
+
+.buttons {
+	height: 20%;
+	padding-left: 80%;
+}
+
+
 /**
  * 弹出层下div
  */
-.div-down{
+
+.div-down {
 	width: 100%;
-	height: 14px;
+	height: 10%;
 	background-color: #008CBA;
+	margin-bottom: -15px;
+	cursor: pointer;
 }
+
+
 /**
  * 弹出层div的样式--结束
  */
@@ -179,7 +195,6 @@ div#users-contain table th {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	border-radius: 10px;
 	font-size: 10px;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
@@ -194,7 +209,6 @@ div#users-contain table th {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	border-radius: 10px;
 	font-size: 10px;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
@@ -205,15 +219,15 @@ div#users-contain table th {
 }
 
 #input-submit {
-	 position:absolute;
-	margin-left: 280px;
-	margin-top: 80px;
+	position: absolute;
+	width: 15%;
+	left: 60%;
 }
 
 #input-button {
-	 position:absolute;
-	margin-left: 350px;
-	margin-top: 80px;
+	position: absolute;
+	width: 15%;
+	left: 80%;
 }
 
 #input-submit:hover {
