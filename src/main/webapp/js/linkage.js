@@ -1,4 +1,15 @@
 	$(document).ready(function() {
+		
+		//分页
+		$("#page").paging({
+			pageNo:1,
+			totalPage: 8,
+			totalSize: 300,
+			callback: function(num) {
+				
+			}
+		})
+		
 		//添加菜单
 		$(".div-main").hide();
 		$("#create-button").click(function() {
