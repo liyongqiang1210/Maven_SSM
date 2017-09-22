@@ -1,9 +1,12 @@
 	$(document).ready(function() {
-		
+		var tp;
+		 $.ajax({url:"/linkage/getLinkagePages",success:function(result){
+		        tp = result;
+		    }});
 		//分页
 		$("#page").paging({
 			pageNo:1,
-			totalPage: 8,
+			totalPage: tp,
 			totalSize: 300,
 			callback: function(num) {
 				

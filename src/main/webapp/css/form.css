@@ -255,12 +255,15 @@ div#users-contain table th {
 			  */
 
 .page_div {
+	width:auto;
+	height:auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 12px;
 	font-family: "microsoft yahei";
 	color: #666666;
-	padding-left: 30%;
+	padding-right: 5%;
+	padding-left:20%;
 	box-sizing: border-box;
 }
 

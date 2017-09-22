@@ -25,8 +25,6 @@
 	<div class="div-out">
 		<div class="div-main">
 			<div class="div-up">
-				<!--<span id="span-name">一级菜单</span>
-					<span id="span-X">X</span>-->
 				<div class="div-title">一级菜单</div>
 				<div class="div-close">X</div>
 			</div>
@@ -66,143 +64,17 @@
 					</tr>
 				</thead>
 				<tbody>
+				<c:forEach items="${linkages }" var="linkage">
 					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
+						<td>${linkage.lo_id }</td>
+						<td>${linkage.lo_name }</td>
+						<td>${linkage.lo_create_time }</td>
+						<td>${linkage.lo_creater }</td>
+						<td>${linkage.lo_update_time }</td>
+						<td>${linkage.lo_modifier }</td>
 					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>johndoe1</td>
-					</tr>
-					
+				</c:forEach>
+				
 
 				</tbody>
 			</table>
