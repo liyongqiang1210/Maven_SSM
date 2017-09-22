@@ -257,10 +257,10 @@ div#users-contain table th {
 .page_div {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	font-size: 15px;
+	font-size: 12px;
 	font-family: "microsoft yahei";
 	color: #666666;
-	padding-left: 40%;
+	padding-left: 30%;
 	box-sizing: border-box;
 }
 
@@ -283,14 +283,14 @@ div#users-contain table th {
 
 #firstPage,
 #lastPage {
-	width: 50px;
+	width: 6%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 }
 
 #prePage,
 #nextPage {
-	width: 70px;
+	width: 8%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 }
@@ -306,7 +306,7 @@ div#users-contain table th {
 
 #firstPage-disable,
 #lastPage-disable {
-	width: 50px;
+	width: 6%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 	opacity: 0.6;
@@ -315,7 +315,7 @@ div#users-contain table th {
 
 #prePage-disable,
 #nextPage-disable {
-	width: 70px;
+	width: 8%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 	opacity: 0.6;
@@ -328,7 +328,7 @@ div#users-contain table th {
  */
 
 .current {
-	width: 30px;
+	width: 3%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 }
@@ -339,27 +339,20 @@ div#users-contain table th {
  */
 
 .current-select {
-	width: 30px;
+	width: 3%;
 	color: white;
 	border: 1px solid #0073A9!important;
 	background-color: #0073A9;
 }
 
-/*.current-select-one {
-	width: 30px;
-	color: white;
-	border: 1px solid #0073A9!important;
-	background-color: #0073A9;
-}*/
-
 .totalPages {
-	margin: 0 10px;
+	margin: 0 2&;
 }
 
 .totalPages span,
 .totalSize span {
 	color: #0073A9;
-	margin: 0 5px;
+	margin: 0 1%;
 }
 
 
