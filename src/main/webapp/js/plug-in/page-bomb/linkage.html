@@ -1,25 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
 <html lang="en">
 
 	<head>
 		<meta charset="utf-8">
-		<base href="<%=basePath%>">
 		<title>一级菜单</title>
 		<!--jq对话框js，css文件  -->
 		<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
 		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-		<link rel="stylesheet" href="<%=basePath%>css/form.css" />
-		<script type="text/javascript" src="<%=basePath%>js/linkage.js"></script>
-		<script type="text/javascript" src="<%=basePath%>js/paging.js" ></script>
+		<link rel="stylesheet" href="../../css/form.css" />
+		<script type="text/javascript" src="../../js/linkage.js"></script>
+		<script type="text/javascript" src="../../js/paging.js" ></script>
 	</head>
 
 	<body>
