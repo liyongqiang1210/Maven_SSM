@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONArray;
 import com.maven.entity.Linkage_One;
 import com.maven.service.LinkageOneService;
 
@@ -37,7 +37,7 @@ public class LinkageController {
 	 */
 	@RequestMapping("/getLinkageOne")
 	public String getLinkageOne() {
-		
+
 		return "jsp/linkage";
 
 	}
@@ -51,19 +51,20 @@ public class LinkageController {
 	 *            查询多少条数据
 	 * @param model
 	 */
-	@RequestMapping(value="/getLinkageOneData",produces="text/html;charset=UTF-8;")
+	@RequestMapping(value = "/getLinkageOneData", produces = "text/html;charset=UTF-8;")
 	@ResponseBody
 	public String getLinkageOneData(Integer start, Integer total) {
 		List<Linkage_One> list = null;
-		Map<String,Integer> map = new HashMap<String, Integer>();
+		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("start", start);
 		map.put("total", total);
-		if (start != null && total !=null) {
+		if (start != null && total != null) {
 			list = los.getCurrentData(map);
 		}
 		JSONArray ja = new JSONArray();
-		ja.put(list);
-		return ja.toString();
+		ja.add(list);
+		String json = ja.toString().substring(1, ja.toString().length()-1);
+		return json;
 	}
 
 	/**
@@ -71,7 +72,7 @@ public class LinkageController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/getPageTotal",produces="text/html;charset=UTF-8;")
+	@RequestMapping(value = "/getPageTotal", produces = "text/html;charset=UTF-8;")
 	@ResponseBody
 	public String getPageTotal() {
 		Integer dataTotal = 0;

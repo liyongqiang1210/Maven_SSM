@@ -33,20 +33,21 @@ $(document)
 													success : function(data) {
 														$("tbody").empty();
 														for (var i = 0; i < total; i++) {
+															var obj = data[i];
 															$("tbody")
 																	.append(
 																			"<tr><td>"
-																					+ data[i].lo_id
+																					+ obj.lo_id
 																					+ "</td><td>"
-																					+ data[i].lo_name
+																					+ obj.lo_name
 																					+ "</td><td>"
-																					+ data[i].lo_create_time
+																					+ obj.lo_create_time
 																					+ "</td><td>"
-																					+ data[i].lo_creater
+																					+ obj.lo_creater
 																					+ "</td><td>"
-																					+ data[i].lo_update_time
+																					+ obj.lo_update_time
 																					+ "</td><td>"
-																					+ data[i].lo_modifier
+																					+ obj.lo_modifier
 																					+ "</td></tr>");
 														}
 
@@ -75,26 +76,32 @@ $(document)
 															"total" : total
 														},
 														success : function(data) {
+															if(data!=null){
+															$("tbody").empty();
 															for (var i = 0; i < total; i++) {
+																var obj = data[i];
+																alert(data[1]);
 																$("tbody")
 																		.append(
 																				"<tr><td>"
-																						+ 2222
+																						+ obj.lo_id
 																						+ "</td><td>"
-																						+ data[i].lo_name
+																						+ obj.lo_name
 																						+ "</td><td>"
-																						+ data[i].lo_create_time
+																						+ obj.lo_create_time
 																						+ "</td><td>"
-																						+ data[i].lo_creater
+																						+ obj.lo_creater
 																						+ "</td><td>"
-																						+ data[i].lo_update_time
+																						+ obj.lo_update_time
 																						+ "</td><td>"
-																						+ data[i].lo_modifier
+																						+ obj.lo_modifier
 																						+ "</td></tr>");
 															}
 
 														}
+														}
 													});
+													
 										}
 									})
 
