@@ -1,6 +1,7 @@
 package com.maven.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.maven.entity.Linkage_One;
 
@@ -42,4 +43,17 @@ public interface ILinkageOneDao {
 	 * @return
 	 */
 	public String deleteLinkage_one(String lo_id);
+	
+	/**
+	 * 查询数据总条数
+	 * @return
+	 */
+	public Integer selectDataTotal();
+	
+	/**
+	 * 获取当前页数据
+	 * @param start
+	 * @return
+	 */
+	public List<Linkage_One> getCurrentData(Map<String,Integer> map);
 }

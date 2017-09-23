@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.maven.dao.ILinkageOneDao">
+	<resultMap type="com.maven.entity.Linkage_One" id="BaseResultmap">
+		<result column="lo_id" property="lo_id" jdbcType="VARCHAR" />
+		<result column="lo_name" property="lo_name" jdbcType="VARCHAR" />
+		<result column="lo_create_time" property="lo_create_time"
+			jdbcType="VARCHAR" />
+		<result column="lo_creater" property="lo_creater" jdbcType="VARCHAR" />
+		<result column="lo_update_time" property="lo_update_time"
+			jdbcType="VARCHAR" />
+		<result column="lo_modifier" property="lo_modifier" jdbcType="VARCHAR" />
+	</resultMap>
 	<select id="selectLinkage_one" parameterType="java.lang.Integer"
 		resultType="com.maven.entity.Linkage_One">
 		SELECT
@@ -22,6 +32,26 @@
 		(#{lo_id},#{lo_name},#{lo_create_time},#{lo_creater});
 
 	</insert>
+	<select id="selectDataTotal" resultType="java.lang.Integer">
+		SELECT
+		count(*)
+		FROM
+		linkage_one
+	</select>
+
+	<select id="getCurrentData" parameterType="java.util.Map"
+		resultType="com.maven.entity.Linkage_One">
+		SELECT
+		lo_id,
+		lo_name,
+		lo_create_time,
+		lo_creater,
+		lo_update_time,
+		lo_modifier
+		FROM
+		linkage_one
+		LIMIT #{start},#{total}
+	</select>
 
 
 </mapper>

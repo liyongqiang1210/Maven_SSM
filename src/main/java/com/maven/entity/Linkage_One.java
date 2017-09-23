@@ -63,8 +63,4 @@ public class Linkage_One implements Serializable {
 		this.lo_modifier = lo_modifier;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 }

@@ -1,6 +1,7 @@
 package com.maven.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,15 @@ public class LinkageOneService {
 		
 		return lod.insertLinkage_one(lo);
 		
+	}
+	
+	public Integer selectDataTotal(){
+		
+		return lod.selectDataTotal();
+	}
+	
+	public List<Linkage_One> getCurrentData(Map<String,Integer> map){
+		
+		return lod.getCurrentData(map);
 	}
 }
