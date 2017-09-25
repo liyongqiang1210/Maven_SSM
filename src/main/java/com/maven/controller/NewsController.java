@@ -81,7 +81,8 @@ public class NewsController {
 		for (News news : list) {
 			json.add(news);
 		}
-		return json.toString();
+		String js = json.toString();
+		return js;
 		
 	}
 }

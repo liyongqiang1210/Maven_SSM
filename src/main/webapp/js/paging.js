@@ -97,7 +97,7 @@
 				content += "<p id='lastPage-disable'>尾页</p>";
 			} else {
 				content += "<a id='nextPage'>下一页</a>";
-				content += "<a id='lastPage'>尾页</a>";
+				content += "<a id='lastPage' value="+total+">尾页</a>";
 			}
 
 			content += "<span class='totalPages'> 共<span>" + total + "</span>页 </span>";
@@ -108,6 +108,7 @@
 		bindEvent: function() {
 			var me = this;
 			me.element.on('click', 'a', function() {
+				var lastPage = $(this).val();
 				var num = $(this).html();
 				var id = $(this).attr("id");
 				if(id == "prePage") {
@@ -118,7 +119,7 @@
 					}
 				} else if(id == "nextPage") {
 					if(me.options.pageNo == me.options.totalPage) {
-						me.options.pageNo = me.options.totalPage
+						me.options.pageNo = me.options.totalPage;
 					} else {
 						me.options.pageNo = +me.options.pageNo + 1;
 					}
