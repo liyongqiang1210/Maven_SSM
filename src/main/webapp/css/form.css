@@ -250,9 +250,9 @@ div#users-contain table th {
  */
 
 
-/*
-			  * 外面盒子样式---自己定义
-			  */
+/**
+ * 外面盒子样式---自己定义
+ */
 
 .page_div {
 	width:auto;
@@ -360,5 +360,16 @@ div#users-contain table th {
 
 
 /**
- * 页面按钮样式
+ * 页面按钮样式  --结束
  */
+ 
+ 
+ 
+ /**
+ * table样式--开始
+ */
+ 
+input#all,input#check{
+	width: 1%;
+	
+}
