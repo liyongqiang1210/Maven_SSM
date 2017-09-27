@@ -369,7 +369,7 @@ div#users-contain table th {
  * table样式--开始
  */
  
-input#all,input#check{
+td.check,th.check{
 	width: 1%;
 	
 }

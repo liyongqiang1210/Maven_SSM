@@ -55,7 +55,7 @@
 			<table id="users" class="ui-widget ui-widget-content">
 				<thead>
 					<tr class="ui-widget-header ">
-						<th><input type="checkbox" id="all" /></th>
+						<th class="check"><input type="checkbox" id="all" /></th>
 						<th>一级菜单ID</th>
 						<th>一级菜单名</th>
 						<th>一级菜单创建时间</th>
@@ -67,7 +67,7 @@
 				<tbody>
 				<c:forEach items="${linkages }" var="linkage">
 					<tr>
-						<td><input type="checkbox" name="option" id="check" /></td>
+						<td class="check"><input type="checkbox" name="option" id="check" /></td>
 						<td>${linkage.lo_id }</td>
 						<td>${linkage.lo_name }</td>
 						<td>${linkage.lo_create_time }</td>
