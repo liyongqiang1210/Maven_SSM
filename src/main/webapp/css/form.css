@@ -373,3 +373,8 @@ td.check,th.check{
 	width: 1%;
 	
 }
+
+input{
+	border: 1px solid #008CBA;
+	padding: 5px 5px 5px 5px;
+}
