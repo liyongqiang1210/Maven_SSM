@@ -150,27 +150,39 @@ div#users-contain table th {
 	height: 75%;
 }
 
-.div-table {
+.div-form {
 	height: 80%;
 }
 
-#div-table {
+#div-form-linkage {
 	position: absolute;
 	left: 30%;
 	margin-left: 30%;
-	margin: 10% auto;
+	margin: 60px auto;
+	font-size: 15px;
 }
 
+.div-form-input {
+	position: absolute;
+	left: 40%;
+	margin-left: 30%;
+	margin: 57px auto;
+	width: 250px;
+}
+.div-form-input:focus{
+	-webkit-box-shadow:0px 1px 10px #0099FF;
+}
+
+
+}
 .buttons {
 	height: 20%;
 	padding-left: 80%;
 }
 
-
 /**
  * 弹出层下div
  */
-
 .div-down {
 	width: 100%;
 	height: 10%;
@@ -179,16 +191,13 @@ div#users-contain table th {
 	cursor: pointer;
 }
 
-
 /**
  * 弹出层div的样式--结束
  */
 
-
 /**
  * 弹出层div上按钮的样式--开始
  */
-
 #input-submit {
 	padding: 8px 16px;
 	text-align: center;
@@ -202,7 +211,6 @@ div#users-contain table th {
 	color: white;
 	border: 2px solid #008CBA;
 }
-
 #input-button {
 	padding: 8px 16px;
 	text-align: center;
@@ -216,63 +224,54 @@ div#users-contain table th {
 	color: white;
 	border: 2px solid #5F5F5F;
 }
-
 #input-submit {
 	position: absolute;
 	width: 15%;
 	left: 60%;
 }
-
 #input-button {
 	position: absolute;
 	width: 15%;
 	left: 80%;
 }
-
 #input-submit:hover {
 	background-color: white;
 	color: black;
 }
-
 #input-button:hover {
 	background-color: white;
 	color: black;
 }
 
-
 /**
  * 弹出层div上按钮的样式--结束
  */
-
 
 /**
  * 分页样式--开始
  */
 
-
 /**
  * 外面盒子样式---自己定义
  */
-
 .page_div {
-	width:auto;
-	height:auto;
+	width: auto;
+	height: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 12px;
 	font-family: "microsoft yahei";
 	color: #666666;
 	padding-right: 5%;
-	padding-left:20%;
+	padding-left: 20%;
 	box-sizing: border-box;
 }
-
 
 /**
  * 页数按钮样式
  */
-
-.page_div a,.page_div p {
+.page_div a,
+.page_div p {
 	min-width: 30px;
 	height: 28px;
 	border: 1px solid #0073A9!important;
@@ -283,21 +282,18 @@ div#users-contain table th {
 	font-size: 13px;
 	display: inline-block;
 }
-
 #firstPage,
 #lastPage {
 	width: 6%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 }
-
 #prePage,
 #nextPage {
 	width: 8%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 }
-
 #firstPage:hover,
 #lastPage:hover,
 #prePage:hover,
@@ -306,7 +302,6 @@ div#users-contain table th {
 	background-color: #0073A9;
 	color: white;
 }
-
 #firstPage-disable,
 #lastPage-disable {
 	width: 6%;
@@ -315,7 +310,6 @@ div#users-contain table th {
 	opacity: 0.6;
 	cursor: not-allowed;
 }
-
 #prePage-disable,
 #nextPage-disable {
 	width: 8%;
@@ -325,56 +319,41 @@ div#users-contain table th {
 	cursor: not-allowed;
 }
 
-
 /**
  * 未选中的页数样式
  */
-
 .current {
 	width: 3%;
 	color: #0073A9;
 	border: 1px solid #0073A9!important;
 }
 
-
 /**
  * 选中的页数样式
  */
-
 .current-select {
 	width: 3%;
 	color: white;
 	border: 1px solid #0073A9!important;
 	background-color: #0073A9;
 }
-
 .totalPages {
 	margin: 0 2&;
 }
-
 .totalPages span,
 .totalSize span {
 	color: #0073A9;
 	margin: 0 1%;
 }
 
-
 /**
  * 页面按钮样式  --结束
  */
- 
- 
- 
- /**
+
+/**
  * table样式--开始
  */
- 
-td.check,th.check{
+td.check,
+th.check {
 	width: 1%;
-	
-}
-
-input{
-	border: 1px solid #008CBA;
-	padding: 5px 5px 5px 5px;
 }
