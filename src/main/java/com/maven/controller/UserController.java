@@ -49,7 +49,7 @@ public class UserController {
 			str = "jsp/main";
 		} else {
 
-			model.addAttribute("message", "用户名或密码输入错误,请重新输入");
+			model.addAttribute("message", "用户名或密码输入错误");
 			str = "jsp/login";
 		}
 		return str;
