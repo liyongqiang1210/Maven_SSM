@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>后台管理页面</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+		<script type="text/javascript" src="jquery-2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+		<script>
+			$(document).ready(function() {
+				
+				$(".lyq-a-news").click(function() {
+					var name = ".lyq-ul-news";
+					fun(name);
+				});
+				$(".lyq-a-shop").click(function() {
+					var name = ".lyq-ul-shop";
+					fun(name);
+				});
+				$(".lyq-a-blog").click(function() {
+					var name = ".lyq-ul-blog";
+					fun(name);
+				});
+				$(".lyq-a-forum").click(function() {
+					var name = ".lyq-ul-forum";
+					fun(name);
+				});
+			});
+
+			function fun(name) {
+				
+				var state = $(name).prop("hidden");
+				if(state == true) {
+					$(name).show(500);
+					$(name).removeAttr("hidden");
+				} else {
+					$(name).hide(500);
+					$(name).prop("hidden", "hidden");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">爬虫后台信息管理</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#"><span class="glyphicon glyphicon-cog"></span></a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>
+		<div class=" col-sm-2">
+			<ul class="nav nav-pills nav-stacked navbar-inverse">
+				<li>
+					<a href="#" class="lyq-a-news">新闻数据列表</a>
+					<ul class="nav nav-pills nav-stacked navbar-inverse lyq-ul lyq-ul-news" hidden="hidden">
+						<li>
+							<a href="#">军事</a>
+						</li>
+						<li>
+							<a href="#">农业</a>
+						</li>
+						<li>
+							<a href="#">娱乐</a>
+						</li>
+						<li>
+							<a href="#">文化</a>
+						</li>
+						<li>
+							<a href="#">社会</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="lyq-a-shop">商品数据列表</a>
+					<ul class="nav nav-pills nav-stacked navbar-inverse lyq-ul lyq-ul-shop" hidden="hidden">
+						<li>
+							<a href="#">军事</a>
+						</li>
+						<li>
+							<a href="#">农业</a>
+						</li>
+						<li>
+							<a href="#">娱乐</a>
+						</li>
+						<li>
+							<a href="#">文化</a>
+						</li>
+						<li>
+							<a href="#">社会</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="lyq-a-blog">博客数据列表</a>
+					<ul class="nav nav-pills nav-stacked navbar-inverse lyq-ul lyq-ul-blog" hidden="hidden">
+						<li>
+							<a href="#">军事</a>
+						</li>
+						<li>
+							<a href="#">农业</a>
+						</li>
+						<li>
+							<a href="#">娱乐</a>
+						</li>
+						<li>
+							<a href="#">文化</a>
+						</li>
+						<li>
+							<a href="#">社会</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="lyq-a-forum">论坛数据列表</a>
+					<ul class="nav nav-pills nav-stacked navbar-inverse lyq-ul lyq-ul-forum" hidden="hidden">
+						<li>
+							<a href="#">军事</a>
+						</li>
+						<li>
+							<a href="#">农业</a>
+						</li>
+						<li>
+							<a href="#">娱乐</a>
+						</li>
+						<li>
+							<a href="#">文化</a>
+						</li>
+						<li>
+							<a href="#">社会</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-10">
+			这里是内容区域
+		</div>
+	</body>
+
+</html>
