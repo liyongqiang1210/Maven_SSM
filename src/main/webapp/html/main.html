@@ -9,29 +9,35 @@
 		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 		<script>
 			$(document).ready(function() {
+				$(".lyq-ul").prop("hidden","hidden");
 
 				$(".lyq-a-news").click(function() {
 					var name = ".lyq-ul-news";
-					fun(name);
+					hidden_ul(name);
 				});
 				$(".lyq-a-shop").click(function() {
 					var name = ".lyq-ul-shop";
-					fun(name);
+					hidden_ul(name);
 				});
 				$(".lyq-a-blog").click(function() {
 					var name = ".lyq-ul-blog";
-					fun(name);
+					hidden_ul(name);
 				});
 				$(".lyq-a-forum").click(function() {
 					var name = ".lyq-ul-forum";
-					fun(name);
+					hidden_ul(name);
+				});
+				$(".junshi").click(function(){
+					$(".lyq-div-contenxt").load("http://localhost:8080/Maven_SSM/linkage/getLinkageOne");
 				});
 			});
 
-			function fun(name) {
-
+			/*打和开关闭菜单的方法*/
+			function hidden_ul(name) {
 				var state = $(name).prop("hidden");
 				if(state == true) {
+					//打开当前菜单前先隐藏全部菜单然后打开当前菜单
+					close_ul();
 					$(name).show(500);
 					$(name).removeAttr("hidden");
 				} else {
@@ -39,26 +45,55 @@
 					$(name).prop("hidden", "hidden");
 				}
 			}
+			/*隐藏全部菜单的方法*/
+			function close_ul(){
+				$("ul.lyq-ul").each(function(){
+					$(this).hide(500);
+					$(this).prop("hidden","hidden");
+				});
+			}
 		</script>
 		<style>
 			body,html{
 				height: 100%;
+				background-color: #222222;
 			}
 			
-			.lyq-div-nav-left {
+			.lyq-div-nav{
 				position: absolute;
-				left: 2%
+				width: 100%;
+				height: 7%;
+				background-color: #101010;
 			}
-			
 			.lyq-div-nav-right {
 				position: absolute;
 				right: 1%;
 			}
 			.lyq-div-left{
-				margin-top: -20px;
+				position: absolute;
+				top: 51px;
 				width: 10%;
-				height: 94.5%;
+				height: 93%;
 				background-color: #0099FF;
+			}
+			.div-main{
+				height: 85%;
+				width: 100%;
+			}
+			.div-left-nav{
+				margin-top: -20px;
+				height: 680px;
+				width: 15%;
+				background-color: #1F7CB6;
+			}
+			.div-right-context{
+				margin-top: -20px;
+				width: 85%;
+				height:680px;
+				background-color: #E7E7E7;
+			}
+			.lyq-ul-color{
+				background-color: #52D689;
 			}
 		</style>
 	</head>
@@ -83,13 +118,15 @@
 
 			<!-- /.navbar-collapse -->
 		</nav>
-			<div class="lyq-div-left">
-				<ul class="nav nav-pills nav-stacked lyq-ul-style">
+		<div class="div-main">
+		<div class="div-left-nav col-xs-2">
+			<div class="col-xs col-xs-12">
+				<ul class=" nav nav-stacked lyq-ul-color">
 					<li>
 						<a href="#" class="lyq-a-news">新闻数据列表</a>
-						<ul class="nav nav-pills nav-stacked lyq-ul lyq-ul-news" hidden="hidden">
+						<ul class="nav nav-pills nav-stacked lyq-ul lyq-ul-news">
 							<li>
-								<a href="#">军事</a>
+								<a href="#" class="junshi">军事</a>
 							</li>
 							<li>
 								<a href="#">农业</a>
@@ -107,7 +144,7 @@
 					</li>
 					<li>
 						<a href="#" class="lyq-a-shop">商品数据列表</a>
-						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-shop" hidden="hidden">
+						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-shop">
 							<li>
 								<a href="#">服装</a>
 							</li>
@@ -127,7 +164,7 @@
 					</li>
 					<li>
 						<a href="#" class="lyq-a-blog">博客数据列表</a>
-						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-blog" hidden="hidden">
+						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-blog">
 							<li>
 								<a href="#">博客园</a>
 							</li>
@@ -144,7 +181,7 @@
 					</li>
 					<li>
 						<a href="#" class="lyq-a-forum">论坛数据列表</a>
-						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-forum" hidden="hidden">
+						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-forum">
 							<li>
 								<a href="#">军事</a>
 							</li>
@@ -163,6 +200,13 @@
 						</ul>
 					</li>
 				</ul>
+			</div>
+			</div>
+			<div class="div-right-context col-xs-10">
+				<div class="col-xs-12 lyq-div-contenxt">
+					
+				</div>
+			</div>
 			</div>
 	</body>
 
