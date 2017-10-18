@@ -73,23 +73,27 @@ body, html {
 }
 
 .div-top {
-	height: 7%;
 	width: 100%;
+	height: 7%;
+}
+
+.top {
+	position:absolute;
+	width:100%;
+	height:100%;
 	background-color: #0099ff;
-	border: 1px solid white;
+	box-shadow: 2px 2px 10px #888888;
 }
 
 .div-main {
 	height: 93%;
 	width: 100%;
-	background-color: #1F7CB6;
 }
 
 .div-left-nav {
 	position: absolute;
 	height: 93%;
 	width: 13%;
-	background-color: #ff4dd2;
 	border: 2px solid white;
 }
 
@@ -110,14 +114,17 @@ body, html {
 
 <body>
 	<div class="div-top">
-		<div class="lyq-div-nav-left">
-			<a class="navbar-brand" href="#">爬虫后台信息管理</a>
+		<div class="top">
+			<div class="lyq-div-nav-left">
+				<a class="navbar-brand" href="#">爬虫后台信息管理</a>
+			</div>
+			<div class="lyq-div-nav-right">
+				<ul class="nav navbar-nav">
+					<li><a href="javascript:;"></a></li>
+				</ul>
+			</div>
 		</div>
-		<div class="lyq-div-nav-right">
-			<ul class="nav navbar-nav">
-				<li><a href="javascript:;"></a></li>
-			</ul>
-		</div>
+
 	</div>
 	<div class="div-main">
 		<div class="div-left-nav">
