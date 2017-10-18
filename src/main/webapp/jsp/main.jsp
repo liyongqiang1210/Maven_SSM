@@ -78,10 +78,10 @@ body, html {
 }
 
 .top {
-	position:absolute;
-	width:100%;
-	height:100%;
-	background-color: #0099ff;
+	position: absolute;
+	width: 100%;
+	height: 7%;
+	background-color: #00FA9A;
 	box-shadow: 2px 2px 10px #888888;
 }
 
@@ -92,22 +92,40 @@ body, html {
 
 .div-left-nav {
 	position: absolute;
-	height: 93%;
+	margin-top: 15px;
+	margin-left: 1%;
+	height: 88%;
 	width: 13%;
-	border: 2px solid white;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 8px #888888;
 }
 
-.lyq-ul-color {
-	background-color: #b3d9ff;
+ul>li {
+border: 1px solid #C0C0C0;
+	background-color: #008BCA;
 }
 
+ul>li>ul>li {
+	background-color: #6495ED;
+	border: 1px solid #C0C0C0;
+	border-bottom:0px; 
+}
+
+
+/*内容页面  */
 .lyq-iframe {
 	position: absolute;
-	left: 13%;
-	width: 87%;
-	height: 93%;
+	margin-top: 15px;
+	left: 16%;
+	width: 82%;
+	height: 88%;
 	background-color: #f2f2f2;
-	border: 2px solid white;
+	border: 0px solid white;
+	box-shadow: 2px 2px 10px #888888;
+}
+
+a {
+	color: #ffffff;
 }
 </style>
 </head>
@@ -118,53 +136,46 @@ body, html {
 			<div class="lyq-div-nav-left">
 				<a class="navbar-brand" href="#">爬虫后台信息管理</a>
 			</div>
-			<div class="lyq-div-nav-right">
-				<ul class="nav navbar-nav">
-					<li><a href="javascript:;"></a></li>
-				</ul>
-			</div>
 		</div>
 
 	</div>
 	<div class="div-main">
 		<div class="div-left-nav">
-			<div class="col-xs col-xs-12">
-				<ul class=" nav nav-stacked lyq-ul-color">
-					<li><a href="javascript:;" class="lyq-a-news">新闻数据列表</a>
-						<ul class="nav nav-pills nav-stacked lyq-ul lyq-ul-news">
-							<li><a
-								href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne"
-								target="iframe_a">军事</a></li>
-							<li><a href="javascript:;">农业</a></li>
-							<li><a href="javascript:;">娱乐</a></li>
-							<li><a href="javascript:;">文化</a></li>
-							<li><a href="javascript:;">社会</a></li>
-						</ul></li>
-					<li><a href="javascript:;" class="lyq-a-shop">商品数据列表</a>
-						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-shop">
-							<li><a href="javascript:;">服装</a></li>
-							<li><a href="javascript:;">化妆品</a></li>
-							<li><a href="javascript:;">手机</a></li>
-							<li><a href="javascript:;">数码</a></li>
-							<li><a href="javascript:;">家具</a></li>
-						</ul></li>
-					<li><a href="javascript:;" class="lyq-a-blog">博客数据列表</a>
-						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-blog">
-							<li><a href="javascript:;">博客园</a></li>
-							<li><a href="javascript:;">CSDN</a></li>
-							<li><a href="javascript:;">知乎</a></li>
-							<li><a href="javascript:;">新浪微博</a></li>
-						</ul></li>
-					<li><a href="javascript:;" class="lyq-a-forum">论坛数据列表</a>
-						<ul class="nav nav-pills nav-stacked  lyq-ul lyq-ul-forum">
-							<li><a href="javascript:;">军事</a></li>
-							<li><a href="javascript:;">农业</a></li>
-							<li><a href="javascript:;">娱乐</a></li>
-							<li><a href="javascript:;">文化</a></li>
-							<li><a href="javascript:;">社会</a></li>
-						</ul></li>
-				</ul>
-			</div>
+			<ul class=" nav nav-stacked ">
+				<li><a href="javascript:;" class="lyq-a-news">新闻数据列表</a>
+					<ul class="nav nav-stacked lyq-ul lyq-ul-news">
+						<li><a
+							href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne"
+							target="iframe_a">军事</a></li>
+						<li><a href="javascript:;">农业</a></li>
+						<li><a href="javascript:;">娱乐</a></li>
+						<li><a href="javascript:;">文化</a></li>
+						<li><a href="javascript:;">社会</a></li>
+					</ul></li>
+				<li><a href="javascript:;" class="lyq-a-shop">商品数据列表</a>
+					<ul class="nav nav-stacked  lyq-ul lyq-ul-shop">
+						<li><a href="javascript:;">服装</a></li>
+						<li><a href="javascript:;">化妆品</a></li>
+						<li><a href="javascript:;">手机</a></li>
+						<li><a href="javascript:;">数码</a></li>
+						<li><a href="javascript:;">家具</a></li>
+					</ul></li>
+				<li><a href="javascript:;" class="lyq-a-blog">博客数据列表</a>
+					<ul class="nav nav-stacked  lyq-ul lyq-ul-blog">
+						<li><a href="javascript:;">博客园</a></li>
+						<li><a href="javascript:;">CSDN</a></li>
+						<li><a href="javascript:;">知乎</a></li>
+						<li><a href="javascript:;">新浪微博</a></li>
+					</ul></li>
+				<li><a href="javascript:;" class="lyq-a-forum">论坛数据列表</a>
+					<ul class="nav nav-stacked  lyq-ul lyq-ul-forum">
+						<li><a href="javascript:;">军事</a></li>
+						<li><a href="javascript:;">农业</a></li>
+						<li><a href="javascript:;">娱乐</a></li>
+						<li><a href="javascript:;">文化</a></li>
+						<li><a href="javascript:;">社会</a></li>
+					</ul></li>
+			</ul>
 		</div>
 		<iframe class="lyq-iframe" src="index.jsp" name="iframe_a"></iframe>
 	</div>
