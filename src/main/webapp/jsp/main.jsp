@@ -73,15 +73,16 @@ body, html {
 }
 
 .div-top {
+	position: fixed;
 	width: 100%;
-	height: 7%;
+	height: 50px;
 }
 
 .top {
-	position: absolute;
+	position: fixed;
 	width: 100%;
-	height: 7%;
-	background-color: #00FA9A;
+	height: 50px;
+	background-color: #000000;
 	box-shadow: 2px 2px 10px #888888;
 }
 
@@ -90,32 +91,32 @@ body, html {
 	width: 100%;
 }
 
+/*左侧导航栏容器  */
 .div-left-nav {
-	position: absolute;
-	margin-top: 15px;
-	margin-left: 1%;
+	position: fixed;
+	top: 80px;
+	left:30px;
 	height: 88%;
-	width: 13%;
-	background-color: #ffffff;
-	box-shadow: 2px 2px 8px #888888;
+	width: 200px;
+	/* background-color: #ffffff;
+	box-shadow: 2px 2px 8px #888888; */
 }
 
 ul>li {
-border: 1px solid #C0C0C0;
+	border: 1px solid #C0C0C0;
 	background-color: #008BCA;
 }
 
 ul>li>ul>li {
 	background-color: #6495ED;
 	border: 1px solid #C0C0C0;
-	border-bottom:0px; 
+	border-bottom: 0px;
 }
-
 
 /*内容页面  */
 .lyq-iframe {
 	position: absolute;
-	margin-top: 15px;
+	margin-top: 80px;
 	left: 16%;
 	width: 82%;
 	height: 88%;
