@@ -16,58 +16,75 @@
 		<script type="text/javascript" src="html/jquery-2.0.0/jquery.min.js"></script>
 		<script type="text/javascript" src="html/bootstrap/js/bootstrap.js"></script>
 		<script>
-			$(document)
-				.ready(
-					function() {
-						/**
-						 * 控制菜单列表的显示与隐藏
-						 * 
-						 * */
-						$(".sina").click(function() {
-							var state = $(".sina-list").css("display");
-							if(state == "block") {
-								$(".sina-list").slideUp("500");
-							} else if(state == "none") {
-								close_div();
-								$(".sina-list").slideDown("500");
-							}
-						});
-						$(".sina2").click(function() {
-							var state = $(".sina2-list").css("display");
-							if(state == "block") {
-								$(".sina2-list").slideUp("500");
-							} else if(state == "none") {
-								close_div();
-								$(".sina2-list").slideDown("500");
-							}
+			$(document).ready(function() {
+				/**
+				 * 控制菜单列表的显示与隐藏
+				 * 
+				 * */
+				$(".sina").click(function() {
+					var state = $(".sina-list").css("display");
+					if(state == "block") {
+						$(".sina-list").slideUp("500");
+						$("div.sina>p>span").addClass("glyphicon-triangle-left");
+						$("div.sina>p>span").removeClass("glyphicon-triangle-bottom");
+					} else if(state == "none") {
+						close_div();
+						$(".sina-list").slideDown("500");
+						$("div.sina>p>span").removeClass("glyphicon-triangle-left");
+						$("div.sina>p>span").addClass("glyphicon-triangle-bottom");
+					}
+				});
+				$(".sina2").click(function() {
+					var state = $(".sina2-list").css("display");
+					if(state == "block") {
+						$(".sina2-list").slideUp("500");
+						$("div.sina2>p>span").addClass("glyphicon-triangle-left");
+						$("div.sina2>p>span").removeClass("glyphicon-triangle-bottom");
+					} else if(state == "none") {
+						close_div();
+						$(".sina2-list").slideDown("500");
+						$("div.sina2>p>span").removeClass("glyphicon-triangle-left");
+						$("div.sina2>p>span").addClass("glyphicon-triangle-bottom");
+					}
 
-						});
-						$(".blog").click(function() {
-							var state = $(".blog-list").css("display");
-							if(state == "block") {
-								$(".blog-list").slideUp("500");
-							} else if(state == "none") {
-								close_div();
-								$(".blog-list").slideDown("500");
-							}
-						});
-						$(".shop").click(function() {
-							var state = $(".shop-list").css("display");
-							if(state == "block") {
-								$(".shop-list").slideUp("500");
-							} else if(state == "none") {
-								close_div();
-								$(".shop-list").slideDown("500");
-							}
-						});
-					});
+				});
+				$(".blog").click(function() {
+					var state = $(".blog-list").css("display");
+					if(state == "block") {
+						$(".blog-list").slideUp("500");
+						$("div.blog>p>span").addClass("glyphicon-triangle-left");
+						$("div.blog>p>span").removeClass("glyphicon-triangle-bottom");
+					} else if(state == "none") {
+						close_div();
+						$(".blog-list").slideDown("500");
+						$("div.blog>p>span").removeClass("glyphicon-triangle-left");
+						$("div.blog>p>span").addClass("glyphicon-triangle-bottom");
+					}
+				});
+				$(".shop").click(function() {
+					var state = $(".shop-list").css("display");
+					if(state == "block") {
+						$(".shop-list").slideUp("500");
+						$("div.shop>p>span").addClass("glyphicon-triangle-left");
+						$("div.shop>p>span").removeClass("glyphicon-triangle-bottom");
+					} else if(state == "none") {
+						close_div();
+						$(".shop-list").slideDown("500");
+						$("div.shop>p>span").removeClass("glyphicon-triangle-left");
+						$("div.shop>p>span").addClass("glyphicon-triangle-bottom");
+					}
+				});
+			});
 
 			/*隐藏全部菜单的方法*/
 			function close_div() {
 				$("div.lyq-div-menu-list").each(function() {
 					$(this).slideUp("500");
+					
 				});
 			}
+			
+			
 		</script>
 		<style>
 			body,
@@ -239,7 +256,9 @@
 		<div class="div-main">
 			<div class="div-left-nav">
 				<div class="lyq-div-menu-name sina">
-					<p>新浪数据列表</p>
+					<p>
+						新浪数据列表<span class="glyphicon glyphicon-triangle-left"></span>
+					</p>
 				</div>
 				<div class="lyq-div-menu-list sina-list">
 					<a href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne" target="iframe_a">军事</a>
@@ -249,7 +268,9 @@
 					<a href="javascript:;">社会</a>
 				</div>
 				<div class="lyq-div-menu-name shop">
-					<p>商品数据列表</p>
+					<p>
+						商品数据列表<span class="glyphicon glyphicon-triangle-left lyq-p-span"></span>
+					</p>
 				</div>
 				<div class="lyq-div-menu-list shop-list">
 					<a href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne" target="iframe_a">军事</a>
@@ -261,7 +282,9 @@
 					<a href="javascript:;">数码</a>
 				</div>
 				<div class="lyq-div-menu-name blog">
-					<p>博客数据列表</p>
+					<p>
+						博客数据列表<span class="glyphicon glyphicon-triangle-left"></span>
+					</p>
 				</div>
 				<div class="lyq-div-menu-list blog-list">
 					<a href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne" target="iframe_a">军事</a>
@@ -271,7 +294,9 @@
 					<a href="javascript:;">新浪微博</a>
 				</div>
 				<div class="lyq-div-menu-name sina2">
-					<p>新浪数据列表</p>
+					<p>
+						用户信息管理<span class="glyphicon glyphicon-triangle-left"></span>
+					</p>
 				</div>
 				<div class="lyq-div-menu-list sina2-list">
 					<a href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne" target="iframe_a">军事</a>
