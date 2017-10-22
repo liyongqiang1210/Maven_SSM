@@ -296,7 +296,21 @@ td, th {
 		format('svg');
 }
 
-.glyphicon {
+.glyphicon-left {
+	position: relative;
+	top: 3px;
+	left:10px;
+	color:#ffffff;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+}
+.glyphicon-right {
 	position: relative;
 	top: 3px;
 	left: 20px;
