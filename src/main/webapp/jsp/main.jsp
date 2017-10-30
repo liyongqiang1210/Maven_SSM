@@ -13,6 +13,7 @@
 <base href="<%=basePath%>">
 <title>后台管理页面</title>
 <link rel="stylesheet" href="html/bootstrap/css/bootstrap.css" />
+<link rel="icon" href="jsp/585150.png">
 <script type="text/javascript" src="html/jquery-2.0.0/jquery.min.js"></script>
 <script type="text/javascript" src="html/bootstrap/js/bootstrap.js"></script>
 <script>
@@ -36,7 +37,6 @@
 			open_close_menu(name);
 		});
 	});
-
 	/*隐藏全部菜单的方法*/
 	function close_div() {
 		$("div.lyq-div-menu-list").each(function() {
@@ -45,7 +45,6 @@
 			$("p>span.span-icon").addClass("glyphicon-triangle-left");
 			/*收起当前菜单*/
 			$(this).slideUp("500");
-
 		});
 	}
 	/* 打开关闭菜单时的滑动效果已经右侧图标变化的方法 */
@@ -74,7 +73,7 @@ body, html {
 }
 
 .div-top {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 50px;
 	background-color: #000000;
@@ -85,21 +84,17 @@ p.lyq-title {
 	display: block;
 	height: 50px;
 	width: 100%;
-	margin-left: 40px;
+	margin-left: 15px;
 	margin-top: 10px;
 	font-size: 20px;
 	color: #FFFFFF;
 }
 
-.div-main {
-	height: 95%;
-	width: 100%;
-}
 /*左侧导航栏容器  */
 .div-left-nav {
 	position: fixed;
 	top: 50px;
-	height: 88%;
+	height: 100%;
 	width: 180px;
 }
 
@@ -117,7 +112,7 @@ div>a {
 	width: 180px;
 	height: 30px;
 	display: block;
-	padding-left: 65px;
+	padding-left: 50px;
 	padding-top: 4px;
 	background-color: #3C95C8;
 	border-radius: 2px;
@@ -141,13 +136,11 @@ p.p-menu-name:hover {
 	border-radius: 2px;
 	background-color: #555555;
 }
-
 /*选中某个菜单时的样式  */
 div>a:focus {
 	border-radius: 2px;
 	background-color: #676767;
 }
-
 /* 菜单列表div的大小 */
 div.sina-list, div.user-list {
 	width: 180px;
@@ -169,12 +162,13 @@ div.shop-list {
 /*内容页面  */
 .lyq-iframe {
 	position: fixed;
-	top:50px;
+	top: 50px;
 	left: 180px;
 	width: 100%;
 	height: 100%;
 	background-color: #f2f2f2;
 	border: 0px solid white;
+	overflow: auto;
 	/* box-shadow: 2px 2px 10px #888888; */
 }
 /*a标签样式*/
@@ -192,7 +186,6 @@ a:hover {
 	color: #ffffff;
 	text-decoration: none;
 }
-
 /* 标题字体颜色 */
 h1, h2, h3, h4, h5, h6, h7 {
 	color: #FFFFFF;
@@ -202,38 +195,36 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 <body>
 	<div class="div-top">
-			<div>
-				<p class="lyq-title">后台信息管理系统</p>
-			</div>
+		<div>
+			<p class="lyq-title">后台信息管理系统</p>
+		</div>
 	</div>
-	<div class="div-main">
 		<div class="div-left-nav">
 			<div class="lyq-div-menu-name user">
-					<p class="p-menu-name">
-						<span class="glyphicon-left glyphicon-user"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户信息管理<span
-							class="glyphicon-right glyphicon-triangle-left span-icon"></span>
-					</p>
+				<p class="p-menu-name">
+					<span class="glyphicon-left glyphicon-home"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp系统管理&nbsp&nbsp&nbsp&nbsp<span
+						class="glyphicon-right glyphicon-triangle-left span-icon"></span>
+				</p>
 			</div>
 			<div class="lyq-div-menu-list user-list">
 				<a href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne"
-					target="iframe_a">军事</a> <a href="javascript:;">农业</a> <a
-					href="javascript:;">娱乐</a> <a href="javascript:;">文化</a> <a
-					href="javascript:;">社会</a>
+					target="iframe_a">用户管理</a> <a href="javascript:;">角色管理</a><a
+					href="javascript:;">菜单管理</a> <a href="javascript:;">角色权限配置</a> <a
+					href="javascript:;">系统配置</a>
 			</div>
 
 			<div class="lyq-div-menu-name sina">
 				<p class="p-menu-name">
-					<span class="glyphicon-left glyphicon-list"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp新浪数据列表<span
+					<span class="glyphicon-left glyphicon-list"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp数据管理&nbsp&nbsp&nbsp&nbsp<span
 						class="glyphicon-right glyphicon-triangle-left span-icon"></span>
 				</p>
 			</div>
 			<div class="lyq-div-menu-list sina-list">
 				<a href="http://localhost:8080/Maven_SSM/linkage/getLinkageOne"
-					target="iframe_a">军事</a> <a href="javascript:;">农业</a> <a
-					href="javascript:;">娱乐</a> <a href="javascript:;">文化</a> <a
-					href="javascript:;">社会</a>
+					target="iframe_a">新浪数据列表</a> <a href="javascript:;">博客数据列表</a> <a
+					href="javascript:;">商品数据列表</a>
 			</div>
-			<div class="lyq-div-menu-name shop">
+		<!-- 	<div class="lyq-div-menu-name shop">
 				<p class="p-menu-name">
 					<span class="glyphicon-left glyphicon-list"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp商品数据列表<span
 						class="glyphicon-right glyphicon-triangle-left span-icon"></span>
@@ -257,10 +248,9 @@ h1, h2, h3, h4, h5, h6, h7 {
 					target="iframe_a">军事</a> <a href="javascript:;">博客园</a> <a
 					href="javascript:;">CSDN</a> <a href="javascript:;">知乎</a> <a
 					href="javascript:;">新浪微博</a>
-			</div>
+			</div> -->
 		</div>
 		<iframe class="lyq-iframe" src="index.jsp" name="iframe_a"></iframe>
-	</div>
 </body>
 
 </html>

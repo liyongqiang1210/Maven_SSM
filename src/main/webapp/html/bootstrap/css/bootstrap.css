@@ -13,7 +13,13 @@ html {
 body {
 	margin: 0;
 }
-
+/*自定义css*/
+.lyq-color{
+	position: absolute;
+	background-color: royalblue;
+	height: 80%;
+	width: 100%;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup,
 	main, menu, nav, section, summary {
 	display: block;
