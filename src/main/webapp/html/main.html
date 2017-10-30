@@ -3,11 +3,12 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>后台管理页面</title>
+		<title>后台管理系统</title>
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 		<script type="text/javascript" src="jquery-2.0.0/jquery.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 		<link rel="stylesheet" href="css/main.css" />
+		<link rel="icon" href="images/585150.png">
 		<script>
 			$(document).ready(function() {
 				/* 控制菜单列表子菜单的显示与隐藏 */
@@ -16,24 +17,39 @@
 					name = "news";
 					open_and_close_menu(name);
 				});
+				$(".user").click(function() {
+					name = "user";
+					open_and_close_menu(name);
+				});
 				$(".shop").click(function() {
 					name = "shop";
+					open_and_close_menu(name);
+				});
+				$(".system").click(function() {
+					name = "system";
 					open_and_close_menu(name);
 				});
 			});
 			/*打开和关闭菜单的方法*/
 			function open_and_close_menu(name) {
 				var state = $("." + name + "-list").css("display");
-				if(state == "block") {
+				if(state == "block") { /*关闭菜单*/
 					$("." + name + "-list").slideUp("500");
-				} else if(state == "none") {
+					$("span.menu-" + name + "-icon").removeClass("span-open");
+					$("span.menu-" + name + "-icon").addClass("span-close");
+				} else if(state == "none") { /*打开菜单*/
+					/*关闭其他打开的菜单*/
 					close_menu();
 					$("." + name + "-list").slideDown("500");
+					$("span.menu-" + name + "-icon").removeClass("span-close");
+					$("span.menu-" + name + "-icon").addClass("span-open");
 				}
 			}
 			/*关闭所有菜单的方法*/
 			function close_menu() {
 				$(".li-ul-menu").each(function() {
+					$("span.menu-icon").removeClass("span-open");
+					$("span.menu-icon").addClass("span-close");
 					$(this).slideUp("500");
 				});
 			}
@@ -58,14 +74,42 @@
 					<li class="li-nav-item">
 						<a href="javascript:;"><cite>首页</cite></a>
 					</li>
-					<li class="li-nav-item">
-						<a href="javascript:;"><cite>用户管理</cite></a>
+					<li class="li-nav-item user">
+						<a href="javascript:;"><cite>用户管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</cite><span class="menu-icon menu-user-icon span-close"></a>
 					</li>
-					<li class="li-nav-item">
-						<a href="javascript:;"><cite>系统管理</cite></a>
+					<ul class="li-ul-menu user-list">
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>新浪新闻</cite></a>
+						</li>
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>腾讯新闻</cite></a>
+						</li>
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>搜狐新闻</cite></a>
+						</li>
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>凤凰网</cite></a>
+						</li>
+					</ul>
+					<li class="li-nav-item system">
+						<a href="javascript:;"><cite>系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</cite><span class="menu-icon menu-system-icon span-close"></a>
 					</li>
+					<ul class="li-ul-menu system-list">
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>新浪新闻</cite></a>
+						</li>
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>腾讯新闻</cite></a>
+						</li>
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>搜狐新闻</cite></a>
+						</li>
+						<li class="li-nav-item">
+							<a href="javascript:;"><cite>凤凰网</cite></a>
+						</li>
+					</ul>
 					<li class="li-nav-item news">
-						<a href="javascript:;"><cite>新闻数据列表</cite></a>
+						<a href="javascript:;"><cite>新闻数据列表</cite><span class="menu-icon menu-news-icon span-close"></span></a>
 					</li>
 					<ul class="li-ul-menu news-list">
 						<li class="li-nav-item">
@@ -82,7 +126,7 @@
 						</li>
 					</ul>
 					<li class="li-nav-item shop">
-						<a href="javascript:;"><cite>商品数据列表</cite></a>
+						<a href="javascript:;"><cite>商品数据列表</cite><span class="menu-icon menu-shop-icon span-close"></span></a>
 					</li>
 					<ul class="li-ul-menu shop-list">
 						<li class="li-nav-item">
