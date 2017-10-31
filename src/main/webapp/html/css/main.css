@@ -3,6 +3,10 @@ html {
 	height: 100%;
 }
 
+body {
+	margin: 0;
+}
+
 
 /*top样式*/
 
@@ -188,6 +192,13 @@ p {
 	color: #FFFFFF;
 }
 
+/*表格工具栏p标签样式*/
+p.toolbar-p{
+	color: #555555;
+	padding: 0;
+	margin: 0;
+}
+
 p.lyq-title {
 	padding-top: 9px;
 	padding-left: 25px;
@@ -214,3 +225,4 @@ p.lyq-title {
 .span-open:before {
 	content: "\e252";
 }
+
