@@ -10,11 +10,12 @@ import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
 public class Crawler_suibi extends BreadthCrawler {
 
-
 	public Crawler_suibi(String crawlPath, boolean autoParse) {
 		super(crawlPath, autoParse);
-		this.addSeed("https://www.cnblogs.com/cate/108724/#p4");
-		
+		for (int i = 0; i <= 200; i++) {
+			this.addSeed("https://www.cnblogs.com/cate/all/"+i);
+		}
+
 	}
 
 	public void visit(Page page, CrawlDatums next) {
@@ -36,11 +37,11 @@ public class Crawler_suibi extends BreadthCrawler {
 	}
 
 	public static void main(String[] args) throws Exception {
-			Crawler_suibi cs = new Crawler_suibi("crawl", true);
-			cs.setThreads(1);
-			cs.setTopN(100);
-			cs.start(5);
-		
+		Crawler_suibi cs = new Crawler_suibi("crawl", true);
+		cs.setThreads(1);
+		cs.setTopN(100);
+		cs.start(5);
+
 	}
 
 }
