@@ -41,7 +41,7 @@ public class Crawler_html5 extends BreadthCrawler {
 			String url = el.absUrl("href");
 			log.debug("博客url地址:" + url);
 			//插入到数据库
-			//jb.insertNews(type, url, title);
+			jb.insertNews(type, url, title);
 		}
 
 	}

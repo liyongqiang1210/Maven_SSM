@@ -47,7 +47,7 @@ public class JDBCTemplate_bokeyuan {
 				// 获得数据库连接
 				conn = DriverManager.getConnection(URL, USER, PASSWORD);
 				// 所要执行的sql语句
-				String sql_bokeyuan = "insert into news (id,type,title,url) value (?,?,?,?)";
+				String sql_bokeyuan = "insert into bokeyuan_text_url (bky_tu_id,bky_type,bky_tu_title,bky_tu_url) value (?,?,?,?)";
 				// 设置事务提交方式为手动提交
 				conn.setAutoCommit(true);
 				// 实现插入操作
@@ -93,7 +93,7 @@ public class JDBCTemplate_bokeyuan {
 	 */
 	public int getTitle(String url) {
 		int i = 0;
-		String select_sql = "select bky_id from bokeyuan_text_url where bky_url = ?";
+		String select_sql = "select bky_tu_id from bokeyuan_text_url where bky_tu_url = ?";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			try {
