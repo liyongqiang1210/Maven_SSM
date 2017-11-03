@@ -21,7 +21,6 @@
 			
 			.table-search {
 				position: relative;
-				margin: 2px 10px 2px 10px;
 				width: auto;
 				height: 35px;
 			}
@@ -30,25 +29,58 @@
 			.toolbar-div {
 				position: relative;
 				display: inline-block;
-				margin: auto 10px;
-				left: 20px;
+				margin: auto 3px;
 				height: 40px;
+			}
+			
+			.toolbar-div-input {
+				top: 13px;
+				width: 200px;
+			}
+			
+			.toolbar-div-button {
+				top: 13px;
+				width: 100px;
+			}
+			
+			.toolbar-div-select {
+				top: 13px;
+				width: 200px;
+			}
+			
+			.toolbar-div-label {
+				top: 13px;
+				width: 90px;
+			}
+			
+			.label {
+				position: absolute;
+				margin: auto 5px;
+				padding: 5px 5px 10px 5px;
 			}
 			/*input公共样式*/
 			
 			.input {
-				width: 200px;
+				position: absolute;
 				height: 30px;
-				margin: 0px 5px;
+				margin: auto 0;
 				padding: 1px 10px 1px 10px;
 				border: 1px solid #ADADAD;
-				border-radius: 3px;
+				border-radius: 2px;
 			}
 			
+			.input-big {
+				width: 178px;
+			}
+			
+			.input-small {
+				width: 120px;
+			}
 			/*button类公共样式*/
+			
 			.button {
 				width: 100px;
-				height: 35px;
+				height: 33px;
 				border: none;
 				color: white;
 				text-align: center;
@@ -84,7 +116,7 @@
 			}
 			
 			.button-color-red:hover {
-				background-color: #CC3366;
+				background-color: #980000;
 			}
 			
 			.datagrid-toolbar {
@@ -116,12 +148,15 @@
 	<body>
 		<!--表格工具栏-->
 		<div class="table-toolbar">
-			<div class="datagrid-toolbar">
-				<div class="toolbar-div input"></div>
-				<div class="toolbar-div button"><button class="button button-color-red">批量删除</button></div>
-				<div class="toolbar-div button"><button class="button button-color-red">删除</button></div>
-				<div class="toolbar-div button"></div>
+			<div class="toolbar-div toolbar-div-label"><label class="label">新闻类型:</label></div>
+			<div class="toolbar-div toolbar-div-select"><input class="input input-small" type="text" placeholder="请选择新闻类型">
 			</div>
+			<div class="toolbar-div toolbar-div-label"><label class="label">文章内容:</label></div>
+			<div class="toolbar-div toolbar-div-input"><input class="input input-big" type="text" placeholder="请输入查询的文章内容"></div>
+			<div class="toolbar-div toolbar-div-button"><button class="button button-color-green">查询</button></div>
+			<div class="toolbar-div toolbar-div-button"><button class="button button-color-red">批量删除</button></div>
+			<div class="toolbar-div toolbar-div-button"><button class="button button-color-red">删除</button></div>
+			<div class="toolbar-div toolbar-div-button"></div>
 		</div>
 		<!--表格内容栏-->
 		<div class="table-body">

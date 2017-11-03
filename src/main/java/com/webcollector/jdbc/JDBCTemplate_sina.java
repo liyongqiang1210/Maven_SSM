@@ -106,19 +106,6 @@ public class JDBCTemplate_sina {
 		}
 
 	}
-	/*
-	 * 
-	 * public void jdbc_website_two(String name, String url, String create_time,
-	 * String creater,String sql) { JdbcTemplate jdbcTemplate = null; try {
-	 * jdbcTemplate = JDBCHelper.createMysqlTemplate("maven",
-	 * "jdbc:mysql://localhost:3306/maven", "root", "root", 0, 20); if
-	 * (jdbcTemplate != null) { int updates = jdbcTemplate.update( sql,
-	 * UUID.randomUUID().toString(), name, url, create_time, creater ); if
-	 * (updates == 1) { log.debug(name+"  插入成功"); } } } catch (Exception ex) {
-	 * jdbcTemplate = null; log.error("错误信息："+ex);
-	 * //System.out.println("mysql未开启或JDBCHelper.createMysqlTemplate中参数配置不正确!");
-	 * } }
-	 */
 
 	/**
 	 * 判断是否存在此条文章
