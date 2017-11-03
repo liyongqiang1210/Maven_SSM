@@ -13,7 +13,7 @@ import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
-public abstract class Crawler_suibi extends BreadthCrawler {
+public class Crawler_suibi extends BreadthCrawler {
 
 	private Log log = LogFactory.getLog(Crawler_gatxw.class);
 
@@ -40,9 +40,16 @@ public abstract class Crawler_suibi extends BreadthCrawler {
 			// 获取博客的url地址
 			String url = el.absUrl("href");
 			log.debug("博客url地址:" + url);
+			//插入到数据库
 			jb.insertNews(type, url, title);
 		}
 
+	}
+	public static void main(String[] args) throws Exception {
+		Crawler_suibi cs =new Crawler_suibi("crawl", true);
+		cs.setThreads(1);
+		cs.setTopN(100);
+		cs.start(2);
 	}
 
 }
