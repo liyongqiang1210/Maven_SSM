@@ -1,4 +1,4 @@
-package com.webcollector.blog.bokeyuan.NET;
+package com.webcollector.blog.bokeyuan.net;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -41,7 +41,7 @@ public class Crawler_csharp extends BreadthCrawler {
 			String url = el.absUrl("href");
 			log.debug("博客url地址:" + url);
 			//插入到数据库
-			jb.insertNews(type, url, title);
+			//jb.insertNews(type, url, title);
 		}
 
 	}

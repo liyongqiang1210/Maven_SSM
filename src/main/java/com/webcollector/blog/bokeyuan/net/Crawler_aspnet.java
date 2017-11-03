@@ -1,4 +1,4 @@
-package com.webcollector.blog.bokeyuan.NET;
+package com.webcollector.blog.bokeyuan.net;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,14 +13,14 @@ import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.berkeley.BreadthCrawler;
 
-public class Crawler_winform extends BreadthCrawler {
+public class Crawler_aspnet extends BreadthCrawler {
 
 	private Log log = LogFactory.getLog(Crawler_gatxw.class);
 
-	public Crawler_winform(String crawlPath, boolean autoParse) {
+	public Crawler_aspnet(String crawlPath, boolean autoParse) {
 		super(crawlPath, autoParse);
-		for (int i = 0; i <= 30; i++) {
-			this.addSeed("https://www.cnblogs.com/cate/winform/" + i);
+		for (int i = 0; i <= 100; i++) {
+			this.addSeed("https://www.cnblogs.com/cate/beginner/" + i);
 		}
 
 	}
@@ -33,7 +33,7 @@ public class Crawler_winform extends BreadthCrawler {
 		Elements els = doc.select("h3>a.titlelnk");
 		for (Element el : els) {
 			// 文章类型
-			String type = "WinForm";
+			String type = "ASP.NET";
 			// 获取文章标题
 			String title = el.select("a").text();
 			log.debug("文章标题:" + title);
@@ -46,7 +46,7 @@ public class Crawler_winform extends BreadthCrawler {
 
 	}
 	public static void main(String[] args) throws Exception {
-		Crawler_winform cs =new Crawler_winform("crawl", true);
+		Crawler_aspnet cs =new Crawler_aspnet("crawl", true);
 		cs.setThreads(1);
 		cs.setTopN(100);
 		cs.start(2);

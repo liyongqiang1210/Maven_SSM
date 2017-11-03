@@ -1,4 +1,4 @@
-package com.webcollector.blog.bokeyuan.NET;
+package com.webcollector.blog.bokeyuan.net;
 
 public class main {
 
