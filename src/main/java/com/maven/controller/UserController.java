@@ -1,6 +1,7 @@
 package com.maven.controller;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +47,7 @@ public class UserController {
 		User user = userService.login(map);
 		String str;
 		if (user != null) {
-			str = "index";
+			str = "jsp/main";
 		} else {
 
 			model.addAttribute("message", "用户名或密码输入错误");
