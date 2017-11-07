@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.maven.dao.IDictionaryDao">
+	<resultMap id="BaseResultMap" type="com.maven.entity.Dictionary">
+		<result column="dictionary_id" property="dictionary_id"
+			jdbcType="VARCHAR" />
+		<result column="dictionary_key" property="dictionary_key"
+			jdbcType="VARCHAR" />
+		<result column="dictionary_value" property="dictionary_value"
+			jdbcType="VARCHAR" />
+		<result column="dictionary_create_time" property="dictionary_create_time"
+			jdbcType="VARCHAR" />
+		<result column="dictionary_update_time" property="dictionary_update_time"
+			jdbcType="VARCHAR" />
+		<result column="dictionary_creater" property="dictionary_creater"
+			jdbcType="VARCHAR" />
+		<result column="dictionary_modifier" property="dictionary_modifier"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		dictionary_id, dictionary_key,
+		dictionary_value,dictionary_create_time,dictionary_update_time,dictionary_creater,dictionary_modifier
+	</sql>
+
+	<!-- 查询全部数据字典 -->
+	<select id="selectAllDictionary" resultType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from dictionary
+	</select>
+	<!-- 根据id查询数据字典 -->
+	<select id="selectDictionaryByID" parameterType="java.lang.String"
+		resultType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from dictionary
+		where
+		dictionary_id = #{dictionary_id}
+	</select>
+	<!-- 添加数据字典 -->
+	<insert id="insertDictionary" parameterType="java.util.Map">
+		insert into
+		dictionary
+		(dictionary_id,dictionary_key,dictionary_value,dictionary_create_time,dictionary_creater)
+		values
+		(#{dictionary_id},#{dictionary_key},#{dictionary_value},#{dictionary_create_time},#{dictionary_creater})
+
+	</insert>
+	<!-- 更新数据字典 -->
+	<update id="updateDictionary" parameterType="java.util.Map">
+		update dictionary
+		set
+		dictionary_key = #{dictionary_key},dictionary_value =
+		#{dictionary_value}
+		where
+		dictionary_id = #{dictionary_id}
+	</update>
+	<!-- 删除数据字典 -->
+	<delete id="deleteDictionary" parameterType="java.lang.String">
+		delete from
+		dictionary
+		where dictionary_id = #{dictionary_id}
+	</delete>
+</mapper>  

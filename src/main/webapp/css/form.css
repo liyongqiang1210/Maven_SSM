@@ -1,0 +1,359 @@
+@charset "utf-8";
+body {
+	font-size: 62.5%;
+}
+
+.table-input {
+	width: 200px;
+	height: 40px;
+}
+
+.table-name {
+	font-size: 15px;
+}
+
+div#users-contain {
+	width: 100%;
+	margin: 20px 0;
+}
+
+div#users-contain table {
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+div#users-contain table td,
+div#users-contain table th {
+	border: 1px solid #eee;
+	padding: .6em 10px;
+	text-align: left;
+}
+
+.ui-dialog .ui-state-error {
+	padding: .3em;
+}
+
+.validateTips {
+	border: 1px solid transparent;
+	padding: 0.3em;
+}
+
+#create-button,
+#update-button,
+#deletes-button {
+	border: 1px solid green;
+	padding: 8px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	margin: 4px 2px;
+	cursor: pointer;
+	float: left;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#create-button,
+#update-button,
+#deletes-button {
+	background-color: #008CBA;
+	color: white;
+	border: 2px solid #008CBA;
+}
+
+#create-button:hover,
+#update-button:hover,
+#deletes-button:hover {
+	background-color: white;
+	color: black;
+}
+
+
+/*弹出层*/
+
+
+/**
+ * 自定义
+ */
+
+
+/**
+ * 最外层div其它的div都在这个div中
+ */
+
+.div-out {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+#users-contain {
+	position: absolute;
+	z-index: 1;
+}
+
+
+/**
+ * 弹出层div的样式--开始
+ */
+
+.div-main {
+	left: 30%;
+	top: 20%;
+	z-index: 2;
+	position: fixed;
+	background-color: white;
+	border: 0px solid #aaa;
+	width: 600px;
+	height: 300px;
+	font-size: 12px;
+	box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 15px rgba(75, 75, 75, 0.3);
+	text-align: left;
+}
+
+
+/**
+ * 弹出层的上div
+ */
+
+.div-up {
+	width: 100%;
+	height: 15%;
+	background-color: #008CBA;
+	font-size: 16px;
+	color: white;
+	cursor: pointer;
+}
+
+.div-title {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.div-close {
+	float: right;
+	margin-right: 3%;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+
+/**
+ * 弹出层中div
+ */
+
+.div-center {
+	height: 75%;
+}
+
+.div-form {
+	height: 80%;
+}
+
+#div-form-linkage {
+	position: absolute;
+	left: 30%;
+	margin-left: 30%;
+	margin: 60px auto;
+	font-size: 15px;
+}
+
+.div-form-input {
+	position: absolute;
+	left: 40%;
+	margin-left: 30%;
+	margin: 57px auto;
+	width: 250px;
+}
+.div-form-input:focus{
+	-webkit-box-shadow:0px 1px 10px #0099FF;
+}
+
+
+}
+.buttons {
+	height: 20%;
+	padding-left: 80%;
+}
+
+/**
+ * 弹出层下div
+ */
+.div-down {
+	width: 100%;
+	height: 10%;
+	background-color: #008CBA;
+	margin-bottom: -15px;
+	cursor: pointer;
+}
+
+/**
+ * 弹出层div的样式--结束
+ */
+
+/**
+ * 弹出层div上按钮的样式--开始
+ */
+#input-submit {
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: #008CBA;
+	color: white;
+	border: 2px solid #008CBA;
+}
+#input-button {
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: #5F5F5F;
+	color: white;
+	border: 2px solid #5F5F5F;
+}
+#input-submit {
+	position: absolute;
+	width: 15%;
+	left: 60%;
+}
+#input-button {
+	position: absolute;
+	width: 15%;
+	left: 80%;
+}
+#input-submit:hover {
+	background-color: white;
+	color: black;
+}
+#input-button:hover {
+	background-color: white;
+	color: black;
+}
+
+/**
+ * 弹出层div上按钮的样式--结束
+ */
+
+/**
+ * 分页样式--开始
+ */
+
+/**
+ * 外面盒子样式---自己定义
+ */
+.page_div {
+	width: auto;
+	height: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	color: #666666;
+	padding-right: 5%;
+	padding-left: 20%;
+	box-sizing: border-box;
+}
+
+/**
+ * 页数按钮样式
+ */
+.page_div a,
+.page_div p {
+	min-width: 30px;
+	height: 28px;
+	border: 1px solid #0073A9!important;
+	text-align: center;
+	margin: 0 4px;
+	cursor: pointer;
+	line-height: 28px;
+	font-size: 13px;
+	display: inline-block;
+}
+#firstPage,
+#lastPage {
+	width: 6%;
+	color: #0073A9;
+	border: 1px solid #0073A9!important;
+}
+#prePage,
+#nextPage {
+	width: 8%;
+	color: #0073A9;
+	border: 1px solid #0073A9!important;
+}
+#firstPage:hover,
+#lastPage:hover,
+#prePage:hover,
+#nextPage:hover,
+.current:hover {
+	background-color: #0073A9;
+	color: white;
+}
+#firstPage-disable,
+#lastPage-disable {
+	width: 6%;
+	color: #0073A9;
+	border: 1px solid #0073A9!important;
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+#prePage-disable,
+#nextPage-disable {
+	width: 8%;
+	color: #0073A9;
+	border: 1px solid #0073A9!important;
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/**
+ * 未选中的页数样式
+ */
+.current {
+	width: 3%;
+	color: #0073A9;
+	border: 1px solid #0073A9!important;
+}
+
+/**
+ * 选中的页数样式
+ */
+.current-select {
+	width: 3%;
+	color: white;
+	border: 1px solid #0073A9!important;
+	background-color: #0073A9;
+}
+.totalPages {
+	margin: 0 2&;
+}
+.totalPages span,
+.totalSize span {
+	color: #0073A9;
+	margin: 0 1%;
+}
+
+/**
+ * 页面按钮样式  --结束
+ */
+
+/**
+ * table样式--开始
+ */
+td.check,
+th.check {
+	width: 1%;
+}

@@ -1,0 +1,201 @@
+body {
+	height: 100%;
+	background-color: #DFE9EE;
+}
+
+
+/**
+     * 登录div样式
+     */
+
+#lyq-div-login {
+	/*定位*/
+	position: absolute;
+	top: -20%;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	/*div宽高*/
+	width: 320px;
+	height: 220px;
+	/*外边距*/
+	margin: auto;
+	/*div边框*/
+	border: 0px solid;
+	/*div背影*/
+	box-shadow: 10px 10px 5px #888888;
+	/*背景色*/
+	background-color: #FAFAFA;
+	/*边角设置为圆滑*/
+	border-radius: 6px;
+	/*内边距*/
+	padding: 30px 20px 30px 20px;
+}
+
+#lyq-div-username {
+	position: absolute;
+	margin: auto;
+	top: -150px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: 280px;
+	height: 35px;
+	background-color: #FAFAFA;
+	border-radius: 6px;
+	border: 1px solid #D0D0D0;
+}
+
+#lyq-div-username:hover {
+	box-shadow: 0px 0px 5px #3186C8;
+}
+
+#lyq-div-password:hover {
+	box-shadow: 0px 0px 5px #3186C8;
+}
+
+#lyq-div-password {
+	position: absolute;
+	margin: auto;
+	top: -20px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: 280px;
+	height: 35px;
+	background-color: #FAFAFA;
+	border-radius: 6px;
+	border: 1px solid #D0D0D0;
+}
+
+#lyq-div-remember {
+	position: absolute;
+	top: 160px;
+	left: 40px;
+	bottom: 0px;
+	right: 0px;
+	width: 120px;
+	height: 35px;
+	background-color: #FAFAFA;
+}
+
+#lyq-div-span {
+	position: absolute;
+	top: 160px;
+	left: 150px;
+	bottom: 0px;
+	right: 0px;
+	width: 200px;
+	height: 35px;
+	background-color: #FAFAFA;
+}
+
+#lyq-div-login-submit {
+	position: absolute;
+	top: 210px;
+	left: 40px;
+	bottom: 0px;
+	right: 0px;
+	width: 280px;
+	height: 45px;
+	background-color: #FAFAFA;
+}
+
+input#lyq-input-password,
+input#lyq-input-username {
+	position: absolute;
+	top: 2px;
+	left: 35px;
+	width: 230px;
+	height: 28px;
+	border: 0px #FAFAFA;
+	background-color: #FAFAFA;
+}
+
+input[type=checkbox] {
+	position: absolute;
+	top: 7px;
+}
+
+p {
+	position: absolute;
+	margin: 5px 0px 5px 5px;
+	top: 0px;
+	left: 20px;
+}
+
+img {
+	position: absolute;
+	margin: auto;
+	top: 10px;
+	left: 8px;
+	width: 18px;
+	height: 15px;
+}
+
+.register {
+	position: absolute;
+	top: 0px;
+	left: 80px;
+	height: 35px;
+	width: 80px;
+	background-color: #3186C8;
+	border: 2px solid #3186C8;
+	border-radius: 2px;
+	color: #FCFDFD;
+	font-size: 15px;
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+}
+
+.login {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 35px;
+	width: 80px;
+	background-color: #3186C8;
+	border: 2px solid #3186C8;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 2px;
+	color: #FCFDFD;
+	font-size: 15px;
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+}
+
+
+/*鼠标在按钮上时的效果*/
+
+.login:hover {
+	background-color: #2A3E93;
+}
+
+.register:hover {
+	background-color: #2A3E93;
+}
+
+
+/*点击按钮时的效果*/
+
+.login:active {
+	background-color: #2A3E93;
+	transform: translateY(2px);
+}
+
+.register:active {
+	background-color: #2A3E93;
+	transform: translateY(2px);
+}
+
+/*提示文字的文字颜色*/
+span.lyq-input-tooltip{
+	position: absolute;
+	margin: auto;
+	color: red;
+	font-size: 13px;
+	top: 10px;
+	left: 30px;
+	
+}
