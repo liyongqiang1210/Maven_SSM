@@ -21,7 +21,7 @@ public class DictionaryService {
 
 	}
 
-	public Map<String,String> selectDictionaryByID(String ID) {
+	public Map<String, String> selectDictionaryByID(String ID) {
 
 		return dictionaryDao.selectDictionaryByID(ID);
 	}
@@ -36,9 +36,21 @@ public class DictionaryService {
 		return dictionaryDao.deleteDictionary(ID);
 	}
 
-	public Integer updateDictionary(Map<String,String> map) {
+	public Integer updateDictionary(Map<String, String> map) {
 
 		return dictionaryDao.updateDictionary(map);
+	}
+
+	public Integer getDataTotal(Map<String, String> map) {
+
+		return dictionaryDao.getDataTotal(map);
+
+	}
+
+	public List<Map<String, Object>> getDataByConditions(Map<String, Object> map) {
+
+		return dictionaryDao.getDataByConditions(map);
+
 	}
 
 }

@@ -62,4 +62,46 @@
 		dictionary
 		where dictionary_id = #{dictionary_id}
 	</delete>
+	<!--根据条件分页模糊查询数据条数 -->
+	<select id="getDataTotal" parameterType="java.util.Map"
+		resultType="java.lang.Integer">
+		select
+		count(dictionary_id)
+		from
+		dictionary
+		<where>
+			<if test="dictionary_key!=null and dictionary_key!=''">
+				and dictionary_key like '%' #{dictionary_key} '%'
+			</if>
+			<if test="dictionary_value!=null and dictionary_value!=''">
+				and dictionary_value like '%' #{dictionary_value} '%'
+			</if>
+			<if test="dictionary_create_time!=null and dictionary_create_time!=''">
+				and dictionary_create_time like '%'
+				#{dictionary_create_time} '%'
+			</if>
+		</where>
+	</select>
+	<!--根据条件分页模糊查询 -->
+	<select id="getDataByConditions" parameterType="java.util.Map"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from
+		dictionary
+		<where>
+			<if test="dictionary_key!=null and dictionary_key!=''">
+				and dictionary_key like '%' #{dictionary_key} '%'
+			</if>
+			<if test="dictionary_value!=null and dictionary_value!=''">
+				and dictionary_value like '%' #{dictionary_value} '%'
+			</if>
+			<if test="dictionary_create_time!=null and dictionary_create_time!=''">
+				and dictionary_create_time like '%'
+				#{dictionary_create_time} '%'
+			</if>
+		</where>
+		limit #{start},#{dataSize}
+	</select>
+
 </mapper>  

@@ -27,4 +27,10 @@ public interface IDictionaryDao {
 
 	// 修改数据字典
 	public Integer updateDictionary(Map<String, String> map);
+
+	// 分页模糊查询数据总数
+	public Integer getDataTotal(Map<String, String> map);
+
+	// 分页模糊查询数据
+	public List<Map<String, Object>> getDataByConditions(Map<String, Object> map);
 }

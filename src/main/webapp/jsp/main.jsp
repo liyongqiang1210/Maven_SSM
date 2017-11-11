@@ -76,66 +76,63 @@
 	</div>
 	<!--左侧导航-->
 	<div class="div-left-nav">
-		<div class="nav-title">
-			<p>欢迎您</p>
-		</div>
 		<!--菜单列表-->
 		<div class="nav">
 			<ul class="ul-menu menu-ul-list">
-				<li class="li-nav-item"><a href="javascript:;"><cite>首页</cite></a>
+				<li class="li-nav-item"><a href="javascript:;">首页</a>
 				</li>
-				<li class="li-nav-item user"><a href="javascript:;"><cite>用户管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</cite><span
+				<li class="li-nav-item user"><a href="javascript:;">用户管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 						class="menu-icon menu-user-icon span-close"></a></li>
 				<ul class="li-ul-menu user-list">
-					<li class="li-nav-item"><a href="javascript:;"><cite>新浪新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">新浪新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>腾讯新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">腾讯新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>搜狐新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">搜狐新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>凤凰网</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">凤凰网</a>
 					</li>
 				</ul>
-				<li class="li-nav-item system"><a href="javascript:;"><cite>系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</cite><span
+				<li class="li-nav-item system"><a href="javascript:;">系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 						class="menu-icon menu-system-icon span-close"></a></li>
 				<ul class="li-ul-menu system-list">
-					<li class="li-nav-item"><a href="javascript:;"><cite>新浪新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">新浪新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>腾讯新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">腾讯新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>搜狐新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">搜狐新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>凤凰网</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">凤凰网</a>
 					</li>
 				</ul>
-				<li class="li-nav-item news"><a href="javascript:;"><cite>新闻数据列表</cite><span
+				<li class="li-nav-item news"><a href="javascript:;">新闻数据列表<span
 						class="menu-icon menu-news-icon span-close"></span></a></li>
 				<ul class="li-ul-menu news-list">
-					<li class="li-nav-item"><a href="javascript:;"><cite>新浪新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">新浪新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>腾讯新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">腾讯新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>搜狐新闻</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">搜狐新闻</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>凤凰网</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">凤凰网</a>
 					</li>
 				</ul>
-				<li class="li-nav-item shop"><a href="javascript:;"><cite>商品数据列表</cite><span
+				<li class="li-nav-item shop"><a href="javascript:;">商品数据列表<span
 						class="menu-icon menu-shop-icon span-close"></span></a></li>
 				<ul class="li-ul-menu shop-list">
-					<li class="li-nav-item"><a href="javascript:;"><cite>服装</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">服装</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>数码</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">数码</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>手机</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">手机</a>
 					</li>
-					<li class="li-nav-item"><a href="javascript:;"><cite>零食</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">零食</a>
 					</li>
 				</ul>
-				<li class="li-nav-item dictionary"><a href="javascript:;"><cite>数据字典列表</cite><span
-						class="menu-icon menu-shop-icon span-close"></span></a></li>
+				<li class="li-nav-item dictionary"><a href="javascript:;">数据字典列表<span
+						class="menu-icon menu-dictionary-icon span-close"></span></a></li>
 				<ul class="li-ul-menu dictionary-list">
-					<li class="li-nav-item"><a href="javascript:;"><cite>博客园</cite></a>
+					<li class="li-nav-item"><a href="javascript:;">博客园</a>
 					</li>
 				</ul>
 			</ul>
