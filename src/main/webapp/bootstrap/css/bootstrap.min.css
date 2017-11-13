@@ -16,7 +16,7 @@ html {
 body {
 	margin: 0;
 	min-width: 1100px;
-	min-height: 500px;
+	min-height: 400px;
 }
 
 article,
@@ -2819,7 +2819,7 @@ th {
 .table {
 	width: 100%;
 	max-width: 100%;
-	margin-bottom: 20px
+	margin-bottom: 10px
 }
 
 .table>tbody>tr>td,
@@ -6528,7 +6528,7 @@ button.list-group-item-danger.active:hover {
 }
 
 .panel {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background-color: #fff;
 	border: 1px solid transparent;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);

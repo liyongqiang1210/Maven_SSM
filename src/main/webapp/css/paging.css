@@ -1,13 +1,11 @@
 /*自定义样式*/
 
-
 /*分页样式*/
-
 .paging {
 	background-color: #FFFFFF;
 	height: 50px;
 	width: auto;
-	padding: 10px 15% 10px 15%;
+	padding: 10px 15% 20px 15%;
 }
 
 .paging-btn {
@@ -46,6 +44,11 @@
 	border: 1px solid black;
 }
 
-.paging-pages-btn:focus{
+.paging-pages-btn:focus {
 	background-color: #0088CC;
+}
+
+.panel-update {
+	border: 0px;
+	margin-bottom: 0px;
 }

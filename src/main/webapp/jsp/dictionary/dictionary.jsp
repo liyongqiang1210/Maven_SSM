@@ -17,7 +17,7 @@
 <script src="js/table.js"></script>
 </head>
 <body>
-	<div class="panel panel-default">
+	<div class="panel panel-default panel-update">
 		<div class="panel-heading">数据字典</div>
 		<div class="panel-body">
 			<div class="panel panel-default">
