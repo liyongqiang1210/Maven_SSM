@@ -14,7 +14,9 @@ html {
 }
 
 body {
-	margin: 0
+	margin: 0;
+	min-width: 1100px;
+	min-height: 500px;
 }
 
 article,
@@ -1986,7 +1988,7 @@ pre code {
 	margin-left: auto
 }
 
-@media (min-width:768px) {
+/*@media (min-width:768px) {
 	.container {
 		width: 750px
 	}
@@ -2000,9 +2002,9 @@ pre code {
 
 @media (min-width:1200px) {
 	.container {
-		width: 1170px
+		width: 1500px
 	}
-}
+}*/
 
 .container-fluid {
 	padding-right: 15px;
@@ -3137,8 +3139,8 @@ output {
 }
 
 .form-control {
-	display: block;
-	width: 100%;
+	display: inline-block;
+	width: 60%;
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
@@ -6529,7 +6531,6 @@ button.list-group-item-danger.active:hover {
 	margin-bottom: 20px;
 	background-color: #fff;
 	border: 1px solid transparent;
-	border-radius: 4px;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 }
@@ -6541,8 +6542,6 @@ button.list-group-item-danger.active:hover {
 .panel-heading {
 	padding: 10px 15px;
 	border-bottom: 1px solid transparent;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px
 }
 
 .panel-heading>.dropdown .dropdown-toggle {

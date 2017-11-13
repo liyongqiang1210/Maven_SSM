@@ -1,0 +1,51 @@
+/*自定义样式*/
+
+
+/*分页样式*/
+
+.paging {
+	background-color: #FFFFFF;
+	height: 50px;
+	width: auto;
+	padding: 10px 15% 10px 15%;
+}
+
+.paging-btn {
+	border-radius: 0px;
+	margin-right: 5px;
+}
+
+.paging-input {
+	height: 34px;
+	width: 55px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.paging-pages {
+	display: inline-block;
+	height: 34px;
+	width: 275px;
+}
+
+.paging-pages-btn {
+	height: 34px;
+	width: 55px;
+	border-radius: 0px;
+	margin-left: -2px;
+	margin-right: -2px;
+}
+
+.paging-p {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.paging-input:focus {
+	border: 1px solid black;
+}
+
+.paging-pages-btn:focus{
+	background-color: #0088CC;
+}
