@@ -14,7 +14,8 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/paging.css" />
 <script type="text/javascript" src="jquery-2.0.0/jquery.min.js"></script>
-<script src="js/table.js"></script>
+<script src="js/checkbox.js"></script>
+<script src="jsp/dictionary/dictionary.js"></script>
 </head>
 <body>
 	<div class="panel panel-default panel-update">
@@ -24,17 +25,17 @@
 				<div class="panel-body">
 					<form class="form-inline">
 						<div class="form-group">
-							<label for="exampleInputName2">字典key: </label> <input type="text"
-								class="form-control" id="exampleInputName2"
+							<label for="dictionary-key">字典key: </label> <input type="text"
+								class="form-control" id="dictionary-key" 
 								placeholder="请输入字典的key值">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail2">创建时间: </label> <input
-								type="email" class="form-control" id="exampleInputEmail2"
+							<label for="dictionary-create-time">创建时间: </label> <input
+								type="email" class="form-control" id="dictionary-create-time"
 								placeholder="请输入创建时间">
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-default">查询</button>
+							<button type="submit" class="btn btn-default" id="select">查询</button>
 						</div>
 						<div class="form-group">
 							<button type="button" class="btn btn-default">添加数据字典</button>
@@ -47,15 +48,15 @@
 				<thead>
 					<tr class="active">
 						<th style="width: 2%;"><input type="checkbox" id="all"></th>
-						<th style="width: 20%;">字典ID</th>
+						<th style="width: 30%;">字典ID</th>
 						<th style="width: 15%;">字典key</th>
 						<th style="width: 15%;">字典value</th>
 						<th style="width: 15%;">创建时间</th>
-						<th style="width: 25%;">编辑</th>
+						<th style="width: 15%;">编辑</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
+				<tbody id="tbody">
+					<!-- <tr>
 						<td><input type="checkbox" name="option"></td>
 						<td>Bangalore</td>
 						<td>560001</td>
@@ -164,7 +165,7 @@
 							<button type="button" class="btn btn-info btn-xs">编辑</button>
 							<button type="button" class="btn btn-danger btn-xs">删除</button>
 						</td>
-					</tr>
+					</tr> -->
 				</tbody>
 			</table>
 			<div class="paging">

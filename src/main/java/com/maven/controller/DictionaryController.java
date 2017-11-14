@@ -71,7 +71,22 @@ public class DictionaryController {
 	@RequestMapping(value = "/insertDictionary", produces = "text/html;charset=UTF-8;")
 	@ResponseBody
 	public String insertDictionary(String dictionary_key, String dictionary_value) {
-
+		// int state = 1;
+		// for(int i = 0;i<1000;i++){
+		// if(state == 1){
+		// String ID = UUID.randomUUID().toString();
+		// Dictionary dict = new Dictionary();
+		// dict.setDictionary_id(ID);
+		// dict.setDictionary_key("测试"+i);
+		// dict.setDictionary_value("ceshi"+i);
+		// dict.setDictionary_create_time("2017-11-14 :00:22");
+		// dict.setDictionary_creater("李永强");
+		// state= dictService.insertDictionary(dict);
+		// }else{
+		// System.out.println("第"+i+"条添加失败!");
+		// }
+		//
+		// }
 		String ID = UUID.randomUUID().toString();
 		Dictionary dict = new Dictionary();
 		dict.setDictionary_id(ID);
@@ -169,13 +184,13 @@ public class DictionaryController {
 	public String getDataByConditions(String dictionary_key, String dictionary_value, String dictionary_create_time,
 			Integer page) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		if(page == null){
+		if (page == null) {
 			page = 0;
 		}
 		map.put("dictionary_key", dictionary_key);
-		map.put("dictionary_value", dictionary_value);
+		map.put("dictionary_value", "");
 		map.put("dictionary_create_time", dictionary_create_time);
-		map.put("start", page*10);
+		map.put("start", page * 10);
 		map.put("dataSize", 10);
 		List<Map<String, Object>> dataByConditions = dictService.getDataByConditions(map);
 		JSONArray jsonArray = JSONArray.fromObject(dataByConditions);
