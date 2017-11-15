@@ -24,14 +24,13 @@
 	display: inline-block;
 	height: 34px;
 	width: 275px;
+	margin-right: 5px;
 }
 
 .paging-pages-btn {
 	height: 34px;
 	width: 55px;
 	border-radius: 0px;
-	margin-left: -2px;
-	margin-right: -2px;
 }
 
 .paging-p {

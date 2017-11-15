@@ -172,18 +172,13 @@
 				<button type="button" class="btn btn-default paging-btn">首页</button>
 				<button type="button" class="btn btn-default paging-btn">上一页</button>
 				<div class="paging-pages">
-					<button type="button" class="btn btn-default paging-pages-btn">1</button>
-					<button type="button" class="btn btn-default paging-pages-btn">2</button>
-					<button type="button" class="btn btn-default paging-pages-btn">3</button>
-					<button type="button" class="btn btn-default paging-pages-btn">4</button>
-					<button type="button" class="btn btn-default paging-pages-btn">5</button>
 				</div>
 				<button type="button" class="btn btn-default paging-btn">下一页</button>
 				<button type="button" class="btn btn-default paging-btn">尾页</button>
 				<input type="text" class="paging-input" />
 				<button type="button" class="btn btn-default paging-btn">跳转</button>
-				<p class="paging-p">共30页</p>
-				<p class="paging-p">合计1000条数据</p>
+				<p class="paging-p" id="p-pageTotal"></p>
+				<p class="paging-p" id="p-dataTotal"></p>
 			</div>
 		</div>
 	</div>
