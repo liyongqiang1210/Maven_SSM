@@ -13,7 +13,8 @@
 <title>后台管理系统</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/paging.css" />
-<script type="text/javascript" src="jquery-2.0.0/jquery.min.js"></script>
+<script src="jquery-2.0.0/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/checkbox.js"></script>
 <script src="jsp/dictionary/dictionary.js"></script>
 </head>
@@ -26,7 +27,7 @@
 					<form class="form-inline">
 						<div class="form-group">
 							<label for="dictionary-key">字典key: </label> <input type="text"
-								class="form-control" id="dictionary-key" 
+								class="form-control" id="dictionary-key"
 								placeholder="请输入字典的key值">
 						</div>
 						<div class="form-group">
@@ -38,7 +39,7 @@
 							<button type="submit" class="btn btn-default" id="select">查询</button>
 						</div>
 						<div class="form-group">
-							<button type="button" class="btn btn-default">添加数据字典</button>
+							<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#addDictionary">添加数据字典</button>
 							<button type="button" class="btn btn-default">删除所选</button>
 						</div>
 					</form>
@@ -56,123 +57,12 @@
 					</tr>
 				</thead>
 				<tbody id="tbody">
-					<!-- <tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="option"></td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>Bangalore</td>
-						<td>560001</td>
-						<td>
-							<button type="button" class="btn btn-info btn-xs">编辑</button>
-							<button type="button" class="btn btn-danger btn-xs">删除</button>
-						</td>
-					</tr> -->
 				</tbody>
 			</table>
 			<div class="paging">
 				<button type="button" class="btn btn-default paging-btn">首页</button>
 				<button type="button" class="btn btn-default paging-btn">上一页</button>
-				<div class="paging-pages">
-				</div>
+				<div class="paging-pages"></div>
 				<button type="button" class="btn btn-default paging-btn">下一页</button>
 				<button type="button" class="btn btn-default paging-btn">尾页</button>
 				<input type="text" class="paging-input" />
@@ -181,6 +71,50 @@
 				<p class="paging-p" id="p-dataTotal"></p>
 			</div>
 		</div>
+	</div>
+	<!-- Modal -->
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="addDictionary" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">添加数据字典</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<div class="col-sm-2"></div>
+							<label for="dictionary-key-add" class="col-sm-2 control-label">字典key:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="dictionary-key-add"
+									placeholder="请输入字典key"> <span
+									class="glyphicon glyphicon-ok"></span>
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2"></div>
+							<label for="dictionary-value-add" class="col-sm-2 control-label">字典value:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="dictionary-value-add"
+									placeholder="请输入字典value"> <span
+									class="glyphicon glyphicon-ok"></span>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" id="submit">提交</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
 	</div>
 </body>
 </html>

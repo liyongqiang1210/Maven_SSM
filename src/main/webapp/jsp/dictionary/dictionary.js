@@ -3,11 +3,35 @@ $(document).ready(function() {
 	checkBox();
 	var dictionary_key = $("#dictionary-key").val();
 	var dictionary_create_time = $("#dictionary-create-time").val();
+	var dictionary_key_add = $("#dictionary-key-add").val();
+	var dictionary_value_add = $("#dictionary-value-add").val();
 	// 页数默认为1
 	var page = 1;
 	// 调用页面数据组装方法
 	paging(dictionary_key, dictionary_create_time, page);
-	
+
+	$("#submit").click(function() {
+		$.ajax({
+			url : "/Maven_SSM/dictionary/insertDictionary",
+			data : {
+				"dictionary_key" : $("#dictionary-key-add").val(),
+				"dictionary_value" : $("#dictionary-value-add").val()
+			},
+			type : "post",
+			dateType : "json",
+			success : function(data) {
+				var state = JSON.parse(data).state;
+				if(state == 1){
+					$("#addDictionary").modal("hide");
+				}else{
+					alert("添加失败");
+				}
+			},error:function(){
+				alert("出现异常");
+			}
+		});
+		
+	});
 
 });
 function paging(dictionary_key, dictionary_create_time, page) {
@@ -56,23 +80,24 @@ function paging(dictionary_key, dictionary_create_time, page) {
 	});
 }
 
-//拼接页按钮
-function addPage(data){
+// 拼接页按钮
+function addPage(data) {
 	var str = "";
-	if(data>5){
-		for(var i = 1;i<6;i++){
-			str += "<button type='button' class='btn btn-default paging-pages-btn'>"+i+"</button>";
+	if (data > 5) {
+		for (var i = 1; i < 6; i++) {
+			str += "<button type='button' class='btn btn-default paging-pages-btn'>"
+					+ i + "</button>";
 		}
-	}else if(data == 0){
-		$(".paging-pages").css("width",data*55+"px");
-		$("div.paging>button").prop("disabled","disabled");
-	}else{
-		$(".paging-pages").css("width",data*55+"px");
-		for(var i = 1;i<data+1;i++){
-			str += "<button type='button' class='btn btn-default paging-pages-btn'>"+i+"</button>";
+	} else if (data == 0) {
+		$(".paging-pages").css("width", data * 55 + "px");
+		$("div.paging>button").prop("disabled", "disabled");
+	} else {
+		$(".paging-pages").css("width", data * 55 + "px");
+		for (var i = 1; i < data + 1; i++) {
+			str += "<button type='button' class='btn btn-default paging-pages-btn'>"
+					+ i + "</button>";
 		}
 	}
-	
-	
+
 	$("div.paging-pages").empty().append(str);
 }
