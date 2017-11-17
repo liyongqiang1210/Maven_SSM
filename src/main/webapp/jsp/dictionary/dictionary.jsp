@@ -39,8 +39,8 @@
 							<button type="submit" class="btn btn-default" id="select">查询</button>
 						</div>
 						<div class="form-group">
-							<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#addDictionary">添加数据字典</button>
-							<button type="button" class="btn btn-default">删除所选</button>
+							<button type="button" id="add" class="btn btn-default"  data-toggle="modal" data-target="#addDictionary">添加数据字典</button>
+							<button type="button" id="deleteSelect" class="btn btn-default">删除所选</button>
 						</div>
 					</form>
 				</div>
@@ -90,8 +90,7 @@
 							<label for="dictionary-key-add" class="col-sm-2 control-label">字典key:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="dictionary-key-add"
-									placeholder="请输入字典key"> <span
-									class="glyphicon glyphicon-ok"></span>
+									placeholder="请输入字典key">
 							</div>
 							<div class="col-sm-2"></div>
 						</div>
@@ -100,8 +99,7 @@
 							<label for="dictionary-value-add" class="col-sm-2 control-label">字典value:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="dictionary-value-add"
-									placeholder="请输入字典value"> <span
-									class="glyphicon glyphicon-ok"></span>
+									placeholder="请输入字典value">
 							</div>
 						</div>
 					</form>
@@ -109,12 +107,10 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
 					</button>
-					<button type="button" class="btn btn-primary" id="submit">提交</button>
+					<button type="button" class="btn btn-primary" id="submit" onclick="submit()">提交</button>
 				</div>
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal -->
 	</div>
 </body>
 </html>
