@@ -13,7 +13,7 @@
 <title>后台管理系统</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/paging.css" />
-<script src="jquery-2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/checkbox.js"></script>
 <script src="jsp/dictionary/dictionary.js"></script>

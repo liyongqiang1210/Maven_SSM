@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <title>后台管理系统</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-<script type="text/javascript" src="jquery-2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="icon" href="585150.png">
 <script>

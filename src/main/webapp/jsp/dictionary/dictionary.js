@@ -7,7 +7,12 @@ $(document).ready(function() {
 	var page = 1;
 	// 调用页面数据组装方法
 	paging(dictionary_key, dictionary_create_time, page);
-
+	/* 为每个按钮绑定点击事件 */
+	$("#tbody").on("click","button[name='edit']", function() {
+		/* 获取当前行某一列的数据 */
+		var text = $(this).parents("tr").find("td:eq(1)");
+		alert(text.text());
+	});
 	// 点击添加按钮时清空model中的值
 	$("#add").click(function() {
 		$("input").val("");
@@ -51,10 +56,6 @@ $(document).ready(function() {
 	});
 
 });
-
-function edit(){
-	
-}
 
 // 校验value值方法
 function dictionary_value_add() {
@@ -126,7 +127,7 @@ function paging(dictionary_key, dictionary_create_time, page) {
 									+ "</td><td>"
 									+ data[i].dictionary_create_time
 									+ "</td><td>"
-									+ "<button type='button' class='btn btn-info btn-xs' onclick='edit()'>编辑</button><button type='button' class='btn btn-danger btn-xs' name = 'delete'>删除</button></td></tr>";
+									+ "<button type='button' class='btn btn-info btn-xs' name='edit'>编辑</button><button type='button' class='btn btn-danger btn-xs' name = 'delete'>删除</button></td></tr>";
 						}
 						$("#tbody").empty().append(str);
 					}
