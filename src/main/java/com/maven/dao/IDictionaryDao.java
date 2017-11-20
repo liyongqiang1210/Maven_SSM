@@ -23,7 +23,7 @@ public interface IDictionaryDao {
 	public Integer insertDictionary(Dictionary dict);
 
 	// 根据ID删除数据字典
-	public Integer deleteDictionary(String ID);
+	public Integer deleteDictionaryByID(String ID);
 
 	// 修改数据字典
 	public Integer updateDictionary(Map<String, String> map);

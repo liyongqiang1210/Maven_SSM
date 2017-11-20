@@ -29,7 +29,7 @@ public class DictionaryController {
 
 	@Autowired
 	private DictionaryService dictService;
-	private DateUtil dateUtil;
+	DateUtil dateUtil = new DateUtil();
 
 	/**
 	 * 获取全部数据字典
@@ -53,8 +53,8 @@ public class DictionaryController {
 	 */
 	@RequestMapping(value = "/selectDictionaryByID", produces = "text/html;charset=UTF-8;")
 	@ResponseBody
-	public String selectDictionaryByID(String ID) {
-		Map<String, String> map = dictService.selectDictionaryByID(ID);
+	public String selectDictionaryByID(String dictionary_id) {
+		Map<String, String> map = dictService.selectDictionaryByID(dictionary_id);
 		String json = JSON.toJSONString(map);
 		return json;
 
@@ -76,7 +76,7 @@ public class DictionaryController {
 		dict.setDictionary_id(ID);
 		dict.setDictionary_key(dictionary_key);
 		dict.setDictionary_value(dictionary_value);
-		dict.setDictionary_create_time("2017-11-14 20:00:22");
+		dict.setDictionary_create_time(dateUtil.getYMDHMS());
 		dict.setDictionary_creater("李永强");
 		Integer state = dictService.insertDictionary(dict);
 		json.put("state", state);
@@ -90,15 +90,23 @@ public class DictionaryController {
 	 * @param dictionary_id
 	 * @return
 	 */
-	@RequestMapping(value = "/deleteDictionary", produces = "text/html;charset=UTF-8;")
+	@RequestMapping(value = "/deleteDictionaryByID", produces = "text/html;charset=UTF-8;")
 	@ResponseBody
-	public String deleteDictionary(String dictionary_id) {
+	public String deleteDictionaryByID(String dictionary_id) {
 		JSONObject json = new JSONObject();
-		Integer state = dictService.deleteDictionary(dictionary_id);
+		Integer state = dictService.deleteDictionaryByID(dictionary_id);
 		json.put("state", state);
 		return json.toString();
 
 	}
+	/*@RequestMapping(value = "/deleteDictionarysByID", produces = "text/html;charset=UTF-8;")
+	@ResponseBody
+	public String deleteDictionarysByID(List<String> list) {
+		Integer state = dictService.deleteDictionarysByID(list);
+		json.put("state", state);
+		return json.toString();
+
+	}*/
 
 	/**
 	 * 更新数据字典
@@ -108,17 +116,18 @@ public class DictionaryController {
 	 * @return
 	 */
 	@RequestMapping(value = "/updateDictionary", produces = "text/html;charset=UTF-8;")
-	public Integer updateDictionary(String dictionary_key, String dictionary_value) {
+	@ResponseBody
+	public String updateDictionary(String dictionary_id, String dictionary_key, String dictionary_value) {
 		Map<String, String> map = new HashMap<String, String>();
+		map.put("dictionary_id", dictionary_id);
 		map.put("dictionary_key", dictionary_key);
 		map.put("dictionary_value", dictionary_value);
 		map.put("dictionary_modifier", "李永强");
 		map.put("dictionary_update_time", dateUtil.getYMDHMS());
-
 		Integer state = dictService.updateDictionary(map);
-
-		return state;
-
+		JSONObject json = new JSONObject();
+		json.put("state", state);
+		return json.toString();
 	}
 
 	/**

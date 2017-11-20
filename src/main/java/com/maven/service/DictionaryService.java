@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.maven.dao.IDictionaryDao;
 import com.maven.entity.Dictionary;
@@ -31,9 +32,9 @@ public class DictionaryService {
 		return dictionaryDao.insertDictionary(dict);
 	}
 
-	public Integer deleteDictionary(String ID) {
+	public Integer deleteDictionaryByID(String ID) {
 
-		return dictionaryDao.deleteDictionary(ID);
+		return dictionaryDao.deleteDictionaryByID(ID);
 	}
 
 	public Integer updateDictionary(Map<String, String> map) {
@@ -51,6 +52,22 @@ public class DictionaryService {
 
 		return dictionaryDao.getDataByConditions(map);
 
+	}
+
+	@Transactional
+	public Integer deleteDictionarysByID(List<String> list) {
+		try {
+			for(int i = 0;i<list.size();i++){
+				if(i<2){
+					deleteDictionaryByID(list.get(i));
+				}else{
+					throw new RuntimeException();
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

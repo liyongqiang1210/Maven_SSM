@@ -39,7 +39,8 @@
 							<button type="submit" class="btn btn-default" id="select">查询</button>
 						</div>
 						<div class="form-group">
-							<button type="button" id="add" class="btn btn-default"  data-toggle="modal" data-target="#addDictionary">添加数据字典</button>
+							<button type="button" id="add" class="btn btn-default"
+								data-toggle="modal" data-target="#addDictionary">添加数据字典</button>
 							<button type="button" id="deleteSelect" class="btn btn-default">删除所选</button>
 						</div>
 					</form>
@@ -73,44 +74,16 @@
 		</div>
 	</div>
 	<!-- Modal -->
-	<!-- 模态框（Modal） -->
+	<!-- 添加模态框（Modal） -->
 	<div class="modal fade" id="addDictionary" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">添加数据字典</h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" role="form">
-						<div class="form-group">
-							<div class="col-sm-2"></div>
-							<label for="dictionary-key-add" class="col-sm-2 control-label">字典key:</label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" id="dictionary-key-add"
-									placeholder="请输入字典key">
-							</div>
-							<div class="col-sm-2"></div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-2"></div>
-							<label for="dictionary-value-add" class="col-sm-2 control-label">字典value:</label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" id="dictionary-value-add"
-									placeholder="请输入字典value">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-					</button>
-					<button type="button" class="btn btn-primary" id="submit" onclick="submit()">提交</button>
-				</div>
-			</div>
-		</div>
+		aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<!--编辑弹框  -->
+	<div class="modal fade" id="updateDictionary" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	</div>
+	<!--删除弹框  -->
+	<div class="modal fade bs-example-modal-sm" id="deleteDictionary"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true"></div>
 </body>
 </html>

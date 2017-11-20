@@ -57,7 +57,7 @@
 		dictionary_id = #{dictionary_id}
 	</update>
 	<!-- 删除数据字典 -->
-	<delete id="deleteDictionary" parameterType="java.lang.String">
+	<delete id="deleteDictionaryByID" parameterType="java.lang.String">
 		delete from
 		dictionary
 		where dictionary_id = #{dictionary_id}
