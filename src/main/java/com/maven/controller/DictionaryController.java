@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
@@ -99,14 +100,20 @@ public class DictionaryController {
 		return json.toString();
 
 	}
-	/*@RequestMapping(value = "/deleteDictionarysByID", produces = "text/html;charset=UTF-8;")
+	/**
+	 * 删除所选数据字典(list集合)
+	 * @param list
+	 * @return
+	 */
+	@RequestMapping(value = "/deleteDictionarysByID", produces = "text/html;charset=UTF-8;")
 	@ResponseBody
-	public String deleteDictionarysByID(List<String> list) {
+	public String deleteDictionarysByID(@RequestParam(required = false, value = "list[]") List<String> list) {
+		JSONObject json = new JSONObject();
 		Integer state = dictService.deleteDictionarysByID(list);
 		json.put("state", state);
 		return json.toString();
 
-	}*/
+	}
 
 	/**
 	 * 更新数据字典

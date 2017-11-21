@@ -56,18 +56,22 @@ public class DictionaryService {
 
 	@Transactional
 	public Integer deleteDictionarysByID(List<String> list) {
+		int h = 0;
+		int state = 0;
 		try {
 			for(int i = 0;i<list.size();i++){
-				if(i<2){
-					deleteDictionaryByID(list.get(i));
+				h = deleteDictionaryByID(list.get(i));
+				if(h == 1){
+					state = 1;
 				}else{
+					state=0;
 					throw new RuntimeException();
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return state;
 	}
 
 }

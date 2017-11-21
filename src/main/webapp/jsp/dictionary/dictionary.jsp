@@ -41,7 +41,8 @@
 						<div class="form-group">
 							<button type="button" id="add" class="btn btn-default"
 								data-toggle="modal" data-target="#addDictionary">添加数据字典</button>
-							<button type="button" id="deleteSelect" class="btn btn-default">删除所选</button>
+							<button type="button" id="deleteSelect" class="btn btn-default"
+								data-toggle="modal" data-target="#deleteDictionarys">删除所选</button>
 						</div>
 					</form>
 				</div>
@@ -83,6 +84,10 @@
 	</div>
 	<!--删除弹框  -->
 	<div class="modal fade bs-example-modal-sm" id="deleteDictionary"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true"></div>
+	<!--删除所选弹框  -->
+	<div class="modal fade bs-example-modal-sm" id="deleteDictionarys"
 		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 		aria-hidden="true"></div>
 </body>

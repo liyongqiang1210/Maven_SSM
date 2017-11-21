@@ -1,5 +1,7 @@
 $(document).ready(
 		function() {
+			//选中的id集合
+			var list_id = new Array();
 			var dictionary_key = $("#dictionary-key").val();
 			var dictionary_create_time = $("#dictionary-create-time").val();
 			var id = "";
@@ -85,6 +87,31 @@ $(document).ready(
 			$("#submit-delete").click(function() {
 				submit_delete(id);
 			});
+			
+			//删除所选事件
+			$("#submit-deletes").click(function() {
+				//获取选中的数据集合
+				$("[name='option']:checked").each(function() {
+					var id = $(this).parents("tr").find("td:eq(1)").text();
+					list_id.push(id);
+				});
+				$.ajax({
+					url:"/Maven_SSM/dictionary/deleteDictionarysByID",
+					data:{"list":list_id},
+					dateType:"json",
+					type:"post",
+					success:function(){
+						$("#deleteDictionarys").modal("hide");
+						//将数组清空
+						list_id.length = 0;
+						window.location.reload();
+					},
+					error:function(){
+						
+					}
+				});
+			
+			});
 
 		});
 // -----------------------------------------组装页面start-----------------------------------------------------------------------
@@ -96,6 +123,8 @@ function dictionaryModal() {
 	$("#updateDictionary").append(update_str);
 	var delete_str = "<div class='modal-dialog modal-sm' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>删除数据字典</h4></div><div class='modal-body'><p>是否删除？</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>否</button><button type='button' class='btn btn-primary' id='submit-delete'>是</button></div></div></div>";
 	$("#deleteDictionary").append(delete_str);
+	var deletes_str = "<div class='modal-dialog modal-sm' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>删除选中数据字典</h4></div><div class='modal-body'><p>是否删除选中的数据？</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>否</button><button type='button' class='btn btn-primary' id='submit-deletes'>是</button></div></div></div>";
+	$("#deleteDictionarys").append(deletes_str);
 }
 // 获取页面数据方法
 function paging(dictionary_key, dictionary_create_time, page) {
