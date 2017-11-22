@@ -11,7 +11,7 @@ $(document).ready(
 			checkBox();
 			// 添加数据字典模态框
 			dictionaryModal();
-			// 调用页面数据组装方法
+			// 调用分页数据组装方法
 			paging(dictionary_key, dictionary_create_time, page);
 			// 为每个编辑按钮绑定点击事件
 			$("#tbody").on(
@@ -87,7 +87,7 @@ $(document).ready(
 			$("#submit-delete").click(function() {
 				submit_delete(id);
 			});
-			
+
 			//删除所选事件
 			$("#submit-deletes").click(function() {
 				//获取选中的数据集合
@@ -96,23 +96,24 @@ $(document).ready(
 					list_id.push(id);
 				});
 				$.ajax({
-					url:"/Maven_SSM/dictionary/deleteDictionarysByID",
-					data:{"list":list_id},
-					dateType:"json",
-					type:"post",
-					success:function(){
+					url : "/Maven_SSM/dictionary/deleteDictionarysByID",
+					data : {
+						"list" : list_id
+					},
+					dateType : "json",
+					type : "post",
+					success : function() {
 						$("#deleteDictionarys").modal("hide");
 						//将数组清空
 						list_id.length = 0;
 						window.location.reload();
 					},
-					error:function(){
-						
+					error : function() {
+
 					}
 				});
-			
-			});
 
+			});
 		});
 // -----------------------------------------组装页面start-----------------------------------------------------------------------
 // 添加弹框
@@ -166,33 +167,18 @@ function paging(dictionary_key, dictionary_create_time, page) {
 		data : {},
 		dataType : "json",
 		success : function(data) {
-			addPage(data.pageTotal);
-			$("#p-pageTotal").append("共" + data.pageTotal + "页");
-			$("#p-dataTotal").append("合计" + data.dataTotal + "条数据");
+			$('#paging').paging({
+				initPageNo : 1, // 初始页码
+				totalPages : data.pageTotal, //总页数
+				totalCount : '合计' + data.dataTotal + '条数据', // 条目总数
+				slideSpeed : 600, // 缓动速度。单位毫秒
+				jump : true, //是否支持跳转
+				callback : function(page) { // 回调函数
+					console.log(page);
+				}
+			});
 		}
 	});
-}
-
-// 拼接页码按钮
-function addPage(data) {
-	var str = "";
-	if (data > 5) {
-		for (var i = 1; i < 6; i++) {
-			str += "<button type='button' class='btn btn-default paging-pages-btn'>"
-					+ i + "</button>";
-		}
-	} else if (data == 0) {
-		$(".paging-pages").css("width", data * 55 + "px");
-		$("div.paging>button").prop("disabled", "disabled");
-	} else {
-		$(".paging-pages").css("width", data * 55 + "px");
-		for (var i = 1; i < data + 1; i++) {
-			str += "<button type='button' class='btn btn-default paging-pages-btn'>"
-					+ i + "</button>";
-		}
-	}
-
-	$("div.paging-pages").empty().append(str);
 }
 // ---------------------------------------------------------组装页面end-----------------------------------------------------------------------
 // ---------------------------------------------------------表单验证start-------------------------------------------------------------

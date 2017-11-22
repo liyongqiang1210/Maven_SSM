@@ -12,10 +12,11 @@
 <meta charset="UTF-8">
 <title>后台管理系统</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/paging.css" />
+<link rel="stylesheet" href="css/paging/paging.css" />
 <script type="text/javascript" src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/checkbox.js"></script>
+<script src="js/paging.js"></script>
 <script src="jsp/dictionary/dictionary.js"></script>
 </head>
 <body>
@@ -61,17 +62,8 @@
 				<tbody id="tbody">
 				</tbody>
 			</table>
-			<div class="paging">
-				<button type="button" class="btn btn-default paging-btn">首页</button>
-				<button type="button" class="btn btn-default paging-btn">上一页</button>
-				<div class="paging-pages"></div>
-				<button type="button" class="btn btn-default paging-btn">下一页</button>
-				<button type="button" class="btn btn-default paging-btn">尾页</button>
-				<input type="text" class="paging-input" />
-				<button type="button" class="btn btn-default paging-btn">跳转</button>
-				<p class="paging-p" id="p-pageTotal"></p>
-				<p class="paging-p" id="p-dataTotal"></p>
-			</div>
+			<!--分页  -->
+			   <div class="paging" id="paging"></div>
 		</div>
 	</div>
 	<!-- Modal -->
