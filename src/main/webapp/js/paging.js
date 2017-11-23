@@ -110,10 +110,10 @@
                 if (pageIndex == 2 || pageIndex == 1) distance = 0;
                 if (pageIndex > totalPages - 2) distance = (totalPages - 5) * liWidth;
                 pageSelect.css('transform', 'translateX(' + (-distance) + 'px)');
-                pageIndex == 1 ? firstPage.attr('disabled', true) : firstPage.attr('disabled', false);
+                /*pageIndex == 1 ? firstPage.attr('disabled', true) : firstPage.attr('disabled', false);
                 pageIndex == 1 ? prePage.attr('disabled', true) : prePage.attr('disabled', false);
                 pageIndex == totalPages ? lastPage.attr('disabled', true) : lastPage.attr('disabled', false);
-                pageIndex == totalPages ? nextPage.attr('disabled', true) : nextPage.attr('disabled', false);
+                pageIndex == totalPages ? nextPage.attr('disabled', true) : nextPage.attr('disabled', false);*/
                 that.options.callback(pageIndex);
             }
 

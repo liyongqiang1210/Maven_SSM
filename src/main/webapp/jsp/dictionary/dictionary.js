@@ -1,9 +1,8 @@
 $(document).ready(
 		function() {
-			//选中的id集合
+
+			// 选中的id集合
 			var list_id = new Array();
-			var dictionary_key = $("#dictionary-key").val();
-			var dictionary_create_time = $("#dictionary-create-time").val();
 			var id = "";
 			// 页数默认为1
 			var page = 1;
@@ -11,8 +10,10 @@ $(document).ready(
 			checkBox();
 			// 添加数据字典模态框
 			dictionaryModal();
-			// 调用分页数据组装方法
-			paging(dictionary_key, dictionary_create_time, page);
+			// 查询首页数据
+			getPageData(page);
+			//获取页数与数据总数
+			var pageTotal = getPageTotalAndDataTotal(page);
 			// 为每个编辑按钮绑定点击事件
 			$("#tbody").on(
 					"click",
@@ -88,9 +89,9 @@ $(document).ready(
 				submit_delete(id);
 			});
 
-			//删除所选事件
+			// 删除所选事件
 			$("#submit-deletes").click(function() {
-				//获取选中的数据集合
+				// 获取选中的数据集合
 				$("[name='option']:checked").each(function() {
 					var id = $(this).parents("tr").find("td:eq(1)").text();
 					list_id.push(id);
@@ -104,9 +105,9 @@ $(document).ready(
 					type : "post",
 					success : function() {
 						$("#deleteDictionarys").modal("hide");
-						//将数组清空
+						// 将数组清空
 						list_id.length = 0;
-						window.location.reload();
+						getPageData(page);
 					},
 					error : function() {
 
@@ -114,6 +115,61 @@ $(document).ready(
 				});
 
 			});
+			// 根据页数获取页面数据
+			$("div.paging").on(
+					"click",
+					"ul#pageSelect>li",
+					function() {
+						// 获取选中的页数
+						var selectPage = $(this).parents("ul#pageSelect").find(
+								"li.sel-page").text();
+						page = selectPage-1;
+						// 获取选中页数据
+						getPageData(page);
+					});
+			// 上一页，下一页，首页，尾页
+			$("div.paging").on("click", "button#prePage", function() {
+				
+				if (parseInt(page) > 0) {
+					page = parseInt(page) - 1;
+				}
+				getPageData(page);
+
+			});
+			$("div.paging").on("click", "button#nextPage", function() {
+				
+				if(parseInt(page)<parseInt(pageTotal)-1){
+					page = parseInt(page)+1;
+				}
+				getPageData(page);
+
+			});
+			$("div.paging").on("click", "button#lastPage", function() {
+				page = pageTotal-1;
+				getPageData(pageTotal-1);
+
+			});
+			$("div.paging").on("click", "button#firstPage", function() {
+				page = 0;
+				getPageData(page);
+				/*if(page == 0){
+					$("button#firstPage").prop("disabled",true);
+					$("button#prePage").prop("disabled",true);
+				}
+				if(page+1 == pageTotal){
+					$("button#lastPage").prop("disabled",true);
+					$("button#nextPage").prop("disabled",true);
+				}*/
+			});
+			$("div.paging").on("click", "button#jumpBtn", function() {
+				var jump = $("input#jumpText").val();
+				if(jump!=""&&jump!=null&&jump<pageTotal){
+					page = jump-1;
+				}
+				getPageData(page);
+			});
+			
+
 		});
 // -----------------------------------------组装页面start-----------------------------------------------------------------------
 // 添加弹框
@@ -128,15 +184,17 @@ function dictionaryModal() {
 	$("#deleteDictionarys").append(deletes_str);
 }
 // 获取页面数据方法
-function paging(dictionary_key, dictionary_create_time, page) {
+function getPageData(page) {
 	// 获取详细数据
 	$
 			.ajax({
 				url : "/Maven_SSM/dictionary/getDataByConditions",
 				type : "post",
+				async : false,
 				data : {
-					"dictionary-key" : dictionary_key,
-					"dictionary-create-time" : dictionary_create_time,
+					"dictionary-key" : $("#dictionary-key").val(),
+					"dictionary-create-time" : $("#dictionary_create_time")
+							.val(),
 					"page" : page
 				},
 				dataType : "json",
@@ -155,35 +213,49 @@ function paging(dictionary_key, dictionary_create_time, page) {
 									+ "</td><td>"
 									+ "<button type='button' class='btn btn-info btn-xs' name='edit' data-toggle='modal' data-target='#updateDictionary'>编辑</button><button type='button' class='btn btn-danger btn-xs' name='delete' data-toggle='modal' data-target='#deleteDictionary'>删除</button></td></tr>";
 						}
-						$("#tbody").empty().append(str);
+						$("tbody#tbody").empty().append(str);
 					}
 				}
 
 			});
+
+}
+// 获取页数与数据总数
+function getPageTotalAndDataTotal(page) {
+	var pageTotal = 0;
 	// 获取页数与数据总数
 	$.ajax({
 		url : "/Maven_SSM/dictionary/getDataTotal",
 		type : "post",
-		data : {},
+		async : false,
+		data : {
+			"dictionary-key" : $("#dictionary-key").val(),
+			"dictionary-create-time" : $("#dictionary_create_time").val(),
+			"page" : page
+		},
 		dataType : "json",
 		success : function(data) {
 			$('#paging').paging({
-				initPageNo : 1, // 初始页码
-				totalPages : data.pageTotal, //总页数
+				initPageNo : page, // 初始页码
+				totalPages : data.pageTotal, // 总页数
 				totalCount : '合计' + data.dataTotal + '条数据', // 条目总数
-				slideSpeed : 600, // 缓动速度。单位毫秒
-				jump : true, //是否支持跳转
+				slideSpeed : 300, // 缓动速度。单位毫秒
+				jump : true, // 是否支持跳转
 				callback : function(page) { // 回调函数
 					console.log(page);
 				}
+			
 			});
+			pageTotal = data.pageTotal;
 		}
+		
 	});
+	return pageTotal;
 }
 // ---------------------------------------------------------组装页面end-----------------------------------------------------------------------
 // ---------------------------------------------------------表单验证start-------------------------------------------------------------
 // 添加提交表单方法
-function submit_add_check() {
+function submit_add_check(page) {
 	// 校验key值
 	dictionary_key_add();
 	// 校验value值
@@ -201,7 +273,7 @@ function submit_add_check() {
 				var state = JSON.parse(data).state;
 				if (state == 1) {
 					$("#addDictionary").modal("hide");
-					window.location.reload();
+					getPageData(page);
 				} else {
 					alert("添加失败");
 				}
@@ -213,7 +285,7 @@ function submit_add_check() {
 	}
 }
 // 更新提交表单方法
-function submit_update_check(id) {
+function submit_update_check(id,page) {
 	// 校验key值
 	dictionary_key_update();
 	// 校验value值
@@ -232,7 +304,7 @@ function submit_update_check(id) {
 				var state = JSON.parse(data).state;
 				if (state == 1) {
 					$("#updateDictionary").modal("hide");
-					window.location.reload();
+					getPageData(page);
 				} else {
 					alert("添加失败");
 				}
@@ -244,7 +316,7 @@ function submit_update_check(id) {
 	}
 }
 // 删除数据方法
-function submit_delete(id) {
+function submit_delete(id,page) {
 	// 根据id删除相应的数据
 	$.ajax({
 		url : "/Maven_SSM/dictionary/deleteDictionaryByID",
@@ -255,7 +327,7 @@ function submit_delete(id) {
 		dataType : "json",
 		success : function(data) {
 			$("#deleteDictionary").modal("hide");
-			window.location.reload();
+			getPageData(page);
 		},
 		error : function() {
 			alert("错误")

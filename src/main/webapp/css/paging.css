@@ -1,53 +1,79 @@
-/*自定义样式*/
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 
-/*分页样式*/
+.fl {
+	float: left;
+}
+
 .paging {
 	background-color: #FFFFFF;
 	height: 50px;
 	width: auto;
-	padding: 10px 15% 20px 15%;
+	text-align:center;
+	padding: 10px 15% 0px 15%;
 }
 
-.paging-btn {
-	border-radius: 0px;
-	margin-right: 5px;
+.paging button {
+	padding: 0 10px;
+	margin: 0 10px;
+	height: 40px;
+	float: left;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	background-color: #ffffff;
 }
 
-.paging-input {
-	height: 34px;
-	width: 55px;
-	padding-left: 5px;
-	padding-right: 5px;
+.paging .first-page, .paging .last-page {
+	margin: 0;
 }
 
-.paging-pages {
-	display: inline-block;
-	height: 34px;
-	width: 275px;
-	margin-right: 5px;
+.paging .pageWrap {
+	height: 40px;
+	float: left;
+	overflow: hidden;
 }
 
-.paging-pages-btn {
-	height: 34px;
-	width: 55px;
-	border-radius: 0px;
+.paging .pageWrap ul {
+	width: 100000px;
+	height: 40px;
+	float: left;
 }
 
-.paging-p {
-	display: inline-block;
-	margin-left: 10px;
-	margin-right: 10px;
+.paging .pageWrap ul li {
+	width: 60px;
+	height: 40px;
+	border: 1px solid #ebebeb;
+	line-height: 40px;
+	box-sizing: border-box;
+	cursor: pointer;
+	float: left;
 }
 
-.paging-input:focus {
-	border: 1px solid black;
+.paging .pageWrap ul .sel-page {
+	color: #333;
+	background-color: #e6e6e6;
+	border-color: #adadad;
 }
 
-.paging-pages-btn:focus {
-	background-color: #0088CC;
+.paging .jump-text {
+	width: 60px;
+	height: 40px;
+	box-sizing: border-box;
+	text-align: center;
+	margin: 0 5px;
+	float: left;
 }
 
-.panel-update {
-	border: 0px;
-	margin-bottom: 0px;
+.paging .jump-button {
+	margin: 0;
+	float: left;
+}
+
+.paging .total-pages, .paging .total-count {
+	margin: 10px 10px;
+	float: left;
+	font-size: 14px;
 }

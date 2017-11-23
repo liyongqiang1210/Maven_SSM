@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <title>后台管理系统</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/paging/paging.css" />
+<link rel="stylesheet" href="css/paging.css" />
 <script type="text/javascript" src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/checkbox.js"></script>
@@ -48,7 +48,7 @@
 					</form>
 				</div>
 			</div>
-			<table class="table table-bordered table-hover">
+			<table class="table table-bordered table-hover" id="table-dictionary">
 				<thead>
 					<tr class="active">
 						<th style="width: 2%;"><input type="checkbox" id="all"></th>
