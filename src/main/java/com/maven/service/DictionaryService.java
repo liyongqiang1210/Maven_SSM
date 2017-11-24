@@ -61,12 +61,12 @@ public class DictionaryService {
 		try {
 			for(int i = 0;i<list.size();i++){
 				h = deleteDictionaryByID(list.get(i));
-				if(h == 1){
+				/*if(h == 1){
 					state = 1;
 				}else{
 					state=0;
 					throw new RuntimeException();
-				}
+				}*/
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

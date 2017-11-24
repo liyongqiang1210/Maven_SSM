@@ -1,6 +1,5 @@
 $(document).ready(
 		function() {
-
 			// 选中的id集合
 			var list_id = new Array();
 			var id = "";
@@ -66,6 +65,11 @@ $(document).ready(
 			$("#dictionary-value-update").blur(function() {
 				dictionary_value_update();
 			});
+			//查询按钮
+			$("#select").click(function() {
+				getPageData(0);
+				getPageTotalAndDataTotal(0);
+			});
 			// 移除表单验证提示
 			$("#add-close").click(function() {
 				$("input#dictionary-key-add+span").remove();
@@ -82,11 +86,11 @@ $(document).ready(
 			});
 			// 更新提交表单方法事件
 			$("#submit-update").click(function() {
-				submit_update_check(id);
+				submit_update_check(id, page);
 			});
 			// 删除事件
 			$("#submit-delete").click(function() {
-				submit_delete(id);
+				submit_delete(id, page);
 			});
 
 			// 删除所选事件
@@ -108,6 +112,7 @@ $(document).ready(
 						// 将数组清空
 						list_id.length = 0;
 						getPageData(page);
+						getPageTotalAndDataTotal(page);
 					},
 					error : function() {
 
@@ -123,13 +128,13 @@ $(document).ready(
 						// 获取选中的页数
 						var selectPage = $(this).parents("ul#pageSelect").find(
 								"li.sel-page").text();
-						page = selectPage-1;
+						page = selectPage - 1;
 						// 获取选中页数据
 						getPageData(page);
 					});
 			// 上一页，下一页，首页，尾页
 			$("div.paging").on("click", "button#prePage", function() {
-				
+
 				if (parseInt(page) > 0) {
 					page = parseInt(page) - 1;
 				}
@@ -137,38 +142,40 @@ $(document).ready(
 
 			});
 			$("div.paging").on("click", "button#nextPage", function() {
-				
-				if(parseInt(page)<parseInt(pageTotal)-1){
-					page = parseInt(page)+1;
+
+				if (parseInt(page) < parseInt(pageTotal) - 1) {
+					page = parseInt(page) + 1;
 				}
 				getPageData(page);
 
 			});
 			$("div.paging").on("click", "button#lastPage", function() {
-				page = pageTotal-1;
-				getPageData(pageTotal-1);
+				page = pageTotal - 1;
+				getPageData(pageTotal - 1);
 
 			});
 			$("div.paging").on("click", "button#firstPage", function() {
 				page = 0;
 				getPageData(page);
-				/*if(page == 0){
-					$("button#firstPage").prop("disabled",true);
-					$("button#prePage").prop("disabled",true);
-				}
-				if(page+1 == pageTotal){
-					$("button#lastPage").prop("disabled",true);
-					$("button#nextPage").prop("disabled",true);
-				}*/
 			});
 			$("div.paging").on("click", "button#jumpBtn", function() {
 				var jump = $("input#jumpText").val();
-				if(jump!=""&&jump!=null&&jump<pageTotal){
-					page = jump-1;
+				if (jump != "" && jump != null && jump < pageTotal) {
+					page = jump - 1;
 				}
 				getPageData(page);
 			});
-			
+			//日期框插件
+			$('#form_datetime').datetimepicker({
+				language : 'zh-CN',
+				weekStart : 1,
+				todayBtn : 1,
+				autoclose : 1,
+				todayHighlight : 1,
+				startView : 2,
+				forceParse : 0,
+				showMeridian : 1
+			});
 
 		});
 // -----------------------------------------组装页面start-----------------------------------------------------------------------
@@ -192,9 +199,8 @@ function getPageData(page) {
 				type : "post",
 				async : false,
 				data : {
-					"dictionary-key" : $("#dictionary-key").val(),
-					"dictionary-create-time" : $("#dictionary_create_time")
-							.val(),
+					"dictionary_key" : $("#dictionary-key").val(),
+					"dictionary_create_time" : $("#dictionary-time").val(),
 					"page" : page
 				},
 				dataType : "json",
@@ -213,8 +219,10 @@ function getPageData(page) {
 									+ "</td><td>"
 									+ "<button type='button' class='btn btn-info btn-xs' name='edit' data-toggle='modal' data-target='#updateDictionary'>编辑</button><button type='button' class='btn btn-danger btn-xs' name='delete' data-toggle='modal' data-target='#deleteDictionary'>删除</button></td></tr>";
 						}
-						$("tbody#tbody").empty().append(str);
 					}
+					$("#tbody").empty().append(str);
+					//将全选设置为false
+					$("thead>tr>th>input#all").prop("checked", false);
 				}
 
 			});
@@ -229,8 +237,8 @@ function getPageTotalAndDataTotal(page) {
 		type : "post",
 		async : false,
 		data : {
-			"dictionary-key" : $("#dictionary-key").val(),
-			"dictionary-create-time" : $("#dictionary_create_time").val(),
+			"dictionary_key" : $("#dictionary-key").val(),
+			"dictionary_create_time" : $("#dictionary-time").val(),
 			"page" : page
 		},
 		dataType : "json",
@@ -241,14 +249,14 @@ function getPageTotalAndDataTotal(page) {
 				totalCount : '合计' + data.dataTotal + '条数据', // 条目总数
 				slideSpeed : 300, // 缓动速度。单位毫秒
 				jump : true, // 是否支持跳转
-				callback : function(page) { // 回调函数
-					console.log(page);
-				}
-			
+			/*callback : function(page) { // 回调函数
+				console.log(page);
+			}*/
+
 			});
 			pageTotal = data.pageTotal;
 		}
-		
+
 	});
 	return pageTotal;
 }
@@ -285,7 +293,7 @@ function submit_add_check(page) {
 	}
 }
 // 更新提交表单方法
-function submit_update_check(id,page) {
+function submit_update_check(id, page) {
 	// 校验key值
 	dictionary_key_update();
 	// 校验value值
@@ -316,7 +324,7 @@ function submit_update_check(id,page) {
 	}
 }
 // 删除数据方法
-function submit_delete(id,page) {
+function submit_delete(id, page) {
 	// 根据id删除相应的数据
 	$.ajax({
 		url : "/Maven_SSM/dictionary/deleteDictionaryByID",

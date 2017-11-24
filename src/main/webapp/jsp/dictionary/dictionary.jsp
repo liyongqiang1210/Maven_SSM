@@ -12,9 +12,14 @@
 <meta charset="UTF-8">
 <title>后台管理系统</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="bootstrap/css/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" href="css/paging.css" />
 <script type="text/javascript" src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap-datetimepicker.js"></script>
+<script src="bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="js/checkbox.js"></script>
 <script src="js/paging.js"></script>
 <script src="jsp/dictionary/dictionary.js"></script>
@@ -32,12 +37,20 @@
 								placeholder="请输入字典的key值">
 						</div>
 						<div class="form-group">
-							<label for="dictionary-create-time">创建时间: </label> <input
-								type="email" class="form-control" id="dictionary-create-time"
-								placeholder="请输入创建时间">
+							<label for="dictionary-create-time">创建时间: </label>
+							<div class="input-group date form_datetime" id="form_datetime"
+								data-date-format="yyyy-mm-dd HH:mm:ss"
+								data-link-field="dtp_input1">
+								<input class="form-control" size="17" type="text"
+									id="dictionary-time" placeholder="请选择时间" value="" readonly><span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-remove"></span></span> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-th"></span></span>
+							</div>
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-default" id="select">查询</button>
+							<button type="button" class="btn btn-default" id="select">查询</button>
 						</div>
 						<div class="form-group">
 							<button type="button" id="add" class="btn btn-default"
@@ -63,7 +76,7 @@
 				</tbody>
 			</table>
 			<!--分页  -->
-			   <div class="paging" id="paging"></div>
+			<div class="paging" id="paging"></div>
 		</div>
 	</div>
 	<!-- Modal -->
