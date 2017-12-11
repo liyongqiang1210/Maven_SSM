@@ -16,7 +16,7 @@
 	<select id="getAllUser" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
-		from user
+		from sys_user
 	</select>
 
 	<!--用户登录 -->
@@ -24,7 +24,7 @@
 		SELECT
 		*
 		FROM
-		u_user
+		sys_user
 		WHERE
 		username=#{username,jdbcType=VARCHAR}
 		AND
@@ -36,7 +36,7 @@
 	<insert id="insertUser" parameterType="java.util.Map"
 		useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO
-		u_user(username,password,createTime)
+		sys_user(username,password,createTime)
 		VALUES
 		(#{username},#{password},#{createTime})
 
@@ -44,14 +44,14 @@
 	<!--删除用户 -->
 	<delete id="deleteUser" parameterType="java.lang.Integer">
 		DELETE FROM
-		u_user
+		sys_user
 		WHERE
 		id=#{id}
 	</delete>
 	<!--修改用户 -->
 	<update id="updateUser" parameterType="java.util.Map">
 		UPDATE
-		u_user
+		sys_user
 		SET
 		username=#{username},password={password}
 		WHERE
@@ -72,7 +72,7 @@
 	<!--转账之转出  -->
 	<update id="subtractMoney" parameterType="java.util.Map">
 		UPDATE
-		u_user
+		sys_user
 		SET
 		account
 		= account - #{account}
@@ -86,7 +86,7 @@
 		SELECT
 		username,account
 		FROM
-		u_user
+		sys_user
 		WHERE
 		username = #{username}
 

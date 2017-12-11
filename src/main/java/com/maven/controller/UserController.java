@@ -21,7 +21,7 @@ import com.maven.entity.User;
 import com.maven.service.IUserService;
 
 /**
- * 测试git是否提交
+ * 
  * @author liyongqiang
  *
  */
@@ -49,8 +49,6 @@ public class UserController {
 		if (user != null) {
 			str = "jsp/main";
 		} else {
-
-			model.addAttribute("message", "用户名或密码输入错误");
 			str = "jsp/login";
 		}
 		return str;
