@@ -464,10 +464,9 @@ body.canvas-menu.mini-navbar .footer {
 body.fixed-sidebar .navbar-static-side,
 body.canvas-menu .navbar-static-side {
     position: fixed;
-    top: 50px;
     width: 220px;
     z-index: 2001;
-    height: calc(100% - 50px) ;
+    height: 100%;
 }
 
 body.fixed-sidebar.mini-navbar .navbar-static-side {
@@ -632,8 +631,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 }
 
 .top-navigation .wrapper.wrapper-content {
-    padding-left : 40px;
-    padding-right : 40px;
+    padding: 40px;
 }
 
 .top-navigation.body-small .wrapper.wrapper-content,
@@ -3531,7 +3529,6 @@ video {
 #wrapper {
     width: 100%;
     overflow-x: hidden;
-    overflow-y: hidden;
     background-color: #2f4050;
 }
 
@@ -3540,8 +3537,7 @@ video {
 }
 
 .wrapper-content {
-    padding-right: : 20px;
-    padding-left : 20px;
+    padding: 20px;
 }
 
 #page-wrapper {
@@ -3745,8 +3741,6 @@ nav.page-tabs .page-tabs-content {
 #content-main {
     height: calc(100% - 50px);
     overflow: hidden;
-    padding-top: 15px;
-    padding-bottom: 20px;
 }
 
 .fixed-nav #content-main {
@@ -7862,7 +7856,6 @@ body.skin-3 {
 }
 
 .navbar-header {
-    margin-left: 220px;
     width: 60%;
 }
 
