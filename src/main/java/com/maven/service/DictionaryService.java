@@ -56,6 +56,7 @@ public class DictionaryService {
 
 	@Transactional
 	public Integer deleteDictionarysByID(List<String> list) {
+		@SuppressWarnings("unused")
 		int h = 0;
 		int state = 0;
 		try {
