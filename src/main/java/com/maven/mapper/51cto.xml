@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.maven.dao.I51CTODao">
+	<resultMap type="com.maven.entity.CtoCourseUrlList" id="BaseResultmap">
+		<result column="course_id" property="course_id" jdbcType="INTEGER" />
+		<result column="course_title" property="course_title" jdbcType="VARCHAR" />
+		<result column="course_url" property="course_url" jdbcType="VARCHAR" />
+		<result column="video_url_id" property="video_url_id" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<!-- 根据视频id查询课程的详细视频信息  -->
+	<select id="selectCourseByVideoID" parameterType="java.lang.Integer"
+		resultType="java.util.Map">
+		SELECT
+		course_id,
+		course_title,
+		course_url,
+		video_url_id
+		FROM
+		51cto_course_url
+		WHERE
+		video_url_id =
+		#{video_url_id}
+	</select>
+	<!-- 查询所有视频信息  -->
+	<select id="selectVideoUrlList" resultType="java.util.Map">
+		SELECT
+		video_id,
+		video_title,
+		video_url,
+		video_class_hour,
+		video_price,
+		video_number
+		FROM
+		51cto_video_url_list
+	</select>
+
+
+</mapper>
