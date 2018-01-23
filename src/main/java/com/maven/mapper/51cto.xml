@@ -33,6 +33,7 @@
 		video_number
 		FROM
 		51cto_video_url_list
+		LIMIT 0,10
 	</select>
 
 
