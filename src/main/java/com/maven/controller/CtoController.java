@@ -31,7 +31,7 @@ public class CtoController {
 
 		List<Map<String, String>> CourseList = ctoService.selectCourseByVideoID(video_url_id);
 		JSONArray json = JSONArray.fromObject(CourseList);
-
+		
 		return json.toString();
 
 	}
@@ -47,7 +47,7 @@ public class CtoController {
 
 		List<Map<String, String>> VideoList = ctoService.selectVideoUrlList();
 		JSONArray json = JSONArray.fromObject(VideoList);
-
+		
 		return json.toString();
 
 	}
